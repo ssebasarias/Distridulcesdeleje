@@ -15,7 +15,7 @@ body {
   overflow-x: hidden ;
   margin: 0;
 }
-.sction-contactus {
+.section-contactus {
   position: absolute;
   inset: 0;
 }
@@ -958,7 +958,7 @@ body {
   justify-content: flex-start;
 }
 
-/* banner */
+/* ------------------------------  banner  ---------------------------------------*/
 .slider {
 	width: 95%;
 	margin: auto;
@@ -1035,7 +1035,6 @@ body {
   position: absolute;
   left: 1045px;
   top: 478px;
-  box-shadow: 6px 8px 4px 0px rgba(48, 76, 120, 0.9);
   object-fit: cover;
 }
 @keyframes cambio {
@@ -1051,7 +1050,7 @@ body {
 	75% {margin-left: -300%;}
 	100% {margin-left: -300%;}
 }
-/* fin banner */
+/*---------------------------------------  fin banner  ------------------------------------*/
 
 .header {
   position: absolute;
@@ -1227,6 +1226,9 @@ body {
   height: 84.38%;
   overflow: visible;
 }
+
+/* ----------------------------  navbar -----------------------------------*/
+
 .navbar {
   background: var(--navyblue, #001f3f);
   padding: 0px 0px 0px 20px;
@@ -1248,47 +1250,23 @@ body {
   justify-content: flex-start;
   flex-shrink: 0;
   position: relative;
+  list-style-type: none;
 }
-.btn-inicio {
+.options-navbar li {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Poppins-Regular", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  position: relative;
+}
+.options-navbar li a:visited{
+  color: #ffffff;
+}
+.options-navbar li a:hover {
   color: #ffd700;
-  text-align: center;
-  font-family: "Poppins-Medium", sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  position: relative;
 }
-.btn-quienessomos {
-  color: #ffffff;
-  text-align: center;
-  font-family: "Poppins-Regular", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  position: relative;
-}
-.btn-produtos {
-  color: #ffffff;
-  text-align: center;
-  font-family: "Poppins-Regular", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  position: relative;
-}
-.btn-ubicanos {
-  color: #ffffff;
-  text-align: center;
-  font-family: "Poppins-Regular", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  position: relative;
-}
-.btn-contactanos {
-  color: #ffffff;
-  text-align: center;
-  font-family: "Poppins-Regular", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  position: relative;
-}
+
 .backgrount-search {
   background: #ffd700;
   padding: 20px;

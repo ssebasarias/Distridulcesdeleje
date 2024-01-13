@@ -33,8 +33,8 @@
   </head>
   <body>
     <div class="homepage">
-      <div class="sction-contactus">
-        <div class="backgrpund-contactus"></div>
+      <div class="section-contactus">
+        <div class="backgrpund-contactus" id="section-contactus"></div>
         <div class="frame-86">
           <svg
             class="rectangle-33"
@@ -262,8 +262,8 @@
         </svg>
         <img class="img-logo-history" src="./img/img-logo-history0.png" />
       </div>
-      <div class="section-aboutus">
-        <div class="background-aboutus"></div>
+      <div class="section-aboutus" >
+        <div class="background-aboutus" id="section-aboutus"></div>
         <div class="txt-aboutus">
           ¡Bienvenidos a DISTRIDULCES!
           <br />
@@ -277,7 +277,7 @@
         <div class="txt-title-auboutus">SOBRE NOSOTROS</div>
       </div>
       <div class="section-products">
-        <div class="productos-section"></div>
+        <div class="productos-section" id="section-products"></div>
         <div class="products-box">
           <div class="selects">
             <div class="ellipse-290"></div>
@@ -318,16 +318,6 @@
               />
             </svg>
           </div>
-          <div class="card-hompage-pass">
-            <div class="txt-price">$10.99 / lb</div>
-            <div class="txt-name">LOKIÑO</div>
-            <img class="img-car" src="./img/img-car0.png" />
-          </div>
-          <div class="card-homepage-pass">
-            <div class="txt-price">$10.99 / lb</div>
-            <div class="txt-name">LOKIÑO</div>
-            <img class="img-card" src="./img/img-card0.png" />
-          </div>
           <div class="card-homepage">
             <div class="txt-name-card">BARRILETE</div>
             <div class="txt-price-card">$5.99 / lb</div>
@@ -352,7 +342,8 @@
         </div>
       </div>
 
-      <div class="section-banner">
+      <div class="section-banner" id="section-banner">
+        <div class="shadow-banner"></div>j
         <ul>
           <li>
             <img class="img-banner-rh" src="./img/img-banner-rh0.png" />
@@ -364,7 +355,6 @@
             <img class="img-banner-center" src="./img/img-banner-center0.png" />
           </li>
         </ul>
-        <div class="shadow-banner"></div>j
         <img class="img-logo2" src="./img/img-logo1.png" />
       </div>
       
@@ -521,13 +511,20 @@
           </div>
         </div>
         <div class="navbar">
-          <div class="options-navbar">
-            <div class="btn-inicio">INICIO</div>
-            <div class="btn-quienessomos">¿Quienes somos?</div>
-            <div class="btn-produtos">Productos</div>
-            <div class="btn-ubicanos">Ubicanos</div>
-            <div class="btn-contactanos">Contactanos</div>
-          </div>
+          <ul class="options-navbar">
+            <li>
+              <a href="#section-banner">Inicio</a>
+            </li>
+            <li>
+              <a href="#section-products">Productos</a>
+            </li>
+            <li>
+              <a href="#section-aboutus">¿Quienes somos?</a>
+            </li>
+            <li>
+              <a href="#section-contactus">Contactanos</a>
+            </li>
+          </ul>
           <div class="backgrount-search">
             <div class="txt-search">Busqueda</div>
             <svg
