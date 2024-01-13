@@ -7,7 +7,6 @@
   width: 100%;
   height: 4578px;
   position: relative;
-  overflow: hidden;
 }
 
 body {
@@ -763,7 +762,7 @@ body {
   overflow: visible;
 }
 .mas-productos {
-  color: #2b6be7;
+  color: #304c78;
   text-align: left;
   font-family: "Inter-Regular", sans-serif;
   font-size: 16px;
@@ -790,7 +789,7 @@ body {
   background: #ffffff;
   border-radius: 24px;
   border-style: solid;
-  border-color: #2b6be7;
+  border-color: #304c78;
   border-width: 2px;
   opacity: 0.5;
   width: 312px;
@@ -802,7 +801,7 @@ body {
   overflow: hidden;
 }
 .txt-price {
-  color: #2b6be7;
+  color: #304c78;
   text-align: left;
   font-family: "Inter-SemiBold", sans-serif;
   font-size: 20px;
@@ -835,7 +834,7 @@ body {
   background: #ffffff;
   border-radius: 24px;
   border-style: solid;
-  border-color: #2b6be7;
+  border-color: #304c78;
   border-width: 2px;
   opacity: 0.5;
   width: 312px;
@@ -858,7 +857,7 @@ body {
   background: #ffffff;
   border-radius: 24px;
   border-style: solid;
-  border-color: #2b6be7;
+  border-color: #304c78;
   border-width: 2px;
   width: 308px;
   position: absolute;
@@ -880,7 +879,7 @@ body {
   bottom: 98px;
 }
 .txt-price-card {
-  color: #2b6be7;
+  color: #304c78;
   text-align: left;
   font-family: "Inter-SemiBold", sans-serif;
   font-size: 20px;
@@ -902,7 +901,7 @@ body {
   background: #ffffff;
   border-radius: 24px;
   border-style: solid;
-  border-color: #2b6be7;
+  border-color: #304c78;
   border-width: 2px;
   width: 308px;
   position: absolute;
@@ -916,7 +915,7 @@ body {
   background: #ffffff;
   border-radius: 24px;
   border-style: solid;
-  border-color: #2b6be7;
+  border-color: #304c78;
   border-width: 2px;
   width: 308px;
   position: absolute;
@@ -930,7 +929,7 @@ body {
   background: #ffffff;
   border-radius: 24px;
   border-style: solid;
-  border-color: #2b6be7;
+  border-color: #304c78;
   border-width: 2px;
   width: 308px;
   position: absolute;
@@ -1050,7 +1049,6 @@ body {
 	75% {margin-left: -300%;}
 	100% {margin-left: -300%;}
 }
-/*---------------------------------------  fin banner  ------------------------------------*/
 
 .header {
   position: absolute;
@@ -1095,6 +1093,10 @@ body {
   position: relative;
   object-fit: cover;
 }
+.info-box,
+.info-box * {
+  box-sizing: border-box;
+}
 .info-box {
   display: flex;
   flex-direction: row;
@@ -1110,7 +1112,7 @@ body {
   height: 45px;
   position: static;
 }
-.frame-614 {
+.frame-61 {
   display: flex;
   flex-direction: row;
   gap: 10px;
@@ -1126,7 +1128,24 @@ body {
   height: 42.81px;
   position: static;
 }
-.ion-home2 {
+.group-82 {
+  width: 42.81px;
+  height: 42.81px;
+  position: static;
+}
+.ellipse-18 {
+  background: #ffffff;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: #001f3f;
+  border-width: 1px;
+  width: 42.81px;
+  height: 42.81px;
+  position: absolute;
+  left: 0px;
+  top: 1.1px;
+}
+.ion-home {
   width: 21px;
   height: 21px;
   position: absolute;
@@ -1134,13 +1153,38 @@ body {
   top: 11.6px;
   overflow: visible;
 }
+.frame-60 {
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  align-items: flex-start;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.address {
+  color: var(--navyblue, #001f3f);
+  text-align: center;
+  font-family: "Poppins-Medium", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  position: relative;
+}
+._123-new-york-usa {
+  color: #808080;
+  text-align: center;
+  font-family: "Poppins-Regular", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  position: relative;
+}
 .info-phone {
   flex-shrink: 0;
   width: 180px;
   height: 45px;
   position: static;
 }
-.frame-615 {
+.frame-612 {
   display: flex;
   flex-direction: row;
   gap: 10px;
@@ -1150,7 +1194,25 @@ body {
   left: 204.81px;
   top: 0px;
 }
-.fluent-call-24-filled2 {
+.group-59 {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  position: static;
+}
+.ellipse-13 {
+  background: #ffffff;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: #001f3f;
+  border-width: 1px;
+  width: 44px;
+  height: 44px;
+  position: absolute;
+  left: 0px;
+  top: 0.5px;
+}
+.fluent-call-24-filled {
   width: 27px;
   height: 27px;
   position: absolute;
@@ -1158,13 +1220,29 @@ body {
   top: 9.5px;
   overflow: visible;
 }
+.phone-number {
+  color: var(--navyblue, #001f3f);
+  text-align: center;
+  font-family: "Poppins-Medium", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  position: relative;
+}
+._650-123-1212 {
+  color: #808080;
+  text-align: center;
+  font-family: "Poppins-Regular", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  position: relative;
+}
 .info-email {
   flex-shrink: 0;
-  width: 405px;
+  width: 211px;
   height: 45px;
   position: static;
 }
-.frame-616 {
+.frame-613 {
   display: flex;
   flex-direction: row;
   gap: 10px;
@@ -1174,7 +1252,27 @@ body {
   left: 404.81px;
   top: 0px;
 }
-.clarity-envelope-line2 {
+.frame-59 {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+.ellipse-132 {
+  background: #ffffff;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: #001f3f;
+  border-width: 1px;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  position: relative;
+}
+.clarity-envelope-line {
   flex-shrink: 0;
   width: 23px;
   height: 18px;
@@ -1183,39 +1281,53 @@ body {
   top: 13.5px;
   overflow: visible;
 }
-.inicio-sesion {
-  flex-shrink: 0;
-  width: 184px;
-  height: 45px;
-  position: static;
-}
-.iniciar-sesion {
+.email-us-here {
   color: var(--navyblue, #001f3f);
   text-align: center;
   font-family: "Poppins-Medium", sans-serif;
   font-size: 16px;
   font-weight: 500;
-  position: absolute;
-  left: 274px;
-  top: 10px;
+  position: relative;
 }
-.rectangle-352 {
-  border-radius: 0px;
-  width: 184px;
-  height: 45px;
+.example-gmail-com {
+  color: #808080;
+  text-align: center;
+  font-family: "Poppins-Regular", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  position: relative;
+}
+
+.login,
+.login * {
+  box-sizing: border-box;
+}
+.login {
+  flex-shrink: 0;
+  width: 187px;
+  height: 47px;
+  position: static;
+}
+.backgroud-login {
+  background: rgba(217, 217, 217, 0);
+  border-radius: 30px;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 1px;
+  width: 187px;
+  height: 47px;
   position: absolute;
-  left: 221px;
+  left: 635.81px;
   top: 0px;
-  overflow: visible;
 }
-.user {
+.img-person {
   width: 24px;
   height: 24px;
   position: absolute;
-  left: 237px;
-  top: 11px;
+  left: 651.81px;
+  top: 10.5px;
 }
-.user2 {
+.user {
   height: auto;
   position: absolute;
   right: 12.5%;
@@ -1226,6 +1338,17 @@ body {
   height: 84.38%;
   overflow: visible;
 }
+.txt-iniciar-sesion {
+  color: var(--navyblue, #001f3f);
+  text-align: center;
+  font-family: "Poppins-Medium", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  position: absolute;
+  left: 688.81px;
+  top: 9.5px;
+}
+
 
 /* ----------------------------  navbar -----------------------------------*/
 
@@ -1289,10 +1412,50 @@ body {
   position: relative;
 }
 .lbl-search {
-  border-radius: 0px;
+  border-radius: 15px;
   flex-shrink: 0;
   width: 298px;
   height: 34px;
   position: relative;
   overflow: visible;
+  background-color: #ffffff;
+  text-align: center;
+  font-family: 'Arial', sans-serif;
+}
+input:focus {
+  outline: none;
+  border-color: #304c78;
+  box-shadow: 0 0 5px #304c78;
+}
+
+/* Estilos para el modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
 }
