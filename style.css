@@ -951,6 +951,33 @@
   align-items: center;
   justify-content: flex-start;
 }
+
+/* banner */
+.slider {
+	width: 95%;
+	margin: auto;
+	overflow: hidden;
+}
+
+.section-banner ul {
+	display: flex;
+	padding: 0;
+	width: 400%;
+	
+	animation: cambio 20s infinite alternate linear;
+}
+
+.slider li {
+	width: 100%;
+	list-style: none;
+}
+
+.slider img {
+	width: 100%;
+}
+
+
+
 .section-banner {
   height: 617px;
   position: absolute;
@@ -1005,6 +1032,21 @@
   box-shadow: 6px 8px 4px 0px rgba(48, 76, 120, 0.9);
   object-fit: cover;
 }
+@keyframes cambio {
+	0% {margin-left: 0;}
+	20% {margin-left: 0;}
+	
+	25% {margin-left: -100%;}
+	45% {margin-left: -100%;}
+	
+	50% {margin-left: -200%;}
+	70% {margin-left: -200%;}
+	
+	75% {margin-left: -300%;}
+	100% {margin-left: -300%;}
+}
+/* fin banner */
+
 .header {
   position: absolute;
   inset: 0;
