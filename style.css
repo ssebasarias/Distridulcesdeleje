@@ -1249,9 +1249,13 @@ body {
   position: relative;
 }
 
-.login,
-.login * {
-  box-sizing: border-box;
+button {
+  cursor: pointer;
+}
+
+button:hover {
+  border-radius: 30px;
+  background-color: hsl(0, 0%, 90%);
 }
 .login {
   flex-shrink: 0;
