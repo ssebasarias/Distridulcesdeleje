@@ -366,26 +366,12 @@ body {
   font-weight: 400;
   position: relative;
 }
-.group-84 {
+
+/* ----------------- seccion datos de contacto ------------------------------- */
+.section-contact-input {
   width: 844px;
   height: 317px;
   position: static;
-}
-.txt-correo {
-  color: #001f3f;
-  text-align: center;
-  font-family: "Inter-Regular", sans-serif;
-  font-size: 20px;
-  line-height: 200%;
-  font-weight: 400;
-  position: absolute;
-  right: 463px;
-  bottom: 799.57px;
-  width: 83px;
-  height: 47.49px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 .lbl-mesnaje {
   background: #d8d8d8;
@@ -396,7 +382,7 @@ body {
   width: 840px;
   height: 151.97px;
   position: absolute;
-  right: 114px;
+  left: calc(50% - 159px);
   bottom: 536px;
 }
 .txt-mensaje {
@@ -407,7 +393,7 @@ body {
   line-height: 200%;
   font-weight: 400;
   position: absolute;
-  right: 864px;
+  left: calc(50% - 163px);
   bottom: 687.97px;
   width: 94px;
   height: 47.49px;
@@ -421,23 +407,40 @@ body {
   border-style: solid;
   border-color: #001f3f;
   border-width: 1px;
-  width: 365px;
+  width: 432px;
   height: 51.05px;
   position: absolute;
-  right: 589px;
+  left: calc(50% - -249px);
   bottom: 746.15px;
 }
-.lbl-nombre2 {
+.txt-correo {
+  color: #001f3f;
+  text-align: center;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 20px;
+  line-height: 200%;
+  font-weight: 400;
+  position: absolute;
+  left: calc(50% - -249px);
+  bottom: 799.57px;
+  width: 83px;
+  height: 47.49px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lbl-correo {
   background: #d8d8d8;
   border-radius: 11px;
   border-style: solid;
   border-color: #001f3f;
   border-width: 1px;
-  width: 432px;
+  width: 365px;
   height: 51.05px;
   position: absolute;
-  right: 114px;
+  left: calc(50% - 159px);
   bottom: 746.15px;
+  
 }
 .txt-nombre {
   color: #001f3f;
@@ -447,7 +450,7 @@ body {
   line-height: 200%;
   font-weight: 400;
   position: absolute;
-  right: 868px;
+  left: calc(50% - 159px);
   bottom: 805.51px;
   width: 86px;
   height: 47.49px;
@@ -455,6 +458,7 @@ body {
   align-items: center;
   justify-content: center;
 }
+
 .enviar {
   width: 140px;
   height: 45px;
@@ -692,6 +696,8 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+/* ---------------------------------------- seccio productos ----------------------------------- */
 .section-products {
   position: absolute;
   inset: 0;
@@ -992,6 +998,7 @@ body {
 95%{margin-left: -200%;}
 }
 
+/* ----------------------------------- header -----------------------------------*/
 .header {
   position: absolute;
   inset: 0;
@@ -1240,6 +1247,7 @@ body {
   position: relative;
 }
 
+/* ---------------- boton inicio de sesion ------------------------------- */
 button {
   cursor: pointer;
 }
