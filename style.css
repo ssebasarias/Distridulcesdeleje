@@ -963,46 +963,37 @@ body {
 
 /* ------------------------------  banner  ---------------------------------------*/
 .section-banner {
-  height: 617px;
-  right: 3px;
-  left: 1px;
-  top: 255px;
-  overflow: hidden;;
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  place-content: center;
 }
 
-.section-banner ul {
+.slide {
+  width: 130vh;
+  max-width: 779px;
+  height: 449px;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.slide ul {
   display: flex;
-  list-style: none;
   padding: 0;
-  margin: 0;
-  width: 300%;
+  width: 300px;
 
-  animation: slide 16s infinite alternate ease-in-out
-}
-
-.section-banner li{
-  list-style: none;
-  width: 100%;
-}
-
-.section-banner img{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  animation: slide 15s infinite cubic-bezier(0.55, 0.48, 0.37, 0.92) ;
 }
 
 @keyframes slide {
-	0% {margin-left: 0%;}
-	20% {margin-left: 0%;}
-	
-	25% {margin-left: -100%;}
-	45% {margin-left: -100%;}
-	
-	50% {margin-left: -200%;}
-	70% {margin-left: -200%;}
-	
-	75% {margin-left: -300%;}
-	95% {margin-left: -300%;}
+0% {margin-left: 0%;}
+30% {margin-left: 0%;}
+
+35% {margin-left: -100%;}
+70% {margin-left: -100%;}
+
+75% {margin-left: -200%;}
+95%{margin-left: -200%;}
 }
 
 .header {
@@ -1253,10 +1244,15 @@ body {
   position: relative;
 }
 
-.login,
-.login * {
-  box-sizing: border-box;
+button {
+  cursor: pointer;
 }
+
+button:hover {
+  border-radius: 30px;
+  background-color: hsl(0, 0%, 90%);
+}
+
 .login {
   flex-shrink: 0;
   width: 187px;

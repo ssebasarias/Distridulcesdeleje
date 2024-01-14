@@ -352,11 +352,13 @@
       </div>
 
       <div class="section-banner" id="section-banner">
-        <ul>
-          <li><img class="img-banner-center" src="./img/img-banner-center0.png" /></li>
-          <li><img class="img-banner-rh" src="./img/img-banner-rh0.png" /></li>
-          <li><img class="img-banner-lf" src="./img/img-banner-lf0.png" /></li>
-        </ul>
+        <div class="slide">
+          <ul>
+              <li><img class="img-banner-center" src="./img/img-banner-center0.png" /></li>
+              <li><img class="img-banner-rh" src="./img/img-banner-rh0.png" /></li>
+              <li><img class="img-banner-lf" src="./img/img-banner-lf0.png" /></li>
+          </ul>
+      </div>
       </div>
       
       <div class="header">
@@ -471,9 +473,9 @@
                   </div>
                 </div>
               </div>
-              <div class="login">
+              <button class="login" id="btnMostrarLogin">
                 <div class="backgroud-login"></div>
-                <div class="img-person">
+                  <div class="img-person">
                   <svg
                     class="user"
                     width="18"
@@ -495,7 +497,25 @@
                   </svg>
                 </div>
                 <div class="txt-iniciar-sesion">Iniciar sesion</div>
-              </div>              
+              </button>              
+            </div>
+            <div id="modalLogin" class="modal">
+              <div class="modal-content">
+                  <span class="close" onclick="cerrarModal()">&times;</span>
+                  <h2>Iniciar Sesión</h2>
+                  <!-- Aquí puedes agregar tu formulario de inicio de sesión -->
+                  <form action="#" method="post">
+                      <!-- Campos del formulario -->
+                      <label for="usuario">Usuario:</label>
+                      <input type="text" id="usuario" name="usuario">
+          
+                      <label for="contrasena">Contraseña:</label>
+                      <input type="password" id="contrasena" name="contrasena">
+          
+                      <!-- Botón para enviar el formulario -->
+                      <input type="submit" value="Iniciar Sesión">
+                  </form>
+              </div>             
             </div>
             
           </div>
