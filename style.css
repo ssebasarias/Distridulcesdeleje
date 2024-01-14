@@ -696,6 +696,8 @@ body {
   align-items: center;
   justify-content: center;
 }
+
+/* ---------------------------------------- seccio productos ----------------------------------- */
 .section-products {
   position: absolute;
   inset: 0;
@@ -996,6 +998,7 @@ body {
 95%{margin-left: -200%;}
 }
 
+/* ----------------------------------- header -----------------------------------*/
 .header {
   position: absolute;
   inset: 0;
@@ -1244,6 +1247,7 @@ body {
   position: relative;
 }
 
+/* ---------------- boton inicio de sesion ------------------------------- */
 button {
   cursor: pointer;
 }
