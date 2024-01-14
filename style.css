@@ -958,87 +958,38 @@ body {
 }
 
 /* ------------------------------  banner  ---------------------------------------*/
-.slider {
-	width: 95%;
-	margin: auto;
-	overflow: hidden;
-}
-
-.section-banner ul {
-	display: flex;
-	padding: 0;
-	width: 400%;
-	
-	animation: cambio 20s infinite alternate linear;
-}
-
-.slider li {
-	width: 100%;
-	list-style: none;
-}
-
-.slider img {
-	width: 100%;
-}
-
-
-
 .section-banner {
   height: 617px;
-  position: absolute;
   right: 3px;
   left: 1px;
   top: 255px;
-  overflow: hidden;
+  overflow: hidden;;
 }
-.shadow-banner {
-  background: #d2d2d2;
-  border-radius: 50%;
-  width: 1332px;
-  height: 124px;
-  position: absolute;
-  left: 119px;
-  top: 478px;
-  filter: blur(7.5px);
+
+.section-banner ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 300%;
+
+  animation: slide 16s infinite alternate ease-in-out
 }
-.img-banner-rh {
-  border-radius: 15px;
-  width: 916px;
-  height: 506px;
-  position: absolute;
-  left: 129px;
-  top: 29px;
+
+.section-banner li{
+  list-style: none;
+  width: 100%;
+}
+
+.section-banner img{
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
-.img-banner-lf {
-  border-radius: 15px;
-  width: 916px;
-  height: 506px;
-  position: absolute;
-  left: 511px;
-  top: 29px;
-  object-fit: cover;
-}
-.img-banner-center {
-  border-radius: 15px;
-  width: 1106px;
-  height: 564px;
-  position: absolute;
-  left: 232px;
-  top: 0px;
-  object-fit: cover;
-}
-.img-logo2 {
-  width: 163px;
-  height: 86px;
-  position: absolute;
-  left: 1045px;
-  top: 478px;
-  object-fit: cover;
-}
-@keyframes cambio {
-	0% {margin-left: 0;}
-	20% {margin-left: 0;}
+
+@keyframes slide {
+	0% {margin-left: 0%;}
+	20% {margin-left: 0%;}
 	
 	25% {margin-left: -100%;}
 	45% {margin-left: -100%;}
@@ -1047,7 +998,7 @@ body {
 	70% {margin-left: -200%;}
 	
 	75% {margin-left: -300%;}
-	100% {margin-left: -300%;}
+	95% {margin-left: -300%;}
 }
 
 .header {
