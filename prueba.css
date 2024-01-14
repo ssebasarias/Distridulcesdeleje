@@ -1,0 +1,36 @@
+
+.section-banner {
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    place-content: center;
+}
+
+.slide {
+    place-content: center;
+    width: 130vh;
+    max-width: 779px;
+    height: 449px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.slide ul {
+    display: flex;
+    padding: 0;
+    width: 300px;
+
+    animation: slide 15s infinite cubic-bezier(0.55, 0.48, 0.37, 0.92) ;
+}
+
+
+@keyframes slide {
+	0% {margin-left: 0%;}
+	30% {margin-left: 0%;}
+	
+	35% {margin-left: -100%;}
+	70% {margin-left: -100%;}
+	
+	75% {margin-left: -200%;}
+	95%{margin-left: -200%;}
+}
