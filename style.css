@@ -965,7 +965,7 @@ body {
 
 /* ------------------------------  banner  ---------------------------------------*/
 .section-banner {
-  height: 100vh;
+  height: 130vh;
   width: 100%;
   display: grid;
   place-content: center;
