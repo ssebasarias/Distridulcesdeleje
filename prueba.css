@@ -1,143 +1,31 @@
-a,
-button,
-input,
-select,
-h1,
-h2,
-h3,
-h4,
-h5,
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  border: none;
-  text-decoration: none;
-  appearance: none;
-  background: none;
-
-  -webkit-font-smoothing: antialiased;
+*{
+margin: 0px;
+padding: 0px;
+text-decoration: none;
 }
 
-/* ------------------------------  banner  ---------------------------------------*/
-.section-banner {
-    height: 125vh;
-    width: 100%;
-    display: grid;
-    place-content: center;
-    overflow: hidden;
-  }
-  
-  .slide {
-    width: 130vh;
-    max-width: 779px;
-    height: 449px;
-    overflow: hidden;
-    border-radius: 10px;
-  }
-  
-  .slide ul {
-    display: flex;
-    padding: 0;
-    width: 300px;
-  
-    animation: slide 15s infinite cubic-bezier(0.55, 0.48, 0.37, 0.92) ;
-  }
-  
-  @keyframes slide {
-  0% {margin-left: 0%;}
-  30% {margin-left: 0%;}
-  
-  35% {margin-left: -100%;}
-  70% {margin-left: -100%;}
-  
-  75% {margin-left: -200%;}
-  95%{margin-left: -200%;}
-  }
-
-/* ------------------------------  productos  ---------------------------------------*/
-
-.productos-section {
-  height: 10vh;
-  width: 100%;
-  display: grid;
-  place-content: center;
+main {
+display: flex;
+flex-direction: column; 
 }
 
-.productos-section a {
-  text-decoration: none;
+section{
+margin-bottom: 20px;
+height: 125vh;
+width: 100%;
 }
 
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  margin: 50px 0;
+button {
+cursor: pointer;
 }
 
-.content {
-  width: 20%;
-  margin: 15px;
-  box-sizing: border-box;
-  float: left;
-  text-align: center;
-  border-radius: 20px;
-  cursor: pointer;
-  padding-top: 10px;
-  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
-  0 10px 10px rgba(0, 0, 0, 0.22);
-  transition: .4s;
-  background: #f2f2f2;
+button:hover {
+border-radius: 30px;
+background-color: hsl(0, 0%, 90%);
 }
 
-.content:hover {
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
-  0 3px 6px rgba(0, 0, 0, 0.23);
-  transform: translate(0px , -8px);
-}
 
-.gallery img {
-  width: 277px;
-  height: 271px;
-  text-align: center;
-  margin: 0 auto;
-  display: block;
-}
 
-.tittle-card {
-  text-align: center;
-  padding-top: 0 8px ;
-}
-
-.price {
-  font-size: 26px;
-  text-align: center;
-  color: #222f3e;
-  margin: 0;
-}
-
-.btn-comprar {
-  background-color: #001F3F;
-  text-align: center;
-  color: azure;
-  font-size: 24px;
-  width: 100%;
-  padding: 15px;
-  border: 0;
-  outline: none;
-  cursor: pointer;
-  margin-top: 5px;
-  border-bottom-right-radius: 20px ;
-  border-bottom-left-radius:20px ;
-}
-
-.btn-mas-productos {
-  width: 187.15px;
-  height: 37px;
-  position: static;
-}
 
 /* ------------------------------  header  ---------------------------------------*/
 .header {
@@ -988,208 +876,208 @@ justify-content: flex-start;
 }
 
 .section-info-contact {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    align-items: center;
-    justify-content: flex-start;
-    width: 634px;
-    height: 80px;
-    position: absolute;
-    left: 483px;
-    top: 4103px;
-  }
-  .adress {
-    flex-shrink: 0;
-    width: 184.81px;
-    height: 45px;
-    position: static;
-  }
-  .frame-61 {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    align-items: center;
-    justify-content: flex-start;
-    position: absolute;
-    left: 0px;
-    top: 17.5px;
-  }
-  .group-59 {
-    flex-shrink: 0;
-    width: 42.81px;
-    height: 42.81px;
-    position: static;
-  }
-  .group-82 {
-    width: 42.81px;
-    height: 42.81px;
-    position: static;
-  }
-  .ellipse-18 {
-    background: #ffffff;
-    border-radius: 50%;
-    border-style: solid;
-    border-color: #001f3f;
-    border-width: 1px;
-    width: 42.81px;
-    height: 42.81px;
-    position: absolute;
-    left: 0px;
-    top: 1.1px;
-  }
-  .ion-home {
-    width: 21px;
-    height: 21px;
-    position: absolute;
-    left: 11.31px;
-    top: 11.6px;
-    overflow: visible;
-  }
-  .frame-60 {
-    display: flex;
-    flex-direction: column;
-    gap: 0px;
-    align-items: flex-start;
-    justify-content: center;
-    flex-shrink: 0;
-    position: relative;
-  }
-  .address {
-    color: var(--navyblue, #001f3f);
-    text-align: center;
-    font-family: "Poppins-Medium", sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    position: relative;
-  }
-  ._123-new-york-usa {
-    color: #808080;
-    text-align: center;
-    font-family: "Poppins-Regular", sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    position: relative;
-  }
-  .phone {
-    flex-shrink: 0;
-    width: 180px;
-    height: 45px;
-    position: static;
-  }
-  .frame-612 {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    align-items: center;
-    justify-content: flex-start;
-    position: absolute;
-    left: 204.81px;
-    top: 17.5px;
-  }
-  .group-592 {
-    flex-shrink: 0;
-    width: 44px;
-    height: 44px;
-    position: static;
-  }
-  .ellipse-13 {
-    background: #ffffff;
-    border-radius: 50%;
-    border-style: solid;
-    border-color: #001f3f;
-    border-width: 1px;
-    width: 44px;
-    height: 44px;
-    position: absolute;
-    left: 0px;
-    top: 0.5px;
-  }
-  .fluent-call-24-filled {
-    width: 27px;
-    height: 27px;
-    position: absolute;
-    left: 9px;
-    top: 9.5px;
-    overflow: visible;
-  }
-  .phone-number {
-    color: var(--navyblue, #001f3f);
-    text-align: center;
-    font-family: "Poppins-Medium", sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    position: relative;
-  }
-  ._650-123-1212 {
-    color: #808080;
-    text-align: center;
-    font-family: "Poppins-Regular", sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    position: relative;
-  }
-  .email {
-    flex-shrink: 0;
-    width: 211px;
-    height: 45px;
-    position: static;
-  }
-  .frame-613 {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    align-items: center;
-    justify-content: flex-start;
-    position: absolute;
-    left: 404.81px;
-    top: 17.5px;
-  }
-  .frame-59 {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    position: relative;
-  }
-  .ellipse-132 {
-    background: #ffffff;
-    border-radius: 50%;
-    border-style: solid;
-    border-color: #001f3f;
-    border-width: 1px;
-    flex-shrink: 0;
-    width: 44px;
-    height: 44px;
-    position: relative;
-  }
-  .clarity-envelope-line {
-    flex-shrink: 0;
-    width: 23px;
-    height: 18px;
-    position: absolute;
-    left: 11px;
-    top: 13.5px;
-    overflow: visible;
-  }
-  .email-us-here {
-    color: var(--navyblue, #001f3f);
-    text-align: center;
-    font-family: "Poppins-Medium", sans-serif;
-    font-size: 16px;
-    font-weight: 500;
-    position: relative;
-  }
-  .example-gmail-com {
-    color: #808080;
-    text-align: center;
-    font-family: "Poppins-Regular", sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    position: relative;
-  }
+display: flex;
+flex-direction: row;
+gap: 20px;
+align-items: center;
+justify-content: flex-start;
+width: 634px;
+height: 80px;
+position: absolute;
+left: 483px;
+top: 4103px;
+}
+.adress {
+flex-shrink: 0;
+width: 184.81px;
+height: 45px;
+position: static;
+}
+.frame-61 {
+display: flex;
+flex-direction: row;
+gap: 10px;
+align-items: center;
+justify-content: flex-start;
+position: absolute;
+left: 0px;
+top: 17.5px;
+}
+.group-59 {
+flex-shrink: 0;
+width: 42.81px;
+height: 42.81px;
+position: static;
+}
+.group-82 {
+width: 42.81px;
+height: 42.81px;
+position: static;
+}
+.ellipse-18 {
+background: #ffffff;
+border-radius: 50%;
+border-style: solid;
+border-color: #001f3f;
+border-width: 1px;
+width: 42.81px;
+height: 42.81px;
+position: absolute;
+left: 0px;
+top: 1.1px;
+}
+.ion-home {
+width: 21px;
+height: 21px;
+position: absolute;
+left: 11.31px;
+top: 11.6px;
+overflow: visible;
+}
+.frame-60 {
+display: flex;
+flex-direction: column;
+gap: 0px;
+align-items: flex-start;
+justify-content: center;
+flex-shrink: 0;
+position: relative;
+}
+.address {
+color: var(--navyblue, #001f3f);
+text-align: center;
+font-family: "Poppins-Medium", sans-serif;
+font-size: 16px;
+font-weight: 500;
+position: relative;
+}
+._123-new-york-usa {
+color: #808080;
+text-align: center;
+font-family: "Poppins-Regular", sans-serif;
+font-size: 14px;
+font-weight: 400;
+position: relative;
+}
+.phone {
+flex-shrink: 0;
+width: 180px;
+height: 45px;
+position: static;
+}
+.frame-612 {
+display: flex;
+flex-direction: row;
+gap: 10px;
+align-items: center;
+justify-content: flex-start;
+position: absolute;
+left: 204.81px;
+top: 17.5px;
+}
+.group-592 {
+flex-shrink: 0;
+width: 44px;
+height: 44px;
+position: static;
+}
+.ellipse-13 {
+background: #ffffff;
+border-radius: 50%;
+border-style: solid;
+border-color: #001f3f;
+border-width: 1px;
+width: 44px;
+height: 44px;
+position: absolute;
+left: 0px;
+top: 0.5px;
+}
+.fluent-call-24-filled {
+width: 27px;
+height: 27px;
+position: absolute;
+left: 9px;
+top: 9.5px;
+overflow: visible;
+}
+.phone-number {
+color: var(--navyblue, #001f3f);
+text-align: center;
+font-family: "Poppins-Medium", sans-serif;
+font-size: 16px;
+font-weight: 500;
+position: relative;
+}
+._650-123-1212 {
+color: #808080;
+text-align: center;
+font-family: "Poppins-Regular", sans-serif;
+font-size: 14px;
+font-weight: 400;
+position: relative;
+}
+.email {
+flex-shrink: 0;
+width: 211px;
+height: 45px;
+position: static;
+}
+.frame-613 {
+display: flex;
+flex-direction: row;
+gap: 10px;
+align-items: center;
+justify-content: flex-start;
+position: absolute;
+left: 404.81px;
+top: 17.5px;
+}
+.frame-59 {
+display: flex;
+flex-direction: row;
+gap: 10px;
+align-items: center;
+justify-content: center;
+flex-shrink: 0;
+position: relative;
+}
+.ellipse-132 {
+background: #ffffff;
+border-radius: 50%;
+border-style: solid;
+border-color: #001f3f;
+border-width: 1px;
+flex-shrink: 0;
+width: 44px;
+height: 44px;
+position: relative;
+}
+.clarity-envelope-line {
+flex-shrink: 0;
+width: 23px;
+height: 18px;
+position: absolute;
+left: 11px;
+top: 13.5px;
+overflow: visible;
+}
+.email-us-here {
+color: var(--navyblue, #001f3f);
+text-align: center;
+font-family: "Poppins-Medium", sans-serif;
+font-size: 16px;
+font-weight: 500;
+position: relative;
+}
+.example-gmail-com {
+color: #808080;
+text-align: center;
+font-family: "Poppins-Regular", sans-serif;
+font-size: 14px;
+font-weight: 400;
+position: relative;
+}
 
 
 
