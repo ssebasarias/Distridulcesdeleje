@@ -1413,7 +1413,9 @@ input:focus {
 .close:hover,
 .close:focus {
   color: black;
-}.homepage,
+}
+
+.homepage,
 .homepage * {
   box-sizing: border-box;
 }
