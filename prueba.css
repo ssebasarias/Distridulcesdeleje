@@ -1,31 +1,143 @@
-*{
-margin: 0px;
-padding: 0px;
-text-decoration: none;
+a,
+button,
+input,
+select,
+h1,
+h2,
+h3,
+h4,
+h5,
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  text-decoration: none;
+  appearance: none;
+  background: none;
+
+  -webkit-font-smoothing: antialiased;
 }
 
-main {
-display: flex;
-flex-direction: column; 
+/* ------------------------------  banner  ---------------------------------------*/
+.section-banner {
+    height: 125vh;
+    width: 100%;
+    display: grid;
+    place-content: center;
+    overflow: hidden;
+  }
+  
+  .slide {
+    width: 130vh;
+    max-width: 779px;
+    height: 449px;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+  
+  .slide ul {
+    display: flex;
+    padding: 0;
+    width: 300px;
+  
+    animation: slide 15s infinite cubic-bezier(0.55, 0.48, 0.37, 0.92) ;
+  }
+  
+  @keyframes slide {
+  0% {margin-left: 0%;}
+  30% {margin-left: 0%;}
+  
+  35% {margin-left: -100%;}
+  70% {margin-left: -100%;}
+  
+  75% {margin-left: -200%;}
+  95%{margin-left: -200%;}
+  }
+
+/* ------------------------------  productos  ---------------------------------------*/
+
+.productos-section {
+  height: 10vh;
+  width: 100%;
+  display: grid;
+  place-content: center;
 }
 
-section{
-margin-bottom: 20px;
-height: 125vh;
-width: 100%;
+.productos-section a {
+  text-decoration: none;
 }
 
-button {
-cursor: pointer;
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0;
 }
 
-button:hover {
-border-radius: 30px;
-background-color: hsl(0, 0%, 90%);
+.content {
+  width: 20%;
+  margin: 15px;
+  box-sizing: border-box;
+  float: left;
+  text-align: center;
+  border-radius: 20px;
+  cursor: pointer;
+  padding-top: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+  0 10px 10px rgba(0, 0, 0, 0.22);
+  transition: .4s;
+  background: #f2f2f2;
 }
 
+.content:hover {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+  0 3px 6px rgba(0, 0, 0, 0.23);
+  transform: translate(0px , -8px);
+}
 
+.gallery img {
+  width: 277px;
+  height: 271px;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+}
 
+.tittle-card {
+  text-align: center;
+  padding-top: 0 8px ;
+}
+
+.price {
+  font-size: 26px;
+  text-align: center;
+  color: #222f3e;
+  margin: 0;
+}
+
+.btn-comprar {
+  background-color: #001F3F;
+  text-align: center;
+  color: azure;
+  font-size: 24px;
+  width: 100%;
+  padding: 15px;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  margin-top: 5px;
+  border-bottom-right-radius: 20px ;
+  border-bottom-left-radius:20px ;
+}
+
+.btn-mas-productos {
+  width: 187.15px;
+  height: 37px;
+  position: static;
+}
 
 /* ------------------------------  header  ---------------------------------------*/
 .header {
