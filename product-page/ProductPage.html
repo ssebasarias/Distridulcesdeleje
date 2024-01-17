@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./vars.css" />
+  <link rel="stylesheet" href="./styleProductPage.css" />
+
+  <style>
+    a,
+    button,
+    input,
+    select,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      border: none;
+      text-decoration: none;
+      appearance: none;
+      background: none;
+
+      -webkit-font-smoothing: antialiased;
+    }
+  </style>
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="product-page">
+
+    <section class="footer">
+      <svg class="background-footer" width="1443" height="345" viewBox="0 0 1443 345" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+      </svg>
+      <div class="social-icons">
+        <img class="img-instagram" src="img-instagram0.png" />
+        <img class="img-facebook" src="img-facebook0.png" />
+        <img class="img-whatapp" src="img-whatapp0.png" />
+      </div>
+      <div class="txt-futer">
+        <div class="txt-copy">© 2024 - DISTRIDUCES.</div>
+        <div class="txt-footer">Politicas</div>
+        <div class="txt-footer2">Terminos y condiciones</div>
+        <div class="txt-footer3">Contactanos</div>
+        <div class="txt-footer4">Ubicanos</div>
+        <div class="txt-footer5">Productos</div>
+        <div class="txt-footer6">Quienes somos</div>
+      </div>
+      <img class="img-logo" src="img-logo0.png" />
+    </section>
+
+    <section class="header">
+      <div class="header-logo">
+        <div class="background-info"></div>
+        <svg class="background-logo" width="474" height="144" viewBox="0 0 474 144" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M0 0H474L456.883 11.3123C442.125 21.0648 431.486 35.9202 427.004 53.0315V53.0315C422.49 70.2642 411.733 85.2044 396.821 94.9507L374.768 109.365C357.782 120.467 338.587 127.744 318.51 130.691L266.271 138.361L0 144V0Z"
+            fill="#304C78" />
+        </svg>
+        <div class="header-info-box">
+          <img class="sin-t-tulo-1-removebg-preview-1" src="sin-t-tulo-1-removebg-preview-10.png" />
+          <div class="info-box">
+            <div class="info-adress">
+              <div class="frame-61">
+                <img class="address-icon" src="address-icon0.png" />
+                <div class="frame-60">
+                  <div class="address">Address</div>
+                  <div class="_123-new-york-usa">123, New York, USA</div>
+                </div>
+              </div>
+            </div>
+            <div class="info-phone">
+              <div class="frame-612">
+                <img class="phone-icon" src="phone-icon0.png" />
+                <div class="frame-60">
+                  <div class="phone-number">Phone Number</div>
+                  <div class="_650-123-1212">(650) 123-1212</div>
+                </div>
+              </div>
+            </div>
+            <div class="info-email">
+              <div class="frame-613">
+                <img class="email-icon" src="email-icon0.png" />
+                <div class="frame-60">
+                  <div class="email-us-here">Email Us Here</div>
+                  <div class="example-gmail-com">example@gmail.com</div>
+                </div>
+              </div>
+            </div>
+            <button class="login" id="login">
+
+              <div class="login2">
+              </div>
+              <div class="txt-iniciar-sesion">Iniciar sesion</div>
+              <div class="para-administradores">Para Administradores</div>
+              <img class="user-img" src="./user-img0.png" />
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ventana emergete de inicio de sesion -->
+      <dialog id="modal" class="modal">
+        <div class="modal-contenido">
+          <span id="cerrar-modal" class="cerrar">&times;</span>
+          <h2>Inicio de Sesión</h2>
+          <h3>Ingresa tus datos para iniciar sesión en Distridulces</h3>
+          <form>
+            <label for="usuario">Usuario</label>
+            <input type="text" id="usuario" name="usuario" required>
+
+            <label for="contrasena">Contraseña</label>
+            <input type="password" id="contrasena" name="contrasena" required>
+
+            <button type="submit">Enviar</button>
+          </form>
+          <img src="tu-imagen.jpg" alt="Imagen al final">
+        </div>
+      </dialog>
+
+      <nav class="navbar">
+        <ul class="options-navbar">
+          <li>
+            <a class="inicio" href="./index.html">INICIO</a>
+          </li>
+          <li>
+            <a href="./ProductPage.html">Productos</a>
+          </li>
+          <li>
+            <a href="">¿Quienes somos?</a>
+          </li>
+          <li>
+            <a href="#section-info-contact">Contactanos</a>
+          </li>
+        </ul>
+        <div class="backgrount-search">
+
+          <label for="product-search" class="txt-search">Busqueda</label>
+          <input type="text" id="product-search" name="product-search" class="lbl-search">
+          
+        </div>
+      </nav>
+
+    </section>
+
+    <div class="product-cards">
+      <div class="group-cards-2">
+        <div class="card-homepage">
+          <div class="txt-name-card">BARRILETE</div>
+          <div class="txt-price-card">$5.99 / lb</div>
+          <img class="img-card" src="img-card0.png" />
+        </div>
+        <div class="card-homepage2">
+          <div class="txt-name-card">BARRILETE</div>
+          <div class="txt-price-card">$5.99 / lb</div>
+          <img class="img-card" src="img-card1.png" />
+        </div>
+        <div class="card-homepage3">
+          <div class="txt-name-card">BARRILETE</div>
+          <div class="txt-price-card">$5.99 / lb</div>
+          <img class="img-card" src="img-card2.png" />
+        </div>
+        <div class="card-homepage4">
+          <div class="txt-name-card">BARRILETE</div>
+          <div class="txt-price-card">$5.99 / lb</div>
+          <img class="img-card" src="img-card3.png" />
+        </div>
+        <div class="card-homepage5">
+          <div class="txt-name-card">BARRILETE</div>
+          <div class="txt-price-card">$5.99 / lb</div>
+          <img class="img-card" src="img-card4.png" />
+        </div>
+        <div class="card-homepage6">
+          <div class="txt-name-card">BARRILETE</div>
+          <div class="txt-price-card">$5.99 / lb</div>
+          <img class="img-card" src="img-card5.png" />
+        </div>
+        <div class="card-homepage7">
+          <div class="txt-name-card">BARRILETE</div>
+          <div class="txt-price-card">$5.99 / lb</div>
+          <img class="img-card" src="img-card6.png" />
+        </div>
+        <div class="card-homepage8">
+          <div class="txt-name-card">BARRILETE</div>
+          <div class="txt-price-card">$5.99 / lb</div>
+          <img class="img-card" src="img-card7.png" />
+        </div>
+        <div class="card-homepage9">
+          <div class="txt-name-card">BARRILETE</div>
+          <div class="txt-price-card">$5.99 / lb</div>
+          <img class="img-card" src="img-card8.png" />
+        </div>
+        <div class="card-homepage10">
+          <div class="txt-name-card">BARRILETE</div>
+          <div class="txt-price-card">$5.99 / lb</div>
+          <img class="img-card" src="img-card9.png" />
+        </div>
+        <div class="card-homepage11">
+          <div class="txt-name-card">BARRILETE</div>
+          <div class="txt-price-card">$5.99 / lb</div>
+          <img class="img-card" src="img-card10.png" />
+        </div>
+        <div class="card-homepage12">
+          <div class="txt-name-card">BARRILETE</div>
+          <div class="txt-price-card">$5.99 / lb</div>
+          <img class="img-card" src="img-card11.png" />
+        </div>
+        <div class="section-nav-product">
+          <div class="divider"></div>
+          <div class="btn-categoria">
+            <div class="txt-categoria">Categoria</div>
+          </div>
+          <div class="btn-filtrar">
+            <div class="txt-filtrar">Filtrar</div>
+          </div>
+          <div class="txt-title-category">Granos</div>
+        </div>
+      </div>
+      <div class="group-cards-1">
+        <div class="card-homepage">
+          <div class="txt-name-card">BARRILETE</div>
+          <div class="txt-price-card">$5.99 / lb</div>
+          <img class="img-card" src="img-card12.png" />
+        </div>
+        <div class="card-homepage2">
+          <div class="txt-name-card">BARRILETE</div>
+          <div class="txt-price-card">$5.99 / lb</div>
+          <img class="img-card" src="img-card13.png" />
+        </div>
+        <div class="card-homepage3">
+          <div class="txt-name-card">BARRILETE</div>
+          <div class="txt-price-card">$5.99 / lb</div>
+          <img class="img-card" src="img-card14.png" />
+        </div>
+        <div class="card-homepage4">
+          <div class="txt-name-card">BARRILETE</div>
+          <div class="txt-price-card">$5.99 / lb</div>
+          <img class="img-card" src="img-card15.png" />
+        </div>
+        <div class="card-homepage5">
+          <div class="txt-name-card">BARRILETE</div>
+          <div class="txt-price-card">$5.99 / lb</div>
+          <img class="img-card" src="img-card16.png" />
+        </div>
+        <div class="card-homepage6">
+          <div class="txt-name-card">BARRILETE</div>
+          <div class="txt-price-card">$5.99 / lb</div>
+          <img class="img-card" src="img-card17.png" />
+        </div>
+        <div class="card-homepage7">
+          <div class="txt-name-card">BARRILETE</div>
+          <div class="txt-price-card">$5.99 / lb</div>
+          <img class="img-card" src="img-card18.png" />
+        </div>
+        <div class="card-homepage8">
+          <div class="txt-name-card">BARRILETE</div>
+          <div class="txt-price-card">$5.99 / lb</div>
+          <img class="img-card" src="img-card19.png" />
+        </div>
+        <div class="card-homepage9">
+          <div class="txt-name-card">BARRILETE</div>
+          <div class="txt-price-card">$5.99 / lb</div>
+          <img class="img-card" src="img-card20.png" />
+        </div>
+        <div class="card-homepage10">
+          <div class="txt-name-card">BARRILETE</div>
+          <div class="txt-price-card">$5.99 / lb</div>
+          <img class="img-card" src="img-card21.png" />
+        </div>
+        <div class="card-homepage11">
+          <div class="txt-name-card">BARRILETE</div>
+          <div class="txt-price-card">$5.99 / lb</div>
+          <img class="img-card" src="img-card22.png" />
+        </div>
+        <div class="card-homepage12">
+          <div class="txt-name-card">BARRILETE</div>
+          <div class="txt-price-card">$5.99 / lb</div>
+          <img class="img-card" src="img-card23.png" />
+        </div>
+        <div class="section-nav-product">
+          <div class="divider"></div>
+          <div class="btn-categoria">
+            <div class="txt-categoria">Categoria</div>
+          </div>
+          <div class="btn-filtrar">
+            <div class="txt-filtrar">Filtrar</div>
+          </div>
+          <div class="txt-title-category">Granos</div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
