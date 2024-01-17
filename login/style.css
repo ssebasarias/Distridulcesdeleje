@@ -1,0 +1,137 @@
+.section-1,
+.section-1 * {
+  box-sizing: border-box;
+}
+.section-1 {
+  background: #ffffff;
+  width: 696px;
+  height: 867px;
+  position: relative;
+}
+.distridulces-azul {
+  width: 235px;
+  height: 235px;
+  position: absolute;
+  left: 231px;
+  top: 576px;
+  object-fit: cover;
+}
+.btn-inicio-sesion {
+  width: 474px;
+  height: 45px;
+  position: static;
+}
+.btn-iniciar-sesion {
+  border-radius: 0px;
+  width: 474px;
+  height: 45px;
+  position: absolute;
+  left: 111px;
+  top: 473px;
+  overflow: visible;
+}
+.txt-iniciar-sesion {
+  color: #ffffff;
+  text-align: center;
+  font-family: "Poppins-Medium", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  position: absolute;
+  left: 204px;
+  top: 484px;
+  width: 288.52px;
+}
+.user {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  left: 153px;
+  top: 484px;
+}
+.img-person {
+  height: auto;
+  position: absolute;
+  right: 12.5%;
+  left: 12.5%;
+  width: 75%;
+  bottom: 8.33%;
+  top: 7.29%;
+  height: 84.38%;
+  overflow: visible;
+}
+.lbl-contrase-a {
+  background: #ffffff;
+  border-radius: 11px;
+  border-style: solid;
+  border-color: #001f3f;
+  border-width: 1px;
+  width: 474px;
+  height: 51.05px;
+  position: absolute;
+  left: 111px;
+  top: 373.8px;
+}
+.txt-contrase-a {
+  color: #001f3f;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 20px;
+  line-height: 200%;
+  font-weight: 400;
+  position: absolute;
+  left: 111px;
+  top: 327px;
+  width: 145px;
+  height: 47px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.lbl-usuario {
+  background: #ffffff;
+  border-radius: 11px;
+  border-style: solid;
+  border-color: #001f3f;
+  border-width: 1px;
+  width: 474px;
+  height: 51.05px;
+  position: absolute;
+  left: 111px;
+  top: 264.8px;
+}
+.txt-usuario {
+  color: #001f3f;
+  text-align: left;
+  font-family: "Inter-Regular", sans-serif;
+  font-size: 20px;
+  line-height: 200%;
+  font-weight: 400;
+  position: absolute;
+  left: 111px;
+  top: 218px;
+  width: 86px;
+  height: 47.49px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.txt-subtitile {
+  color: #636363;
+  text-align: center;
+  font-family: "Poppins-Medium", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  position: absolute;
+  left: 75px;
+  top: 150px;
+}
+.txt-title {
+  color: #000000;
+  text-align: center;
+  font-family: "Poppins-Medium", sans-serif;
+  font-size: 40px;
+  font-weight: 500;
+  position: absolute;
+  left: 61px;
+  top: 56px;
+}

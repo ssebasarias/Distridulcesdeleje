@@ -1,12 +1,27 @@
-// Función para mostrar el modal
-function mostrarModal() {
-    document.getElementById('modalLogin').style.display = 'block';
-}
+document.addEventListener('DOMContentLoaded', function () {
+    // Obtén referencias a los elementos relevantes
+    const enlaceInicio = document.getElementById('login');
+    const modal = document.getElementById('modal');
+    const cerrarModal = document.getElementById('cerrar-modal');
 
-// Función para cerrar el modal
-function cerrarModal() {
-    document.getElementById('modalLogin').style.display = 'none';
-}
+    // Función para mostrar el modal
+    function mostrarModal() {
+        modal.style.display = 'block';
+    }
 
-// Asociar la función mostrarModal al clic del botón
-document.getElementById('btnMostrarLogin').addEventListener('click', mostrarModal);
+    // Función para ocultar el modal
+    function ocultarModal() {
+        modal.style.display = 'none';
+    }
+
+    // Asigna eventos a los elementos
+    enlaceInicio.addEventListener('click', mostrarModal);
+    cerrarModal.addEventListener('click', ocultarModal);
+
+    // Cierra el modal si se hace clic fuera de él
+    window.addEventListener('click', function (event) {
+        if (event.target === modal) {
+            ocultarModal();
+        }
+    });
+});
