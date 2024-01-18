@@ -630,6 +630,9 @@ input:focus {
   text-align: center;
   margin: 0 10px;
   cursor: pointer;
+  border: 1px;
+  border-style: solid;
+  border-color: #2b6be7;
 
   display: grid;
   text-align: center;
@@ -666,6 +669,7 @@ input:focus {
 }
 
 .mostrador .fila .item .detalles {
+  font-size: 0px;
   visibility: hidden;
 }
 
