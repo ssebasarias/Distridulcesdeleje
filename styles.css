@@ -54,6 +54,7 @@ header {
     right: 80px;
     left: 87px;
     top: 0px;
+    height: 120px;
 }
 
 .sin-t-tulo-1-removebg-preview-1 {
@@ -218,35 +219,21 @@ header {
 }
 
 /* ------ login ------*/
-button {
-    cursor: pointer;
-    border: none;
-}
 
-button:hover #login {
-    border-radius: 14px;
-}
+
+
 
 .login {
     flex-shrink: 0;
     width: 170px;
     height: 73px;
     position: static;
-    border-radius: 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: 1px;
+    background-color: #f2f2f2;
 }
 
-.login2 {
-    background: rgba(217, 217, 217, 0);
-    border-radius: 14px;
-    border-style: solid;
-    border-color: #000000;
-    border-width: 1px;
-    width: 170px;
-    height: 73px;
-    position: absolute;
-    left: 513px;
-    top: 0px;
-}
 
 .txt-iniciar-sesion {
     color: var(--navyblue, #001f3f);
@@ -288,23 +275,23 @@ button:hover #login {
 
 .navbar {
     background: var(--navyblue, #001f3f);
+    border-radius: 10px;
     padding: 0px 0px 0px 20px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    position: sticky;
-    top: 0px;
+    position: absolute;
+    right: 83px;
+    left: 87px;
+    top: 113px;
     overflow: hidden;
-    width: 80%;
-    height: 60px;
-    left: 83px;
-}
+    height: 45px;
+  }
 
 .options-navbar {
     display: flex;
     flex-direction: row;
-    gap: 20px;
     align-items: center;
     justify-content: flex-start;
     flex-shrink: 0;
@@ -316,39 +303,41 @@ button:hover #login {
     color: #ffffff;
     text-align: center;
     font-family: "Poppins-Regular", sans-serif;
-    font-size: 16px;
+    font-size: 13px;
     font-weight: 400;
     position: relative;
-}
-
-.options-navbar li a {
+  }
+  
+  .options-navbar li a {
     display: block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-}
-
-.options-navbar li a:hover {
+  }
+  
+  .options-navbar li a:hover {
     color: #ffd700;
-}
+  }
 
-.backgrount-search {
+  .backgrount-search {
     background: #ffd700;
     padding: 20px;
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 30px;
     align-items: center;
+    justify-content: flex-start;
+    flex-shrink: 0;
     position: relative;
     overflow: hidden;
-}
+  }
 
 .txt-search {
     color: var(--navyblue, #001f3f);
     text-align: left;
     font-family: "Poppins-Medium", sans-serif;
-    font-size: 16px;
+    font-size: 13px;
     font-weight: 500;
     position: relative;
     display: flex;
@@ -356,21 +345,25 @@ button:hover #login {
 }
 
 .lbl-search {
-    border-radius: 15px;
+    border-radius: 30px;
     flex-shrink: 0;
-    width: 298px;
-    height: 34px;
+    width: 281px;
+    height: 28px;
     position: relative;
     overflow: visible;
     background-color: #ffffff;
     text-align: center;
     font-family: 'Arial', sans-serif;
+    border: none;
+    outline: none;
 }
 
 input:focus {
+    border: none;
     outline: none;
     border-color: #304c78;
     box-shadow: 0 0 5px #304c78;
+    
 }
 
 /* Estilos para el modal */
@@ -388,9 +381,8 @@ input:focus {
 /* -------------------------- fin navbar ------------------------------- */
 /* -------------------------- banner ----------------------------------- */
 section {
-    padding: 20px;
     width: 100%;
-    height: 500px;
+    height: 480px;
 }
 
 .section-banner {
@@ -530,10 +522,13 @@ section {
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    padding: 50px;
+    padding-left: 200px;
+    margin: auto;
+    max-width: 1200px; /* Ajusta el valor según tus necesidades */
 }
 
-.mision img {
+.imgMision {
     width: 345px;
     height: 357px;
     object-fit: cover;
@@ -541,7 +536,6 @@ section {
     align-items: end;
     margin-left: auto;
 }
-
 
 .txt-content-mision {
     color: #001f3f;
@@ -552,6 +546,7 @@ section {
     display: flex;
     flex-direction: row;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .txt-content-mision h2 {
@@ -569,11 +564,13 @@ section {
 /* --------------------------- vision ------------------------------------- */
 
 .vision {
-    background: #f3f3f3;
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    padding: 50px;
+    padding-right: 200px;
+    margin: auto;
+    max-width: 1200px; /* Ajusta el valor según tus necesidades */
 }
 
 .vision img {
@@ -582,7 +579,7 @@ section {
     object-fit: cover;
     display: flex;
     align-items: end;
-    margin-left: auto;
+    margin-right: auto;
 }
 
 .txt-content-vision {
@@ -594,6 +591,7 @@ section {
     display: flex;
     flex-direction: row;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .txt-content-vision h2 {
@@ -602,9 +600,9 @@ section {
     font-size: 24px;
     line-height: 200%;
     font-weight: 700;
-    width: 417px;
+    width: 475px;
     height: 44.64px;
-    display: flex;
+    text-align: right;
 }
 
 
@@ -614,7 +612,10 @@ section {
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    padding: 50px;
+    padding-right: 200px;
+    margin: auto;
+    max-width: 1200px; /* Ajusta el valor según tus necesidades */
 }
 
 .valores img {
@@ -636,6 +637,7 @@ section {
     display: flex;
     flex-direction: row;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .txt-content-valores h2 {
@@ -653,11 +655,14 @@ section {
 /* --------------------------- linea corporativa ------------------------------------- */
 
 .lineacorporativa {
-    background: #f3f3f3;
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    padding: 50px;
+    padding-left: 200px;
+    padding-right: 200px;
+    margin: auto;
+    max-width: 1200px; /* Ajusta el valor según tus necesidades */
 }
 
 .lineacorporativa img {
