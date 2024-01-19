@@ -50,12 +50,11 @@
               </div>
             </div>
           </div>
-          <button class="login" id="login">
-            <div class="login2"></div>
+          <a class="login" id="login">
             <div class="txt-iniciar-sesion">Iniciar sesion</div>
             <div class="para-administradores">Para Administradores</div>
             <img class="user-img" src="./img/user.png" />
-          </button>
+          </a>
         </div>
       </div>
     </div>
@@ -84,7 +83,7 @@
   <nav class="navbar">
     <ul class="options-navbar">
       <li>
-        <a href="#section-banner">Inicio</a>
+        <a href="./index.html#section-banner">INICIO</a>
       </li>
       <li>
         <a href="./product-page/ProductPage.html">Productos</a>
@@ -117,30 +116,81 @@
 
   <!-- Sección Productos -->
   <section class="productos-section" id="productos">
-    <div class="productos">PRODUCTOS DE ALTA CALIDAD</div>
+<<<<<<< HEAD
+    <div class="productos">Productos de Alta Calidad</div>
     <div class="gallery">
       <div class="content">
         <img src="./img/img-card1.png" alt="">
         <div class="tittle-card">BARRILETE</div>
         <div class="price">$5.99/lbs</div>
+=======
+    <h2 class="title-productos">PRODUCTOS DE ALTA CALIDAD</h2>
+
+    <div class="fila">
+      <div class="item" onclick="cargar(this)">
+        <div class="contenedor-foto">
+          <img src="img/img-card1.png" alt="">
+        </div>
+        <div class="contenedor-texto">
+          <p class="descripcion">Barrilete</p>
+          <span class="precio">$ 5.300</span>
+        </div>
+        <p class="detalles" id="detalles"> Dulce de colores muy rico</p>
+>>>>>>> 9d307ca8c0075e4a8514ccdb34a68b66bbccd812
       </div>
-      <div class="content">
-        <img src="./img/img-card1.png" alt="">
-        <div class="tittle-card">BARRILETE</div>
-        <div class="price">$5.99/lbs</div>
+      <div class="item" onclick="cargar(this)">
+        <div class="contenedor-foto">
+          <img src="img/img-card1.png" alt="">
+        </div>
+        <div class="contenedor-texto">
+          <p class="descripcion">Barrilete</p>
+          <span class="precio">$ 5.300</span>
+        </div>
+        <p class="detalles" id="detalles"> Dulce de colores muy rico</p>
       </div>
-      <div class="content">
-        <img src="./img/img-card1.png" alt="">
-        <div class="tittle-card">BARRILETE</div>
-        <div class="price">$5.99/lbs</div>
+      <div class="item" onclick="cargar(this)">
+        <div class="contenedor-foto">
+          <img src="img/img-card1.png" alt="">
+        </div>
+        <div class="contenedor-texto">
+          <p class="descripcion">Barrilete</p>
+          <span class="precio">$ 5.300</span>
+        </div>
+        <p class="detalles" id="detalles"> Dulce de colores muy rico</p>
       </div>
-      <div class="content">
-        <img src="./img/img-card1.png" alt="">
-        <div class="tittle-card">BARRILETE</div>
-        <div class="price">$5.99/lbs</div>
+      <div class="item" onclick="cargar(this)">
+        <div class="contenedor-foto">
+          <img src="img/img-card1.png" alt="">
+        </div>
+        <div class="contenedor-texto">
+          <p class="descripcion">Barrilete</p>
+          <span class="precio">$ 5.300</span>
+        </div>
+        <p class="detalles" id="detalles"> Dulce de colores muy rico</p>
+      </div>
+      <div class="item" onclick="cargar(this)">
+        <div class="contenedor-foto">
+          <img src="img/img-card1.png" alt="">
+        </div>
+        <div class="contenedor-texto">
+          <p class="descripcion">Barrilete</p>
+          <span class="precio">$ 5.300</span>
+        </div>
+        <p class="detalles" id="detalles"> Dulce de colores muy rico</p>
+      </div>
+      <div class="item" onclick="cargar(this)">
+        <div class="contenedor-foto">
+          <img src="img/img-card1.png" alt="">
+        </div>
+        <div class="contenedor-texto">
+          <p class="descripcion">Barrilete</p>
+          <span class="precio">$ 5.300</span>
+        </div>
+        <p class="detalles" id="detalles"> Dulce de colores muy rico</p>
       </div>
     </div>
-    <button class="btn-mas-productos">Ver más productos</button>
+
+    <a href="product-page/ProductPage.html" class="btn-mas-productos">Ver más productos</a>
     </div>
   </section>
 
@@ -160,13 +210,16 @@
         logrando así nuestra consolidación en el futuro.
       </p>
     </div>
-    <img class="img" src="./img/img0.png" />
-
+    
+    <img class="imgMision" src="./img/img0.png" />
   </section>
+
+  
 
   <!-- Sección vision -->
   <section class="vision">
 
+    <img class="img-vision" src="./img/img-vision.png" />
     <div class="txt-content-vision">
       <h2 class="txt-title-vision">VISION</h2>
       <p>
@@ -174,9 +227,9 @@
         por los clientes del canal tradicional en el eje cafetero para la compra
         de productos de consumo masivo y
         consolidarnos como lideres en ventas y distribución.
+        ola
       </p>
     </div>
-    <img class="img-vision" src="./img/img-vision.png" />
 
   </section>
 
@@ -221,27 +274,18 @@
         brindarle el mejor servicio posible.
       </p>
       <!-- Formulario de contacto -->
-      <form action="https://formsubmit.co/sebgameover5@gmail.com" method="POST">
+      <form>
+        <input class="lbl-nombre" type="text" placeholder="NOMBRE">
 
-        <label for="name">NOMBRE</label>
-        <input class="lbl-nombre" type="text" name="name" id="name" placeholder="NOMBRE">
+        <input class="lbl-telefoo" type="tel" placeholder="TELEFONO">
 
-        <label for="phone">TELEFONO</label>
-        <input class="lbl-telefoo" type="tel" name="phone" id="phone" placeholder="TELEFONO">
+        <input class="lbl-correo" type="email" placeholder="CORREO">
 
-        <label for="email">CORREO</label>
-        <input class="lbl-correo" type="email" name="email" id="email" placeholder="CORREO">
+        <input class="lbl-mensaje" type="email" placeholder="MENSAJE">
 
-        <label for="message">MENSAJE</label>
-        <textarea class="lbl-mensaje" name="message" id="message" cols="30" rows="5" placeholder="MENSAJE"> </textarea>
-
-        <input class="btn-enviar" type="submit" value="Enviar">
-
-        <input type="hidden" name="_next" value="http://127.0.0.1:5501/">
-        <input type="hidden" name="_captcha" value="false">
-
+        <button class="enviar-contact" type="submit">Enviar</button>
       </form>
-    
+      
     
   </section>
 
