@@ -453,18 +453,18 @@ input:focus {
 /* -------------------------- banner ----------------------------------- */
 section {
     width: 100%;
-    height: 550px;
 }
 
 .section-banner {
     display: grid;
     place-content: center;
     overflow: hidden;
+    padding-top: 10px;
+    margin-bottom: -40px;
 }
 
 .slide {
     width: 130vh;
-    max-width: 779px;
     height: 449px;
     overflow: hidden;
     border-radius: 10px;
@@ -509,6 +509,10 @@ section {
 .productos-section {
     display: grid;
     place-content: center;
+    background-color: #4c9fda25;
+    padding-bottom: 90px;
+    padding-top: 50px;
+
 }
 .productos {
     color: #001f3f;
@@ -530,6 +534,9 @@ section {
     font-family: "MergeOne-Regular", sans-serif;
     font-size: 24px;
     margin-bottom: 40PX;
+    padding-top: 20px;
+    font-weight: 800;
+    color: #001f3f;
 }
 
 .fila {
@@ -612,97 +619,74 @@ section {
 
 
 /* -------------------------- sobre nosotros --------------------------- */
-/* --------------------------- mision ------------------------------------- */
+.title-Distridulces{
+    position: relative;
+    bottom: 0;
+    color: #001f3f;
+    margin-top: 50px;
+    margin-bottom: -5px;
+    text-align: center!important;
+    font-family: Alfa Slab One,sans-serif;
+    font-size: 90px;
+    line-height: .4em;
+    height: auto;
+    font-weight: 800;
+    letter-spacing: -8px;
+}
+
+/* --------------------------- mision vision ------------------------------------- */
 
 .mision {
+    background-color: #4c9fda25;
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
     padding: 50px;
-    padding-left: 200px;
+    gap: 40px;
     margin: auto;
-    max-width: 1200px;
     /* Ajusta el valor según tus necesidades */
 }
-
+.img-vision,
 .imgMision {
     width: 345px;
     height: 357px;
     object-fit: cover;
     display: flex;
-    align-items: end;
-    margin-left: auto;
-}
-
-.txt-content-mision {
-    color: #001f3f;
-    text-align: left;
-    font-family: "Inter-Regular", sans-serif;
-    height: 100%;
-    width: 50%;
-    display: flex;
-    flex-direction: row;
     align-items: center;
-    flex-wrap: wrap;
 }
 
-.txt-content-mision h2 {
-    color: #001f3f;
-    font-family: "Inter-Bold", sans-serif;
-    font-size: 24px;
-    line-height: 200%;
-    font-weight: 700;
-    width: 417px;
-    height: 44.64px;
-    display: flex;
+.content-txt-vision{
+    padding: 2% 10%;
+}
+.content-txt-mision{
+    padding: 2% 10%;
 }
 
-
-/* --------------------------- vision ------------------------------------- */
-
-.vision {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    padding: 50px;
-    padding-right: 200px;
-    margin: auto;
-    max-width: 1200px;
-    /* Ajusta el valor según tus necesidades */
-}
-
-.vision img {
-    width: 345px;
-    height: 357px;
-    object-fit: cover;
-    display: flex;
-    align-items: end;
-    margin-right: auto;
-}
-
+.txt-content-mision,
 .txt-content-vision {
     color: #001f3f;
-    text-align: left;
+    text-align: center; /* Cambiado a center para centrar el texto */
     font-family: "Inter-Regular", sans-serif;
     height: 100%;
     width: 50%;
     display: flex;
-    flex-direction: row;
-    align-items: center;
-    flex-wrap: wrap;
+    flex-direction: column; /* Cambiado a column para que los elementos estén uno encima del otro */
+    justify-content: center; /* Agregado para centrar verticalmente */
+    align-items: center; /* Agregado para centrar horizontalmente */
 }
 
+.txt-content-mision h2,
 .txt-content-vision h2 {
     color: #001f3f;
     font-family: "Inter-Bold", sans-serif;
     font-size: 24px;
     line-height: 200%;
-    font-weight: 700;
-    width: 475px;
-    height: 44.64px;
-    text-align: right;
-}
+    font-weight: 1000;
+    width: 100%; /* Cambiado a 100% para ocupar todo el ancho disponible */
+    text-align: center; /* Agregado para centrar el título */
+    font-weight: 800;
 
+}
 
 /* --------------------------- valores ------------------------------------- */
 
@@ -710,18 +694,18 @@ section {
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
-    padding: 50px;
-    padding-right: 200px;
+    padding-left: 30px;
+    
     margin: auto;
+    max-width: auto;
     max-width: 1200px;
     /* Ajusta el valor según tus necesidades */
 }
 
 .valores img {
-    width: 345px;
-    height: 357px;
     object-fit: cover;
     display: flex;
+    padding-left: 90px;
     align-items: end;
     margin-left: auto;
 }
@@ -729,25 +713,34 @@ section {
 
 .txt-content-valores {
     color: #001f3f;
-    text-align: left;
     font-family: "Inter-Regular", sans-serif;
-    height: 100%;
     width: 50%;
     display: flex;
     flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
+    align-content: center;
+    padding-left: 70px;
 }
+
 
 .txt-content-valores h2 {
     color: #001f3f;
     font-family: "Inter-Bold", sans-serif;
-    font-size: 24px;
+    font-size: 40px;
     line-height: 200%;
     font-weight: 700;
     width: 417px;
     height: 44.64px;
     display: flex;
+    font-weight: 800;
+}
+.txt-valores{
+    padding-right: 50px;
+}
+.img-valores {
+    width: 100%; /* La imagen ocupará el 100% del contenedor (la mitad derecha) */
+    object-fit: cover; /* Ajusta el tamaño de la imagen sin deformarla */
 }
 
 
@@ -757,44 +750,48 @@ section {
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
-    padding: 50px;
-    padding-left: 200px;
-    padding-right: 200px;
+    padding-right: 20px;
     margin: auto;
-    max-width: 1200px;
-    /* Ajusta el valor según tus necesidades */
+    max-width: auto;
 }
 
 .lineacorporativa img {
-    width: 345px;
-    height: 357px;
     object-fit: cover;
     display: flex;
-    align-items: end;
-    margin-left: auto;
+    padding-right: 90px;
+    align-items: start;
+    margin-right: auto;
 }
+
 
 .txt-content-lineacorporativa {
     color: #001f3f;
-    text-align: left;
     font-family: "Inter-Regular", sans-serif;
-    height: 100%;
     width: 50%;
     display: flex;
     flex-direction: row;
     align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+    padding-right: 70px;
+    text-align: right;
+
 }
 
-.txt-content-lineacorporativa h2 {
+.txt-title-lineacorporativa {
     color: #001f3f;
     font-family: "Inter-Bold", sans-serif;
-    font-size: 24px;
+    font-size: 40px;
     line-height: 200%;
-    font-weight: 700;
-    width: 417px;
-    height: 44.64px;
-    display: flex;
+    width: 100%;
+    font-weight: 800;
+    text-align: right;
 }
+.img-lineacorporativa {
+    width: 100%; /* La imagen ocupará el 100% del contenedor (la mitad derecha) */
+    object-fit: cover; /* Ajusta el tamaño de la imagen sin deformarla */
+}
+
 
 
 /* --------------------------- cotactanos ----------------------------------------- */
