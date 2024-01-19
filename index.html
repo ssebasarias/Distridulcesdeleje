@@ -106,9 +106,9 @@
     <section class="section-banner" id="section-banner">
       <div class="slide">
         <ul>
-          <li><img class="img-banner-center" src="./img/img-banner-center0.png" /></li>
-          <li><img class="img-banner-rh" src="./img/img-banner-rh0.png" /></li>
-          <li><img class="img-banner-lf" src="./img/img-banner-lf0.png" /></li>
+          <li><img class="img-banner-center" src="./img/img_banner.jpg" /></li>
+          <li><img class="img-banner-rh" src="./img/img_banner.jpg" /></li>
+          <li><img class="img-banner-lf" src="./img/img_banner.jpg" /></li>
         </ul>
       </div>
     </section>
@@ -184,44 +184,45 @@
     <a href="product-page/ProductPage.html" class="btn-mas-productos">Ver más productos</a>
     </div>
   </section>
+  <section class="title-Distridulces">
+    DISTRIDULCES
+  </section>
 
   <!-- Sección mision -->
   <section class="mision" id="section-aboutus">
 
     <div class="txt-content-mision">
-      <h2 class="txt-title-mision">MISION</h2>
-      <p>
-        Llevar hasta los hogares colombianos los productos de nuestros aliados a través de nuestros clientes, creando
-        oportunidad
-        de negocio para todos. Apoyados en una estructura de organización simple, recurso humano empoderado y
-        tecnología de punta.
-        <br>
-        Desarrollamos un trabajo planeado y direccionado hacia el cumplimiento de indicadores para satisfacción de
-        clientes y proveedores,
-        logrando así nuestra consolidación en el futuro.
-      </p>
+      <img class="imgMision" src="./img/img_mision.png" />
+      <div class="content-txt-mision">
+        <h2 class="txt-title-mision">MISION</h2>
+        <p>
+          Llevar hasta los hogares colombianos los productos de nuestros aliados a través de nuestros clientes, creando
+          oportunidad
+          de negocio para todos. Apoyados en una estructura de organización simple, recurso humano empoderado y
+          tecnología de punta.
+          <br>
+          Desarrollamos un trabajo planeado y direccionado hacia el cumplimiento de indicadores para satisfacción de
+          clientes y proveedores,
+          logrando así nuestra consolidación en el futuro.
+        </p>
+      </div>
     </div>
-    
-    <img class="imgMision" src="./img/img0.png" />
-  </section>
 
-  
-
-  <!-- Sección vision -->
-  <section class="vision">
-
-    <img class="img-vision" src="./img/img-vision.png" />
     <div class="txt-content-vision">
-      <h2 class="txt-title-vision">VISION</h2>
-      <p>
-        Ser en el año 2028 la empresa preferida
-        por los clientes del canal tradicional en el eje cafetero para la compra
-        de productos de consumo masivo y
-        consolidarnos como lideres en ventas y distribución.
-        ola
-      </p>
+      <img class="img-vision" src="./img/img_Vision.png" />
+      <div class="content-txt-vision">
+        <h2 class="txt-title-vision">VISION</h2>
+        <p>
+          Ser en el año 2028 la empresa preferida
+          por los clientes del canal tradicional en el eje cafetero para la compra
+          de productos de consumo masivo y
+          consolidarnos como lideres en ventas y distribución.
+          ola
+        </p>
+      </div>
+      
+      
     </div>
-
   </section>
 
   <!-- Sección valores -->
@@ -229,20 +230,21 @@
     
     <div class="txt-content-valores">
       <h2 class="txt-title-valores">VALORES</h2>
-      <p>
-        Ser en el año 2028 la empresa preferida
-        por los clientes del canal tradicional en el eje cafetero para la compra
-        de productos de consumo masivo y
-        consolidarnos como lideres en ventas y distribución.
+      <p class="txt-valores">
+        <br><br>Actuamos en el marco de la Honestidad, lo que nos permite trabajar en un ambiente motivador y de confianza.
+        <br><br>Respetamos y valoramos todas las formas de pensar, nos basamos en el buen trato como pilar para una sana convivencia
+        <br><br>Somos Familia DISTRIDULCES nos cuidamos y apoyamos entre todos. A través del Compromiso y la disciplina.
+
       </p>
     </div>
-    <img class="img-valores" src="./img/img-valores.png" />
+    <img class="img-valores" src="./img/img_valores.jpg" />
 
   </section>
 
   <!-- Sección lineacorporativa -->
   <section class="lineacorporativa">
-
+    
+    <img class="img-lineacorporativa" src="./img/img_lineacorporativa.jpg" />
     <div class="txt-content-lineacorporativa">
       <h2 class="txt-title-lineacorporativa">LINEA CORPORATIVA</h2>
       <p>
@@ -251,7 +253,6 @@
         esos sueños realidad ven y haz parte de la familia Distridulces.
       </p>
     </div>
-    <img class="img-lineacorporativa" src="./img/img-lineacorporativa.png" />
     
   </section>
 
@@ -265,18 +266,54 @@
         brindarle el mejor servicio posible.
       </p>
       <!-- Formulario de contacto -->
+
+
+
       <form>
-        <input class="lbl-nombre" type="text" placeholder="NOMBRE">
 
-        <input class="lbl-telefoo" type="tel" placeholder="TELEFONO">
-
-        <input class="lbl-correo" type="email" placeholder="CORREO">
-
-        <input class="lbl-mensaje" type="email" placeholder="MENSAJE">
+        <table>
+          <tr>
+            <td>
+              <input class="lbl-nombre" type="text" placeholder="NOMBRE">
+            </td>
+            <td>
+              <input class="lbl-telefono" type="tel" placeholder="TELEFONO">
+            </td>
+          </tr>
+        </table>
+        <table>
+          <tr>
+            <input class="lbl-correo" type="email" placeholder="CORREO">
+          </tr>
+          <tr>
+            <input class="lbl-mensaje" type="email" placeholder="MENSAJE">
+          </tr>
+        </table>
 
         <button class="enviar-contact" type="submit">Enviar</button>
       </form>
-    
+
+      <form action="https://formsubmit.co/sebgameover5@gmail.com" method="POST">
+
+        <label for="name">NOMBRE</label>
+        <input class="lbl-nombre" type="text" name="name" id="name" placeholder="NOMBRE">
+
+        <label for="phone">TELEFONO</label>
+        <input class="lbl-telefoo" type="tel" name="phone" id="phone" placeholder="TELEFONO">
+
+        <label for="email">CORREO</label>
+        <input class="lbl-correo" type="email" name="email" id="email" placeholder="CORREO">
+
+        <label for="message">MENSAJE</label>
+        <textarea class="lbl-mensaje" name="message" id="message" cols="30" rows="5" placeholder="MENSAJE"> </textarea>
+
+        <input class="btn-enviar" type="submit" value="Enviar">
+
+        <input type="hidden" name="_next" value="http://127.0.0.1:5501/">
+        <input type="hidden" name="_captcha" value="false">
+
+      </form>
+      
     
   </section>
 
@@ -290,7 +327,7 @@
         <a href=""><img class="img-whatapp" src="./img/img-whatapp0.png" /></a>
       </div>
       <div class="txt-futer">
-        <div class="txt-copy">© 2024 - DISTRIDUCES.</div>
+        <div class="txt-copy">© 2024 - DISTRIDUCES.</div>
         <div class="txt-footer">Politicas</div>
         <div class="txt-footer2">Terminos y condiciones</div>
         <div class="txt-footer3">Contactanos</div>
