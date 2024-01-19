@@ -17,7 +17,7 @@ function cargar(item) {
     let top = rect.top + window.scrollY;
 
     // Establece la posición de "seleccion" al lado del elemento seleccionado
-    seleccion.style.top = (top - 193) + "px";
+    seleccion.style.top = (top - 152) + "px";
 
     imgSeleccionada.src = item.getElementsByTagName("img")[0].src;
     modeloSeleccionado.innerHTML = item.getElementsByTagName("p")[0].innerHTML;
@@ -39,4 +39,30 @@ function quitarBordes() {
     }
 }
 
+document.addEventListener('DOMContentLoaded', function () {
+    // Obtén referencias a los elementos relevantes
+    const enlaceInicio = document.getElementById('login');
+    const modal = document.getElementById('modal');
+    const cerrarModal = document.getElementById('cerrar-modal');
 
+    // Función para mostrar el modal
+    function mostrarModal() {
+        modal.style.display = 'block';
+    }
+
+    // Función para ocultar el modal
+    function ocultarModal() {
+        modal.style.display = 'none';
+    }
+
+    // Asigna eventos a los elementos
+    enlaceInicio.addEventListener('click', mostrarModal);
+    cerrarModal.addEventListener('click', ocultarModal);
+
+    // Cierra el modal si se hace clic fuera de él
+    window.addEventListener('click', function (event) {
+        if (event.target === modal) {
+            ocultarModal();
+        }
+    });
+});
