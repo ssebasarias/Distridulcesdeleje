@@ -840,7 +840,7 @@ form {
     justify-content: flex-start;
 }
 
-.enviar-contact {
+.btn-enviar {
     border-radius: 20px;
     border-style: solid;
     border-color: #001f3f;

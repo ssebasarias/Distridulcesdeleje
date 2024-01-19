@@ -221,16 +221,25 @@
         brindarle el mejor servicio posible.
       </p>
       <!-- Formulario de contacto -->
-      <form>
-        <input class="lbl-nombre" type="text" placeholder="NOMBRE">
+      <form action="https://formsubmit.co/sebgameover5@gmail.com" method="POST">
 
-        <input class="lbl-telefoo" type="tel" placeholder="TELEFONO">
+        <label for="name">NOMBRE</label>
+        <input class="lbl-nombre" type="text" name="name" id="name" placeholder="NOMBRE">
 
-        <input class="lbl-correo" type="email" placeholder="CORREO">
+        <label for="phone">TELEFONO</label>
+        <input class="lbl-telefoo" type="tel" name="phone" id="phone" placeholder="TELEFONO">
 
-        <input class="lbl-mensaje" type="email" placeholder="MENSAJE">
+        <label for="email">CORREO</label>
+        <input class="lbl-correo" type="email" name="email" id="email" placeholder="CORREO">
 
-        <button class="enviar-contact" type="submit">Enviar</button>
+        <label for="message">MENSAJE</label>
+        <textarea class="lbl-mensaje" name="message" id="message" cols="30" rows="5" placeholder="MENSAJE"> </textarea>
+
+        <input class="btn-enviar" type="submit" value="Enviar">
+
+        <input type="hidden" name="_next" value="http://127.0.0.1:5501/">
+        <input type="hidden" name="_captcha" value="false">
+
       </form>
     
     
