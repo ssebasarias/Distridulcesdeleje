@@ -453,6 +453,7 @@ input:focus {
 /* -------------------------- banner ----------------------------------- */
 section {
     width: 100%;
+    height: 500px;
 }
 
 .section-banner {
@@ -509,119 +510,116 @@ section {
 .productos-section {
     display: grid;
     place-content: center;
-    background-color: #4c9fda25;
-    padding-bottom: 90px;
-    padding-top: 50px;
-
 }
-.productos {
-    color: #001f3f;
-    text-align: left;
-    font-family: "MergeOne-Regular", sans-serif;
-    font-size: 24px;
-    line-height: 130%;
-    font-weight: 400;
-    position: relative;
-    width: 741px;
-    height: 96px;
+
+.productos-section a {
+    text-decoration: none;
+}
+
+.gallery {
     display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
     align-items: center;
-    justify-content: flex-start;
-  }
-
-.title-productos {
-    text-align: left;
-    font-family: "MergeOne-Regular", sans-serif;
-    font-size: 24px;
-    margin-bottom: 40PX;
-    padding-top: 20px;
-    font-weight: 800;
-    color: #001f3f;
+    margin: 50px 0;
 }
 
-.fila {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 40px;
-}
-
-.fila .item {
-    max-width: 210px;
-    padding: 10px;
-    width: 189px;
-    height: 250px;
-    border-radius: 24px;
+.content {
+    width: 20%;
+    margin: 15px;
+    box-sizing: border-box;
+    float: left;
     text-align: center;
-    margin: 0 10px;
+    border-radius: 20px;
     cursor: pointer;
-    border: 1px;
-    border-style: solid;
-    border-color: #2b6be7;
+    padding-top: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.22);
+    transition: .4s;
+    background: #f2f2f2;
+}
 
-    display: grid;
+.content:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
+        0 3px 6px rgba(0, 0, 0, 0.23);
+    transform: translate(0px, -8px);
+}
+
+.gallery img {
+    width: 277px;
+    height: 271px;
     text-align: center;
+    margin: 0 auto;
+    display: block;
 }
 
-.fila .item:hover {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+.tittle-card {
+    text-align: center;
+    padding-top: 0 8px;
 }
 
-.fila .item .contenedor-foto {
+.price {
+    font-size: 26px;
+    text-align: center;
+    color: #222f3e;
+    margin: 0;
+}
+
+.btn-comprar {
+    background-color: #001F3F;
+    text-align: center;
+    color: azure;
+    font-size: 24px;
     width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
-.fila .item .contenedor-foto img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.fila .item .descripcion {
-    color: #707070;
-    font-family: "Inter-SemiBold", sans-serif;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.fila .item .precio {
-    color: #2b6be7;
-    font-family: "Inter-SemiBold", sans-serif;
-    font-weight: bold;
-    font-size: 20px;
-}
-
-.fila .item .detalles {
-    visibility: hidden;
+    padding: 15px;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+    margin-top: 5px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
 
 .btn-mas-productos {
-    display: inline-block;
-    padding: 8px 15px;
-    text-decoration: none;
-    color: #000;
-    border: 2px solid #000;
-    border-radius: 25px;
-    transition: background-color 0.3s, color 0.3s;
-    text-align: center;
-    width: 150px; 
-    margin-left: auto; 
-    display: block; 
-}
-
-.btn-mas-productos:hover,
-.btn-mas-productos:visited {
-    color: #000;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 187.15px;
+    height: 37px;
+    position: static;
 }
 
 
 /* -------------------------- sobre nosotros --------------------------- */
-.title-Distridulces{
-    position: relative;
-    bottom: 0;
+/* --------------------------- mision ------------------------------------- */
+
+.mision {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.mision img {
+    width: 345px;
+    height: 357px;
+    object-fit: cover;
+    display: flex;
+    align-items: end;
+    margin-left: auto;
+}
+
+
+.txt-content-mision {
+    color: #001f3f;
+    text-align: left;
+    font-family: "Inter-Regular", sans-serif;
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.txt-content-mision h2 {
     color: #001f3f;
     margin-top: 50px;
     margin-bottom: -5px;
@@ -636,15 +634,12 @@ section {
 
 /* --------------------------- mision vision ------------------------------------- */
 
-.mision {
-    background-color: #4c9fda25;
+.vision {
+    background: #f3f3f3;
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
-    padding: 50px;
-    gap: 40px;
-    margin: auto;
-    /* Ajusta el valor según tus necesidades */
+    justify-content: space-between;
 }
 .img-vision,
 .imgMision {
@@ -652,14 +647,8 @@ section {
     height: 357px;
     object-fit: cover;
     display: flex;
-    align-items: center;
-}
-
-.content-txt-vision{
-    padding: 2% 10%;
-}
-.content-txt-mision{
-    padding: 2% 10%;
+    align-items: end;
+    margin-left: auto;
 }
 
 .txt-content-mision,
@@ -670,9 +659,8 @@ section {
     height: 100%;
     width: 50%;
     display: flex;
-    flex-direction: column; /* Cambiado a column para que los elementos estén uno encima del otro */
-    justify-content: center; /* Agregado para centrar verticalmente */
-    align-items: center; /* Agregado para centrar horizontalmente */
+    flex-direction: row;
+    align-items: center;
 }
 
 .txt-content-mision h2,
@@ -681,11 +669,10 @@ section {
     font-family: "Inter-Bold", sans-serif;
     font-size: 24px;
     line-height: 200%;
-    font-weight: 1000;
-    width: 100%; /* Cambiado a 100% para ocupar todo el ancho disponible */
-    text-align: center; /* Agregado para centrar el título */
-    font-weight: 800;
-
+    font-weight: 700;
+    width: 417px;
+    height: 44.64px;
+    display: flex;
 }
 
 /* --------------------------- valores ------------------------------------- */
@@ -694,12 +681,7 @@ section {
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
-    padding-left: 30px;
-    
-    margin: auto;
-    max-width: auto;
-    max-width: 1200px;
-    /* Ajusta el valor según tus necesidades */
+    justify-content: space-between;
 }
 
 .valores img {
@@ -718,9 +700,6 @@ section {
     display: flex;
     flex-direction: row;
     align-items: center;
-    flex-wrap: wrap;
-    align-content: center;
-    padding-left: 70px;
 }
 
 
@@ -750,9 +729,7 @@ section {
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
-    padding-right: 20px;
-    margin: auto;
-    max-width: auto;
+    justify-content: space-between;
 }
 
 .lineacorporativa img {
