@@ -888,6 +888,33 @@ input.lbl-mensaje {
     justify-content: flex-start;
 }
 
+.lbl-mensaje {
+    background: #f6f6f6;
+    border-radius: 13px;
+    border-style: solid;
+    border-color: #001f3f;
+    border-width: 0.2px;
+    width: 569px;
+    height: 120px;
+    resize: none;
+    overflow-y: auto;
+}
+
+.lbl-mensaje::placeholder {
+    color: rgba(0, 31, 63, 0.6);
+    text-align: left;
+    font-family: "Inter-Bold", sans-serif;
+    font-size: 13px;
+    line-height: 200%;
+    font-weight: 700;
+    position: relative;
+    width: 129px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
 .enviar-contact {
     border-radius: 20px;
     border-style: solid;
@@ -897,7 +924,9 @@ input.lbl-mensaje {
     height: 30px;
     position: relative;
     overflow: visible;
+    margin-top: 20px;
 }
+
 
 /* --------------------------- footer ------------------------------ */
 
