@@ -54,6 +54,7 @@ header {
     right: 80px;
     left: 87px;
     top: 0px;
+    height: 120px;
 }
 
 .sin-t-tulo-1-removebg-preview-1 {
@@ -218,35 +219,21 @@ header {
 }
 
 /* ------ login ------*/
-button {
-    cursor: pointer;
-    border: none;
-}
 
-button:hover #login {
-    border-radius: 14px;
-}
+
+
 
 .login {
     flex-shrink: 0;
     width: 170px;
     height: 73px;
     position: static;
-    border-radius: 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: 1px;
+    background-color: #f2f2f2;
 }
 
-.login2 {
-    background: rgba(217, 217, 217, 0);
-    border-radius: 14px;
-    border-style: solid;
-    border-color: #000000;
-    border-width: 1px;
-    width: 170px;
-    height: 73px;
-    position: absolute;
-    left: 513px;
-    top: 0px;
-}
 
 .txt-iniciar-sesion {
     color: var(--navyblue, #001f3f);
@@ -336,7 +323,7 @@ button:hover #login {
     margin-top: 20px;
     width: 400px;
     height: 45px;
-    background-color: #304C78;  
+    background-color: #304C78;
     border-radius: 100px;
     color: #FFF;
     font-family: Poppins;
@@ -359,23 +346,23 @@ button:hover #login {
 
 .navbar {
     background: var(--navyblue, #001f3f);
+    border-radius: 10px;
     padding: 0px 0px 0px 20px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    position: sticky;
-    top: 0px;
+    position: absolute;
+    right: 83px;
+    left: 87px;
+    top: 113px;
     overflow: hidden;
-    width: 80%;
-    height: 60px;
-    left: 83px;
+    height: 45px;
 }
 
 .options-navbar {
     display: flex;
     flex-direction: row;
-    gap: 20px;
     align-items: center;
     justify-content: flex-start;
     flex-shrink: 0;
@@ -387,7 +374,7 @@ button:hover #login {
     color: #ffffff;
     text-align: center;
     font-family: "Poppins-Regular", sans-serif;
-    font-size: 16px;
+    font-size: 13px;
     font-weight: 400;
     position: relative;
 }
@@ -409,8 +396,10 @@ button:hover #login {
     padding: 20px;
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 30px;
     align-items: center;
+    justify-content: flex-start;
+    flex-shrink: 0;
     position: relative;
     overflow: hidden;
 }
@@ -419,7 +408,7 @@ button:hover #login {
     color: var(--navyblue, #001f3f);
     text-align: left;
     font-family: "Poppins-Medium", sans-serif;
-    font-size: 16px;
+    font-size: 13px;
     font-weight: 500;
     position: relative;
     display: flex;
@@ -427,21 +416,25 @@ button:hover #login {
 }
 
 .lbl-search {
-    border-radius: 15px;
+    border-radius: 30px;
     flex-shrink: 0;
-    width: 298px;
-    height: 34px;
+    width: 281px;
+    height: 28px;
     position: relative;
     overflow: visible;
     background-color: #ffffff;
     text-align: center;
     font-family: 'Arial', sans-serif;
+    border: none;
+    outline: none;
 }
 
 input:focus {
+    border: none;
     outline: none;
     border-color: #304c78;
     box-shadow: 0 0 5px #304c78;
+
 }
 
 /* Estilos para el modal */
@@ -459,20 +452,19 @@ input:focus {
 /* -------------------------- fin navbar ------------------------------- */
 /* -------------------------- banner ----------------------------------- */
 section {
-    padding: 20px;
     width: 100%;
-    height: 500px;
 }
 
 .section-banner {
     display: grid;
     place-content: center;
     overflow: hidden;
+    padding-top: 10px;
+    margin-bottom: -40px;
 }
 
 .slide {
     width: 130vh;
-    max-width: 779px;
     height: 449px;
     overflow: hidden;
     border-radius: 10px;
@@ -517,167 +509,184 @@ section {
 .productos-section {
     display: grid;
     place-content: center;
-}
+    background-color: #4c9fda25;
+    padding-bottom: 90px;
+    padding-top: 50px;
 
-.productos-section a {
-    text-decoration: none;
 }
-
-.gallery {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    margin: 50px 0;
-}
-
-.content {
-    width: 20%;
-    margin: 15px;
-    box-sizing: border-box;
-    float: left;
-    text-align: center;
-    border-radius: 20px;
-    cursor: pointer;
-    padding-top: 10px;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
-        0 10px 10px rgba(0, 0, 0, 0.22);
-    transition: .4s;
-    background: #f2f2f2;
-}
-
-.content:hover {
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16),
-        0 3px 6px rgba(0, 0, 0, 0.23);
-    transform: translate(0px, -8px);
-}
-
-.gallery img {
-    width: 277px;
-    height: 271px;
-    text-align: center;
-    margin: 0 auto;
-    display: block;
-}
-
-.tittle-card {
-    text-align: center;
-    padding-top: 0 8px;
-}
-
-.price {
-    font-size: 26px;
-    text-align: center;
-    color: #222f3e;
-    margin: 0;
-}
-
-.btn-comprar {
-    background-color: #001F3F;
-    text-align: center;
-    color: azure;
+.productos {
+    color: #001f3f;
+    text-align: left;
+    font-family: "MergeOne-Regular", sans-serif;
     font-size: 24px;
+    line-height: 130%;
+    font-weight: 400;
+    position: relative;
+    width: 741px;
+    height: 96px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+.title-productos {
+    text-align: left;
+    font-family: "MergeOne-Regular", sans-serif;
+    font-size: 24px;
+    margin-bottom: 40PX;
+    padding-top: 20px;
+    font-weight: 800;
+    color: #001f3f;
+}
+
+.fila {
     width: 100%;
-    padding: 15px;
-    border: 0;
-    outline: none;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.fila .item {
+    max-width: 210px;
+    padding: 10px;
+    width: 189px;
+    height: 250px;
+    border-radius: 24px;
+    text-align: center;
+    margin: 0 10px;
     cursor: pointer;
-    margin-top: 5px;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
+    border: 1px;
+    border-style: solid;
+    border-color: #2b6be7;
+
+    display: grid;
+    text-align: center;
+}
+
+.fila .item:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.fila .item .contenedor-foto {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.fila .item .contenedor-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.fila .item .descripcion {
+    color: #707070;
+    font-family: "Inter-SemiBold", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.fila .item .precio {
+    color: #2b6be7;
+    font-family: "Inter-SemiBold", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.fila .item .detalles {
+    visibility: hidden;
 }
 
 .btn-mas-productos {
-    width: 187.15px;
-    height: 37px;
-    position: static;
+    display: inline-block;
+    padding: 8px 15px;
+    text-decoration: none;
+    color: #000;
+    border: 2px solid #000;
+    border-radius: 25px;
+    transition: background-color 0.3s, color 0.3s;
+    text-align: center;
+    width: 150px; 
+    margin-left: auto; 
+    display: block; 
 }
+
+.btn-mas-productos:hover,
+.btn-mas-productos:visited {
+    color: #000;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
 
 /* -------------------------- sobre nosotros --------------------------- */
-/* --------------------------- mision ------------------------------------- */
+.title-Distridulces{
+    position: relative;
+    bottom: 0;
+    color: #001f3f;
+    margin-top: 50px;
+    margin-bottom: -5px;
+    text-align: center!important;
+    font-family: Alfa Slab One,sans-serif;
+    font-size: 90px;
+    line-height: .4em;
+    height: auto;
+    font-weight: 800;
+    letter-spacing: -8px;
+}
+
+/* --------------------------- mision vision ------------------------------------- */
 
 .mision {
+    background-color: #4c9fda25;
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    padding: 50px;
+    gap: 40px;
+    margin: auto;
+    /* Ajusta el valor según tus necesidades */
 }
-
-.mision img {
+.img-vision,
+.imgMision {
     width: 345px;
     height: 357px;
     object-fit: cover;
     display: flex;
-    align-items: end;
-    margin-left: auto;
-}
-
-
-.txt-content-mision {
-    color: #001f3f;
-    text-align: left;
-    font-family: "Inter-Regular", sans-serif;
-    height: 100%;
-    width: 50%;
-    display: flex;
-    flex-direction: row;
     align-items: center;
 }
 
-.txt-content-mision h2 {
-    color: #001f3f;
-    font-family: "Inter-Bold", sans-serif;
-    font-size: 24px;
-    line-height: 200%;
-    font-weight: 700;
-    width: 417px;
-    height: 44.64px;
-    display: flex;
+.content-txt-vision{
+    padding: 2% 10%;
+}
+.content-txt-mision{
+    padding: 2% 10%;
 }
 
-
-/* --------------------------- vision ------------------------------------- */
-
-.vision {
-    background: #f3f3f3;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.vision img {
-    width: 345px;
-    height: 357px;
-    object-fit: cover;
-    display: flex;
-    align-items: end;
-    margin-left: auto;
-}
-
+.txt-content-mision,
 .txt-content-vision {
     color: #001f3f;
-    text-align: left;
+    text-align: center; /* Cambiado a center para centrar el texto */
     font-family: "Inter-Regular", sans-serif;
     height: 100%;
     width: 50%;
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column; /* Cambiado a column para que los elementos estén uno encima del otro */
+    justify-content: center; /* Agregado para centrar verticalmente */
+    align-items: center; /* Agregado para centrar horizontalmente */
 }
 
+.txt-content-mision h2,
 .txt-content-vision h2 {
     color: #001f3f;
     font-family: "Inter-Bold", sans-serif;
     font-size: 24px;
     line-height: 200%;
-    font-weight: 700;
-    width: 417px;
-    height: 44.64px;
-    display: flex;
-}
+    font-weight: 1000;
+    width: 100%; /* Cambiado a 100% para ocupar todo el ancho disponible */
+    text-align: center; /* Agregado para centrar el título */
+    font-weight: 800;
 
+}
 
 /* --------------------------- valores ------------------------------------- */
 
@@ -685,14 +694,18 @@ section {
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    padding-left: 30px;
+    
+    margin: auto;
+    max-width: auto;
+    max-width: 1200px;
+    /* Ajusta el valor según tus necesidades */
 }
 
 .valores img {
-    width: 345px;
-    height: 357px;
     object-fit: cover;
     display: flex;
+    padding-left: 90px;
     align-items: end;
     margin-left: auto;
 }
@@ -700,67 +713,85 @@ section {
 
 .txt-content-valores {
     color: #001f3f;
-    text-align: left;
     font-family: "Inter-Regular", sans-serif;
-    height: 100%;
     width: 50%;
     display: flex;
     flex-direction: row;
     align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+    padding-left: 70px;
 }
+
 
 .txt-content-valores h2 {
     color: #001f3f;
     font-family: "Inter-Bold", sans-serif;
-    font-size: 24px;
+    font-size: 40px;
     line-height: 200%;
     font-weight: 700;
     width: 417px;
     height: 44.64px;
     display: flex;
+    font-weight: 800;
+}
+.txt-valores{
+    padding-right: 50px;
+}
+.img-valores {
+    width: 100%; /* La imagen ocupará el 100% del contenedor (la mitad derecha) */
+    object-fit: cover; /* Ajusta el tamaño de la imagen sin deformarla */
 }
 
 
 /* --------------------------- linea corporativa ------------------------------------- */
 
 .lineacorporativa {
-    background: #f3f3f3;
     box-sizing: border-box;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    padding-right: 20px;
+    margin: auto;
+    max-width: auto;
 }
 
 .lineacorporativa img {
-    width: 345px;
-    height: 357px;
     object-fit: cover;
     display: flex;
-    align-items: end;
-    margin-left: auto;
+    padding-right: 90px;
+    align-items: start;
+    margin-right: auto;
 }
+
 
 .txt-content-lineacorporativa {
     color: #001f3f;
-    text-align: left;
     font-family: "Inter-Regular", sans-serif;
-    height: 100%;
     width: 50%;
     display: flex;
     flex-direction: row;
     align-items: center;
+    flex-wrap: wrap;
+    align-content: center;
+    padding-right: 70px;
+    text-align: right;
+
 }
 
-.txt-content-lineacorporativa h2 {
+.txt-title-lineacorporativa {
     color: #001f3f;
     font-family: "Inter-Bold", sans-serif;
-    font-size: 24px;
+    font-size: 40px;
     line-height: 200%;
-    font-weight: 700;
-    width: 417px;
-    height: 44.64px;
-    display: flex;
+    width: 100%;
+    font-weight: 800;
+    text-align: right;
 }
+.img-lineacorporativa {
+    width: 100%; /* La imagen ocupará el 100% del contenedor (la mitad derecha) */
+    object-fit: cover; /* Ajusta el tamaño de la imagen sin deformarla */
+}
+
 
 
 /* --------------------------- cotactanos ----------------------------------------- */
@@ -768,11 +799,17 @@ section {
     display: flex;
     text-align: center;
     flex-direction: column;
+    background-color: #eeeeee;
 }
 
 
 form {
-    text-align: left;
+    display: flex;
+    margin: auto;
+    margin-top: 20px;
+    text-align: center;
+    flex-wrap: wrap;
+    max-width: 570px;
 }
 
 form label {
@@ -786,11 +823,17 @@ form input {
     margin-bottom: 16px;
     box-sizing: border-box;
 }
-
-form {
-    max-width: 400px;
-    margin: 0 auto;
+input.lbl-nombre {
+    width: 393px;
 }
+input.lbl-telefono {
+    width: 170px;
+}
+input.lbl-mensaje {
+    height: 160px;
+    
+}
+
 
 .contacto h2 {
     color: #001f3f;
@@ -803,6 +846,7 @@ form {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 15px;
 }
 
 .contacto p {
@@ -813,16 +857,20 @@ form {
     font-weight: 400;
     width: 561px;
     height: 78px;
+    position: relative;
     display: flex;
+    align-items: center;
     justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .contacto input {
     background: #f6f6f6;
-    border-radius: 8px;
+    border-radius: 13px;
     border-style: solid;
     border-color: #001f3f;
-    border-width: 1px;
+    border-width: 0.2px;
 }
 
 .contacto input::placeholder {
@@ -840,13 +888,13 @@ form {
     justify-content: flex-start;
 }
 
-.btn-enviar {
+.enviar-contact {
     border-radius: 20px;
     border-style: solid;
     border-color: #001f3f;
     border-width: 1px;
     width: 113.3px;
-    height: 36.14px;
+    height: 30px;
     position: relative;
     overflow: visible;
 }
