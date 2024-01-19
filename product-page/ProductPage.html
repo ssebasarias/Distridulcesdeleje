@@ -59,102 +59,96 @@
     </section>
 
     <!-- Contenido del header -->
-    <section class="header">
-
-      <!-- logo y info contactos -->
-      <div class="header-logo">
-
-        <!-- Logo -->
-        <svg class="background-logo" width="474" height="144" viewBox="0 0 474 144" fill="none"
-          xmlns="http://www.w3.org/2000/svg">
-          <path
-            d="M0 0H474L456.883 11.3123C442.125 21.0648 431.486 35.9202 427.004 53.0315V53.0315C422.49 70.2642 411.733 85.2044 396.821 94.9507L374.768 109.365C357.782 120.467 338.587 127.744 318.51 130.691L266.271 138.361L0 144V0Z"
-            fill="#304C78" />
-        </svg>
-
-        <!--  Informacion -->
-        <div class="header-info-box">
-          <img class="sin-t-tulo-1-removebg-preview-1" src="/img/logo.png" />
-          <div class="info-box">
-            <div class="info-adress">
-              <div class="frame-61">
-                <img class="address-icon" src="/img/address-icon0.png" />
-                <div class="frame-60">
-                  <div class="address">Address</div>
-                  <div class="_123-new-york-usa">123, New York, USA</div>
-                </div>
+      <!-- Header -->
+  <header>
+    <div class="header-logo">
+      <div class="background-info"></div>
+      <svg class="background-logo" width="474" height="144" viewBox="0 0 474 144" fill="none"
+        xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M0 0H474L456.883 11.3123C442.125 21.0648 431.486 35.9202 427.004 53.0315C422.49 70.2642 411.733 85.2044 396.821 94.9507L374.768 109.365C357.782 120.467 338.587 127.744 318.51 130.691L266.271 138.361L0 144V0Z"
+          fill="#304C78" />
+      </svg>
+      <div class="header-info-box">
+        <img class="sin-t-tulo-1-removebg-preview-1" src="../img/logo.png" />
+        <div class="info-box">
+          <div class="info-adress">
+            <div class="frame-61">
+              <img class="address-icon" src="../img/address-icon0.png" />
+              <div class="frame-60">
+                <div class="address">Address</div>
+                <div class="_123-new-york-usa">123, New York, USA</div>
               </div>
             </div>
-            <div class="info-phone">
-              <div class="frame-612">
-                <img class="phone-icon" src="/img/phone-icon0.png" />
-                <div class="frame-60">
-                  <div class="phone-number">Phone Number</div>
-                  <div class="_650-123-1212">(650) 123-1212</div>
-                </div>
-              </div>
-            </div>
-            <div class="info-email">
-              <div class="frame-613">
-                <img class="email-icon" src="img/email-icon0.png" />
-                <div class="frame-60">
-                  <div class="email-us-here">Email Us Here</div>
-                  <div class="example-gmail-com">example@gmail.com</div>
-                </div>
-              </div>
-            </div>
-            <button class="login" id="login">
-              <div class="txt-iniciar-sesion">Iniciar sesion</div>
-              <div class="para-administradores">Para Administradores</div>
-              <img class="user-img" src="img/user-img0.png" />
-            </button>
           </div>
+          <div class="info-phone">
+            <div class="frame-612">
+              <img class="phone-icon" src="../img/phone-icon0.png" />
+              <div class="frame-60">
+                <div class="phone-number">Phone Number</div>
+                <div class="_650-123-1212">(650) 123-1212</div>
+              </div>
+            </div>
+          </div>
+          <div class="info-email">
+            <div class="frame-613">
+              <img class="email-icon" src="../img/email-icon0.png" />
+              <div class="frame-60">
+                <div class="email-us-here">Email Us Here</div>
+                <div class="example-gmail-com">example@gmail.com</div>
+              </div>
+            </div>
+          </div>
+          <a class="login" id="login">
+            <div class="txt-iniciar-sesion">Iniciar sesion</div>
+            <div class="para-administradores">Para Administradores</div>
+            <img class="user-img" src="../img/user.png" />
+          </a>
         </div>
       </div>
+    </div>
 
-      <!-- ventana emergete de inicio de sesion -->
-      <dialog id="modal" class="modal">
-        <div class="modal-contenido">
-          <span id="cerrar-modal" class="cerrar">&times;</span>
-          <h2>Inicio de Sesión</h2>
-          <h3>Ingresa tus datos para iniciar sesión en Distridulces</h3>
-          <form>
-            <label for="usuario">Usuario</label>
-            <input type="text" id="usuario" name="usuario" required>
+  </header>
 
-            <label for="contrasena">Contraseña</label>
-            <input type="password" id="contrasena" name="contrasena" required>
+  <!-- ventana emergete de inicio de sesion -->
+  <div id="modal" class="modal">
+    <div class="modal-contenido">
+      <span id="cerrar-modal" class="cerrar-modal">&times;</span>
+      <h2>Bienvenido!</h2>
+      <h3>Ingresa tus datos para iniciar sesión en Distridulces</h3>
+      <form>
+        <label for="usuario">Usuario</label>
+        <input type="text" id="usuario" name="usuario" required>
 
-            <button type="submit">Enviar</button>
-          </form>
-          <img src="tu-imagen.jpg" alt="Imagen al final">
-        </div>
-      </dialog>
+        <label for="contrasena">Contraseña</label>
+        <input type="password" id="contrasena" name="contrasena" required>
 
-      <!-- Navbar -->
-      <nav class="navbar">
-        <ul class="options-navbar">
-          <li>
-            <a class="inicio" href="/index.html">INICIO</a>
-          </li>
-          <li>
-            <a href="./ProductPage.html">Productos</a>
-          </li>
-          <li>
-            <a href="">¿Quienes somos?</a>
-          </li>
-          <li>
-            <a href="#section-info-contact">Contactanos</a>
-          </li>
-        </ul>
-        <div class="backgrount-search">
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+  </div>
 
-          <label for="product-search" class="txt-search">Busqueda</label>
-          <input type="text" id="product-search" name="product-search" class="lbl-search">
-
-        </div>
-      </nav>
-    </section>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <ul class="options-navbar">
+      <li>
+        <a href="../index.html#section-banner">INICIO</a>
+      </li>
+      <li>
+        <a href="./ProductPage.html">Productos</a>
+      </li>
+      <li>
+        <a href="../index.html#section-aboutus">¿Quienes somos?</a>
+      </li>
+      <li>
+        <a href="../index.html#contacto">Contactanos</a>
+      </li>
+    </ul>
+    <div class="backgrount-search">
+      <label for="product-search" class="txt-search">Busqueda</label>
+      <input type="text" id="product-search" name="product-search" class="lbl-search">
+    </div>
+  </nav>
 
     <div class="cotenedor-productpage">
       <section class="contenido" id="contenido">
