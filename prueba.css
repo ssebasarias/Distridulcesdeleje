@@ -1,0 +1,370 @@
+/* --------------------- header -------------------------*/
+.header-desktop {
+    background-color: #fff;
+    padding: 0px;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-mobile {
+    background-color: #fff;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    display: none;
+}
+
+.logo-mobile {
+    width: 200px;
+    height: 80px;
+    position: relative;
+    object-fit: cover;
+    float: left;
+    line-height: 80px;
+    margin-right: 40px;
+}   
+
+
+.background-logo {
+    border-radius: 0px;
+    width: 474px;
+    height: 144px;
+    display: flex;
+    left: 0px;
+    top: 0px;
+    overflow: visible;
+}
+
+
+.header-info-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    right: 80px;
+    left: 87px;
+    top: 0px;
+    height: 120px;
+}
+
+.sin-t-tulo-1-removebg-preview-1 {
+    flex-shrink: 0;
+    width: 223px;
+    height: 128px;
+    position: relative;
+    object-fit: cover;
+}
+
+.info-box {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    justify-content: flex-end;
+    flex-shrink: 0;
+    width: 683px;
+    position: relative;
+}
+
+
+.info-adress {
+    flex-shrink: 0;
+    width: 149px;
+    height: 37px;
+    position: static;
+}
+
+.frame-61 {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+    position: absolute;
+    left: -12px;
+    top: 18px;
+}
+
+.address-icon {
+    flex-shrink: 0;
+    width: 35px;
+    height: 35px;
+    position: relative;
+    object-fit: cover;
+}
+
+.frame-60 {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.address {
+    color: var(--navyblue, #001f3f);
+    text-align: center;
+    font-family: "Poppins-Medium", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    position: relative;
+}
+
+._123-new-york-usa {
+    color: #808080;
+    text-align: center;
+    font-family: "Poppins-Regular", sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    position: relative;
+}
+
+.info-phone {
+    flex-shrink: 0;
+    width: 147px;
+    height: 37px;
+    position: static;
+}
+
+.frame-612 {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+    position: absolute;
+    left: 157px;
+    top: 18px;
+}
+
+.phone-icon {
+    flex-shrink: 0;
+    width: 35px;
+    height: 35px;
+    position: relative;
+    object-fit: cover;
+}
+
+.phone-number {
+    color: var(--navyblue, #001f3f);
+    text-align: center;
+    font-family: "Poppins-Medium", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    position: relative;
+}
+
+._650-123-1212 {
+    color: #808080;
+    text-align: center;
+    font-family: "Poppins-Regular", sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    position: relative;
+}
+
+.info-email {
+    flex-shrink: 0;
+    width: 169px;
+    height: 37px;
+    position: static;
+}
+
+.frame-613 {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+    position: absolute;
+    left: 324px;
+    top: 18px;
+}
+
+.email-icon {
+    flex-shrink: 0;
+    width: 35px;
+    height: 35px;
+    position: relative;
+    object-fit: cover;
+}
+
+.email-us-here {
+    color: var(--navyblue, #001f3f);
+    text-align: center;
+    font-family: "Poppins-Medium", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    position: relative;
+}
+
+.example-gmail-com {
+    color: #808080;
+    text-align: center;
+    font-family: "Poppins-Regular", sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    position: relative;
+}
+
+/* ------ login ------*/
+
+
+
+
+.login {
+    flex-shrink: 0;
+    width: 170px;
+    height: 73px;
+    position: static;
+    border-radius: 20px;
+    cursor: pointer;
+    border: 1px;
+    background-color: #f2f2f2;
+}
+
+
+.txt-iniciar-sesion {
+    color: var(--navyblue, #001f3f);
+    text-align: left;
+    font-family: "Poppins-Medium", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    position: absolute;
+    left: 571px;
+    top: 8px;
+    width: 100px;
+}
+
+.para-administradores {
+    color: #808080;
+    text-align: left;
+    font-family: "Poppins-Regular", sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    position: absolute;
+    left: 571px;
+    top: 29px;
+    width: 100px;
+    height: 35px;
+}
+
+.user-img {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 524px;
+    top: 16px;
+    object-fit: cover;
+}
+
+/* --------------------------- seccion responsive ------------------------------ */
+
+.mostrar-menu, .esconder-menu {
+    font-size: 70px;
+    cursor: pointer;
+    transition: 0.4s;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    display: flex;
+}
+
+.mostrar-menu {
+    order: 1;
+}
+
+.mostrar-menu:hover, .esconder-menu:hover {
+    color: #ffd700; 
+}
+
+#check {
+    display: none;
+}
+
+@media (max-width:720px) {
+    .header-desktop {
+        display: none;
+    }
+
+    .header-mobile   {
+        display: block;
+    }
+
+    .navbar-mobile {
+        position: fixed;
+        width: 100%;
+        height: 140vh;
+        background: #fff;
+        right: -100%;
+        top: 0;
+        text-align: left;
+        padding: 100px 0px;
+        z-index: 100;
+        transition: 0.8s;
+    }
+
+    .navbar-mobile a {
+        display: block;
+        padding: 20px;
+        color: #001f3f;
+        text-decoration: none;
+    }
+
+    .navbar-mobile button {
+        position: relative;
+        left: 60px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        width: 400px;
+        height: 45px;
+        background-color: #304C78;
+        border-radius: 100px;
+        color: #FFF;
+        font-family: Poppins;
+        font-size: 16px;
+    }
+
+    .navbar-mobile a:hover {
+        color: #ffd700; 
+    }
+
+    .esconder-menu {
+        position: absolute;
+        top: 20px;
+        right: 0px;
+    }
+
+    .logo-mobile-navbar {
+        width: 200px;
+        height: 80px;
+        position: absolute;
+        object-fit: cover;
+        float: left;
+        top: 20px;
+    }
+
+    .info-box-mobile {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        align-items: center;
+        justify-content: flex-end;
+        flex-shrink: 0;
+        width: 683px;
+        left: 20px;
+        position: relative;
+    }
+
+
+    #check:checked ~ .navbar-mobile {
+        right: 0;
+    }
+}

@@ -16,34 +16,46 @@ body {
 }
 
 /* --------------------- header -------------------------*/
-header {
+.header-desktop {
     background-color: #fff;
     padding: 0px;
+    height: 100px;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.header-logo {
-    width: 1443px;
-    height: 154px;
-    position: static;
+.header-mobile {
+    background-color: #fff;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    display: none;
 }
 
-.background-info {
-    background: #ffffff;
-    width: 1443px;
-    height: 154px;
+.logo-mobile {
+    width: 200px;
+    height: 80px;
+    position: relative;
+    object-fit: cover;
+    float: left;
+    line-height: 80px;
+    margin-right: 40px;
+}   
 
-}
 
 .background-logo {
     border-radius: 0px;
     width: 474px;
     height: 144px;
-    position: absolute;
+    display: flex;
     left: 0px;
     top: 0px;
     overflow: visible;
 }
+
 
 .header-info-box {
     display: flex;
@@ -75,6 +87,7 @@ header {
     width: 683px;
     position: relative;
 }
+
 
 .info-adress {
     flex-shrink: 0;
@@ -267,6 +280,110 @@ header {
     left: 524px;
     top: 16px;
     object-fit: cover;
+}
+
+/* --------------------------- seccion responsive ------------------------------ */
+
+.mostrar-menu, .esconder-menu {
+    font-size: 70px;
+    cursor: pointer;
+    transition: 0.4s;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    display: flex;
+}
+
+.mostrar-menu {
+    order: 1;
+}
+
+.mostrar-menu:hover, .esconder-menu:hover {
+    color: #ffd700; 
+}
+
+#check {
+    display: none;
+}
+
+@media (max-width:720px) {
+    .header-desktop {
+        display: none;
+    }
+
+    .header-mobile   {
+        display: block;
+    }
+
+    .navbar-mobile {
+        position: fixed;
+        width: 100%;
+        height: 140vh;
+        background: #fff;
+        right: -100%;
+        top: 0;
+        text-align: left;
+        padding: 100px 0px;
+        z-index: 100;
+        transition: 0.8s;
+    }
+
+    .navbar-mobile a {
+        display: block;
+        padding: 20px;
+        color: #001f3f;
+        text-decoration: none;
+    }
+
+    .navbar-mobile button {
+        position: relative;
+        left: 60px;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        width: 400px;
+        height: 45px;
+        background-color: #304C78;
+        border-radius: 100px;
+        color: #FFF;
+        font-family: Poppins;
+        font-size: 16px;
+    }
+
+    .navbar-mobile a:hover {
+        color: #ffd700; 
+    }
+
+    .esconder-menu {
+        position: absolute;
+        top: 20px;
+        right: 0px;
+    }
+
+    .logo-mobile-navbar {
+        width: 200px;
+        height: 80px;
+        position: absolute;
+        object-fit: cover;
+        float: left;
+        top: 20px;
+    }
+
+    .info-box-mobile {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        align-items: center;
+        justify-content: flex-end;
+        flex-shrink: 0;
+        width: 683px;
+        left: 20px;
+        position: relative;
+    }
+
+
+    #check:checked ~ .navbar-mobile {
+        right: 0;
+    }
 }
 
 /* --------------------- ventana emergente inicio sesion -----------------------*/
