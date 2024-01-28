@@ -56,11 +56,30 @@
           </a>
         </div>
       </div>
+
+      <!-- ventana emergete de inicio de sesion -->
+      <div id="modal" class="modal">
+        <div class="modal-contenido">
+          <span id="cerrar-modal" class="cerrar">&times;</span>
+          <h2>Bienvenido!</h2>
+          <h3>Ingresa tus datos para iniciar sesión en Distridulces</h3>
+          <form>
+            <label for="usuario">Usuario</label>
+            <input type="text" id="usuario" name="usuario" required>
+
+            <label for="contrasena">Contraseña</label>
+            <input type="password" id="contrasena" name="contrasena" required>
+
+            <button type="submit">Enviar</button>
+          </form>
+        </div>
+      </div>
+
       <!-- Navbar -->
       <nav class="navbar">
         <ul class="options-navbar">
           <li>
-            <a href="./index.html#section-banner">INICIO</a>
+            <a href="./index.html#section-banner">Inicio</a>
           </li>
           <li>
             <a href="./product-page/ProductPage.html">Productos</a>
@@ -97,7 +116,7 @@
           &#215
         </label>
 
-        <button type="submit">Iniciar sesion</button>
+        <button class="login" id="login">Iniciar sesion</button>
 
         <div class="info-box-mobile">
           <div class="info-adress">
