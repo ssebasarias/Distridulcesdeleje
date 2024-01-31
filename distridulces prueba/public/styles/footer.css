@@ -1,0 +1,118 @@
+.footer {
+    box-sizing: border-box;
+    width: 1443px;
+    height: 345px;
+    position: relative;
+    background-color: #808080;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    bottom: 0;
+}
+
+.social-icons {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: calc(50% - -228.5px);
+    bottom: 207px;
+    object-fit: cover;
+}
+
+.txt-futer {
+    position: absolute;
+    inset: 0;
+}
+
+.txt-copy {
+    color: #ffffff;
+    text-align: center;
+    font-family: "Inter-SemiBold", sans-serif;
+    font-size: 20px;
+    line-height: 130%;
+    font-weight: 600;
+    position: absolute;
+    left: calc(50% - 152.5px);
+    bottom: 56px;
+    width: 305px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.txt-footers {
+    color: #ffffff;
+    text-align: center;
+    font-family: "Inter-Regular", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    position: absolute;
+    left: calc(50% - 4%);
+    bottom: 275px;
+    width: 101px;
+    height: 14px;
+    line-height: 140%;
+}
+
+.txt-footers a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.txt-footers a:visited {
+    color: #fff;
+}
+
+.img-logo {
+    width: 183px;
+    height: 183px;
+    position: absolute;
+    left: calc(50% - 411.5px);
+    bottom: 81px;
+    object-fit: cover;
+}
+
+/* --------------------------- seccion responsive ------------------------------ */
+
+@media (max-width:720px) {
+    .footer {
+        box-sizing: border-box;
+        width: 100%;
+        position: relative;
+    }
+
+    .img-logo {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        left: calc(50% - 100px);
+        bottom: 185px;
+        object-fit: cover;
+    }
+
+    .social-icons {
+        width: 30px;
+        height: 30px;
+        display: flex;
+        position: absolute;
+        left: calc(50% - 85px);
+        bottom: 100px;
+        object-fit: cover;
+        margin-bottom: 20px;
+    }
+
+    .txt-footers {
+        color: #ffffff;
+        text-align: left;
+        font-family: "Inter-Regular", sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        position: absolute;
+        left: calc(50% - -25.5px);
+        bottom: 275px;
+        width: 101px;
+        height: 14px;
+    }
+}

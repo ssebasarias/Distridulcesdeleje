@@ -52,9 +52,9 @@ section {
     }
 }
 
-
 /* --------------------------- productos --------------------------------*/
 .productos-section {
+    width: 100%;
     display: grid;
     place-content: center;
     background-color: #4c9fda25;
@@ -62,6 +62,7 @@ section {
     padding-top: 50px;
 
 }
+
 .productos {
     color: #001f3f;
     text-align: left;
@@ -75,7 +76,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-  }
+}
 
 .title-productos {
     text-align: left;
@@ -154,9 +155,9 @@ section {
     border-radius: 25px;
     transition: background-color 0.3s, color 0.3s;
     text-align: center;
-    width: 150px; 
-    margin-left: auto; 
-    display: block; 
+    width: 150px;
+    margin-left: auto;
+    display: block;
 }
 
 .btn-mas-productos:hover,
@@ -165,24 +166,21 @@ section {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-
 /* -------------------------- sobre nosotros --------------------------- */
-.title-Distridulces{
+.title-Distridulces {
     position: relative;
     bottom: 0;
     color: #001f3f;
     margin-top: 50px;
     margin-bottom: -5px;
-    text-align: center!important;
-    font-family: Alfa Slab One,sans-serif;
+    text-align: center !important;
+    font-family: Alfa Slab One, sans-serif;
     font-size: 90px;
     line-height: .4em;
     height: auto;
     font-weight: 800;
     letter-spacing: -8px;
 }
-
-/* --------------------------- mision vision ------------------------------------- */
 
 .mision {
     background-color: #4c9fda25;
@@ -194,33 +192,39 @@ section {
     margin: auto;
     /* Ajusta el valor según tus necesidades */
 }
+
 .img-vision,
 .imgMision {
-    width: 345px;
-    height: 357px;
+    width: 220px;
+    height: 220px;
     object-fit: cover;
     display: flex;
     align-items: center;
 }
 
-.content-txt-vision{
+.content-txt-vision {
     padding: 2% 10%;
 }
-.content-txt-mision{
+
+.content-txt-mision {
     padding: 2% 10%;
 }
 
 .txt-content-mision,
 .txt-content-vision {
     color: #001f3f;
-    text-align: center; /* Cambiado a center para centrar el texto */
+    text-align: center;
+    /* Cambiado a center para centrar el texto */
     font-family: "Inter-Regular", sans-serif;
     height: 100%;
     width: 50%;
     display: flex;
-    flex-direction: column; /* Cambiado a column para que los elementos estén uno encima del otro */
-    justify-content: center; /* Agregado para centrar verticalmente */
-    align-items: center; /* Agregado para centrar horizontalmente */
+    flex-direction: column;
+    /* Cambiado a column para que los elementos estén uno encima del otro */
+    justify-content: center;
+    /* Agregado para centrar verticalmente */
+    align-items: center;
+    /* Agregado para centrar horizontalmente */
 }
 
 .txt-content-mision h2,
@@ -230,8 +234,10 @@ section {
     font-size: 24px;
     line-height: 200%;
     font-weight: 1000;
-    width: 100%; /* Cambiado a 100% para ocupar todo el ancho disponible */
-    text-align: center; /* Agregado para centrar el título */
+    width: 100%;
+    /* Cambiado a 100% para ocupar todo el ancho disponible */
+    text-align: center;
+    /* Agregado para centrar el título */
     font-weight: 800;
 
 }
@@ -243,21 +249,11 @@ section {
     display: flex;
     flex-direction: row;
     padding-left: 30px;
-    
     margin: auto;
     max-width: auto;
     max-width: 1200px;
     /* Ajusta el valor según tus necesidades */
 }
-
-.valores img {
-    object-fit: cover;
-    display: flex;
-    padding-left: 90px;
-    align-items: end;
-    margin-left: auto;
-}
-
 
 .txt-content-valores {
     color: #001f3f;
@@ -268,7 +264,6 @@ section {
     align-items: center;
     flex-wrap: wrap;
     align-content: center;
-    padding-left: 70px;
 }
 
 
@@ -283,14 +278,19 @@ section {
     display: flex;
     font-weight: 800;
 }
-.txt-valores{
+
+.txt-valores {
     padding-right: 50px;
 }
-.img-valores {
-    width: 100%; /* La imagen ocupará el 100% del contenedor (la mitad derecha) */
-    object-fit: cover; /* Ajusta el tamaño de la imagen sin deformarla */
-}
 
+.img-valores {
+    width: 100%;
+    object-fit: cover;
+    display: flex;
+    padding-left: 124px;
+    align-items: end;
+    margin-left: auto;
+}
 
 /* --------------------------- linea corporativa ------------------------------------- */
 
@@ -301,14 +301,7 @@ section {
     padding-right: 20px;
     margin: auto;
     max-width: auto;
-}
-
-.lineacorporativa img {
-    object-fit: cover;
-    display: flex;
-    padding-right: 90px;
-    align-items: start;
-    margin-right: auto;
+    background-color: #4c9fda25;
 }
 
 
@@ -335,13 +328,17 @@ section {
     font-weight: 800;
     text-align: right;
 }
+
 .img-lineacorporativa {
-    width: 100%; /* La imagen ocupará el 100% del contenedor (la mitad derecha) */
-    object-fit: cover; /* Ajusta el tamaño de la imagen sin deformarla */
+    width: 50%;
+    object-fit: cover;
+    display: flex;
+    padding-right: 90px;
+    align-items: start;
+    margin-right: auto;
 }
 
-
-
+/* --------------------------- cotactanos ----------------------------------------- */
 /* --------------------------- cotactanos ----------------------------------------- */
 .contacto {
     display: flex;
@@ -371,15 +368,18 @@ form input {
     margin-bottom: 16px;
     box-sizing: border-box;
 }
+
 input.lbl-nombre {
     width: 393px;
 }
+
 input.lbl-telefono {
     width: 170px;
 }
+
 input.lbl-mensaje {
     height: 160px;
-    
+
 }
 
 
@@ -473,4 +473,152 @@ input.lbl-mensaje {
     position: relative;
     overflow: visible;
     margin-top: 20px;
+}
+
+/* --------------------------- seccion responsive ------------------------------ */
+
+@media (max-width:720px) {
+
+    
+    .slider-mobile {
+        height: auto;
+        margin: auto;
+        overflow: hidden;
+    }
+
+    .slider-mobile .fila {
+        display: flex;
+        animation: scroll 60s linear infinite;
+        -webkit-transform: scroll 60s linear infinite;
+        width: calc(75px * 6);
+    }
+
+    .slider-mobile .item {
+        width: 75px;
+    }
+
+    .slider-mobile .item {
+        width: 100%;
+    }
+
+    @keyframes scroll {
+        0% {
+            -webkit-transform: translate(0);
+            transform: translate(0);
+        }
+
+        100% {
+            -webkit-transform: translate(calc(-75px*3));
+            transform: translate(calc(-75px*3));
+        }
+
+    }
+
+    .title-Distridulces {
+        font-size: 60px;
+    }
+
+    .img-valores {
+        width: 50%;
+        object-fit: cover;
+        display: flex;
+        padding-left: 0px;
+        align-items: end;
+        margin-left: auto;
+    }
+
+    .img-lineacorporativa {
+        width: 25%;
+        height: auto;
+        object-fit: cover;
+        display: flex;
+        padding-right: 0px;
+        align-items: start;
+        margin-right: auto;
+    }
+
+    .contacto {
+        display: flex;
+        text-align: center;
+        flex-direction: column;
+        background-color: #eeeeee;
+    }
+
+
+    .contacto h2 {
+        color: #001f3f;
+        text-align: left;
+        font-family: "Inter-Bold", sans-serif;
+        font-size: 32px;
+        line-height: 200%;
+        font-weight: 700;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 15px;
+    }
+
+    .contacto p {
+        color: #001f3f;
+        font-family: "Inter-Regular", sans-serif;
+        font-size: 15px;
+        line-height: 200%;
+        font-weight: 400;
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: auto;
+        margin-right: 200px;
+    }
+
+    form {
+        display: flex;
+        margin: auto;
+        margin-top: 20px;
+        text-align: center;
+        flex-wrap: wrap;
+    }
+
+    form label {
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    form input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+    }
+
+    input.lbl-nombre {
+        width: 150px;
+    }
+
+    input.lbl-telefono {
+        width: 150px;
+    }
+
+    input.lbl-correo {
+        width: 440px;
+    }
+
+    input.lbl-mensaje {
+        width: 440px;
+    }
+
+    .lbl-mensaje {
+        background: #f6f6f6;
+        border-radius: 13px;
+        border-style: solid;
+        border-color: #001f3f;
+        border-width: 0.2px;
+        width: 430px;
+        height: 120px;
+        resize: none;
+        overflow-y: auto;
+    }
 }
