@@ -1,0 +1,324 @@
+/* --------------------- header -------------------------*/
+header {
+    background-color: #fff;
+    padding: 0px;
+    width: 100%;
+  }
+  
+  .header-logo {
+    width: 1443px;
+    height: 154px;
+    position: static;
+  }
+  
+  .background-info {
+    background: #ffffff;
+    width: 1443px;
+    height: 154px;
+  
+  }
+  
+  .background-logo {
+    border-radius: 0px;
+    width: 474px;
+    height: 144px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    overflow: visible;
+  }
+  
+  .header-info-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    right: 80px;
+    left: 87px;
+    top: 0px;
+    height: 120px;
+  }
+  
+  .sin-t-tulo-1-removebg-preview-1 {
+    flex-shrink: 0;
+    width: 223px;
+    height: 128px;
+    position: relative;
+    object-fit: cover;
+  }
+  
+  .info-box {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    justify-content: flex-end;
+    flex-shrink: 0;
+    width: 683px;
+    position: relative;
+  }
+  
+  .info-adress {
+    flex-shrink: 0;
+    width: 149px;
+    height: 37px;
+    position: static;
+  }
+  
+  .frame-61 {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+    position: absolute;
+    left: -12px;
+    top: 18px;
+  }
+  
+  .address-icon {
+    flex-shrink: 0;
+    width: 35px;
+    height: 35px;
+    position: relative;
+    object-fit: cover;
+  }
+  
+  .frame-60 {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    align-items: flex-start;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+  }
+  
+  .address {
+    color: var(--navyblue, #001f3f);
+    text-align: center;
+    font-family: "Poppins-Medium", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    position: relative;
+  }
+  
+  ._123-new-york-usa {
+    color: #808080;
+    text-align: center;
+    font-family: "Poppins-Regular", sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    position: relative;
+  }
+  
+  .info-phone {
+    flex-shrink: 0;
+    width: 147px;
+    height: 37px;
+    position: static;
+  }
+  
+  .frame-612 {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+    position: absolute;
+    left: 157px;
+    top: 18px;
+  }
+  
+  .phone-icon {
+    flex-shrink: 0;
+    width: 35px;
+    height: 35px;
+    position: relative;
+    object-fit: cover;
+  }
+  
+  .phone-number {
+    color: var(--navyblue, #001f3f);
+    text-align: center;
+    font-family: "Poppins-Medium", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    position: relative;
+  }
+  
+  ._650-123-1212 {
+    color: #808080;
+    text-align: center;
+    font-family: "Poppins-Regular", sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    position: relative;
+  }
+  
+  .info-email {
+    flex-shrink: 0;
+    width: 169px;
+    height: 37px;
+    position: static;
+  }
+  
+  .frame-613 {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+    position: absolute;
+    left: 324px;
+    top: 18px;
+  }
+  
+  .email-icon {
+    flex-shrink: 0;
+    width: 35px;
+    height: 35px;
+    position: relative;
+    object-fit: cover;
+  }
+  
+  .email-us-here {
+    color: var(--navyblue, #001f3f);
+    text-align: center;
+    font-family: "Poppins-Medium", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    position: relative;
+  }
+  
+  .example-gmail-com {
+    color: #808080;
+    text-align: center;
+    font-family: "Poppins-Regular", sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    position: relative;
+  }
+  
+  /* ------ login ------*/
+  
+  
+  
+  
+  .login {
+    flex-shrink: 0;
+    width: 170px;
+    height: 73px;
+    position: static;
+    border-radius: 20px;
+    cursor: pointer;
+    border: 1px;
+    background-color: #f2f2f2;
+  }
+  
+  
+  .txt-iniciar-sesion {
+    color: var(--navyblue, #001f3f);
+    text-align: left;
+    font-family: "Poppins-Medium", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    position: absolute;
+    left: 571px;
+    top: 8px;
+    width: 100px;
+  }
+  
+  .para-administradores {
+    color: #808080;
+    text-align: left;
+    font-family: "Poppins-Regular", sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    position: absolute;
+    left: 571px;
+    top: 29px;
+    width: 100px;
+    height: 35px;
+  }
+  
+  .user-img {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    left: 524px;
+    top: 16px;
+    object-fit: cover;
+  }
+  
+  /* --------------------- ventana emergente inicio sesion -----------------------*/
+  
+  .modal {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 1000;
+  }
+  
+  .modal-contenido {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+    position: relative;
+    text-align: center;
+    z-index: 1000;
+    border-radius: 30px;
+  }
+  
+  .modal-contenido h2 {
+    margin-top: 30px;
+    font-family: Poppins;
+    font-size: 40px;
+    color: #000;
+  }
+  
+  .modal-contenido h3 {
+    margin-top: 10px;
+    color: #636363;
+    font-family: Poppins;
+    font-size: 15px;
+  }
+  
+  .modal-contenido form {
+    padding: 20px;
+    margin-top: 30px;
+  }
+  
+  .modal-contenido input {
+    border-radius: 11px;
+    border: 1px solid #001F3F;
+    background: #FFF;
+  }
+  
+  .modal-contenido button {
+    margin-top: 20px;
+    width: 400px;
+    height: 45px;
+    background-color: #304C78;
+    border-radius: 100px;
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 16px;
+  }
+  
+  .cerrar-modal {
+  
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    font-size: 40px;
+    cursor: pointer;
+  }
+  

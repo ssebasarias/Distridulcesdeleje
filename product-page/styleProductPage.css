@@ -507,6 +507,7 @@ input:focus {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    text-align: left;
     margin-bottom: 40px;
 }
 
@@ -524,6 +525,9 @@ input:focus {
     border-color: #2b6be7;
     display: grid;
     text-align: center;
+}
+.mostrador .fila #fantasma {
+  visibility: hidden;
 }
 
 .mostrador .fila .item:hover {

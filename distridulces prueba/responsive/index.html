@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./vars.css" />
+    <link rel="stylesheet" href="./pruebapp.css" />
+
+    <style>
+        a,
+        button,
+        input,
+        select,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            border: none;
+            text-decoration: none;
+            appearance: none;
+            background: none;
+
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+    <title>Pruebapp</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+
+    </header>
+    <div class="product-page">
+
+        <!-- Header -->
+        <div class="cotenedor-productpage">
+            <section class="contenido" id="contenido">
+                <!-- PRIMERA SECCION -->
+                <div class="category-section">
+                    <h2 class="category-title">ARROCES</h2>
+                    <div class="category-buttons">
+                        <label for="categoriaDropdown">Categoria:</label>
+                        <select id="categoriaDropdown">
+                            <option value="seleccionar">Seleccionar</option>
+                        </select>
+                        <label for="filtrarDropdown">Filtrar:</label>
+                        <select id="filtrarDropdown">
+                            <option value="seleccionar">Seleccionar</option>
+                        </select>
+                    </div>
+                </div>
+    
+                <div class="mostrador" id="mostrador">
+                    <div class="fila">
+                        <input type="checkbox" id="checki">
+                        <label for="checki" class="mostrar-detalle-producto">
+                            <div class="item" onclick="cargar(this)">
+                                <div class="contenedor-foto">
+                                    <img src="./img/img-products/seccion1/img-card0.png" alt="">
+                                </div>
+                                <div class="contenedor-texto">
+                                    <p class="descripcion">Barrilete</p>
+                                    <span class="precio">$ 5.300</span>
+                                </div>
+                            </div>
+                        </label>
+                        <input type="checkbox" id="checki">
+                        <label for="checki" class="mostrar-detalle-producto">
+                            <div class="item" onclick="cargar(this)">
+                                <div class="contenedor-foto">
+                                    <img src="./img/img-products/seccion1/img-card0.png" alt="">
+                                </div>
+                                <div class="contenedor-texto">
+                                    <p class="descripcion">Barrilete</p>
+                                    <span class="precio">$ 5.300</span>
+                                </div>
+                            </div>
+                        </label>
+                        <input type="checkbox" id="checki">
+                        <label for="checki" class="mostrar-detalle-producto">
+                            <div class="item" onclick="cargar(this)">
+                                <div class="contenedor-foto">
+                                    <img src="./img/img-products/seccion1/img-card0.png" alt="">
+                                </div>
+                                <div class="contenedor-texto">
+                                    <p class="descripcion">Barrilete</p>
+                                    <span class="precio">$ 5.300</span>
+                                </div>
+                            </div>
+                        </label>
+                        <input type="checkbox" id="checki">
+                        <label for="checki" class="mostrar-detalle-producto">
+                            <div class="item" onclick="cargar(this)">
+                                <div class="contenedor-foto">
+                                    <img src="./img/img-products/seccion1/img-card0.png" alt="">
+                                </div>
+                                <div class="contenedor-texto">
+                                    <p class="descripcion">Barrilete</p>
+                                    <span class="precio">$ 5.300</span>
+                                </div>
+                            </div>
+                        </label>
+                        <input type="checkbox" id="checki">
+                        <label for="checki" class="mostrar-detalle-producto">
+                            <div class="item" onclick="cargar(this)">
+                                <div class="contenedor-foto">
+                                    <img src="./img/img-products/seccion1/img-card0.png" alt="">
+                                </div>
+                                <div class="contenedor-texto">
+                                    <p class="descripcion">Barrilete</p>
+                                    <span class="precio">$ 5.300</span>
+                                </div>
+                            </div>
+                        </label>
+                        <input type="checkbox" id="checki">
+                        <label for="checki" class="mostrar-detalle-producto">
+                            <div class="item" onclick="cargar(this)">
+                                <div class="contenedor-foto">
+                                    <img src="./img/img-products/seccion1/img-card0.png" alt="">
+                                </div>
+                                <div class="contenedor-texto">
+                                    <p class="descripcion">Barrilete</p>
+                                    <span class="precio">$ 5.300</span>
+                                </div>
+                            </div>
+                        </label>
+                        <input type="checkbox" id="checki">
+                        <label for="checki" class="mostrar-detalle-producto">
+                            <div class="item" onclick="cargar(this)">
+                                <div class="contenedor-foto">
+                                    <img src="./img/img-products/seccion1/img-card0.png" alt="">
+                                </div>
+                                <div class="contenedor-texto">
+                                    <p class="descripcion">Barrilete</p>
+                                    <span class="precio">$ 5.300</span>
+                                </div>
+                            </div>
+                        </label>
+                        <div class="seleccion-mobile">
+                            <div class="info">
+                                <img src="img/1.png" alt="" id="img-mobile">
+                                <h2 id="modelo-mobile">titulo</h2>
+                                <p id="descripcion-mobile">descrtipcion</p>
+                
+                                <span class="precio" id="precio-mobile">$12345</span>
+                
+                                <div class="fila">
+                                    <div class="size">
+                                        <label for="">Cantidad</label>
+                                        <input type="number" min="0">
+                                    </div>
+                                    <button>AGREGAR AL CARRITO</button>
+                                </div>
+                            </div>
+                            <label for="checki" class="esconder-detalle-producto">
+                                &#215
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </section>
+    
+            <section class="seleccion" id="seleccion">
+                <div class="cerrar" onclick="cerrar()">
+                    &#x2715
+                </div>
+                <div class="info">
+                    <img src="img/1.png" alt="" id="img">
+                    <h2 id="modelo">titulo</h2>
+                    <p id="descripcion">descrtipcion</p>
+    
+                    <span class="precio" id="precio">$12345</span>
+    
+                    <div class="fila">
+                        <div class="size">
+                            <label for="">Cantidad</label>
+                            <input type="number" min="0">
+                        </div>
+                        <button>AGREGAR AL CARRITO</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+                
+
+            </section>
+            <!-- CONTENEDOR DEL ITEM SELECCIONADO -->
+            <section class="seleccion" id="seleccion">
+                <div class="cerrar" onclick="cerrar()">
+                    &#x2715
+                </div>
+                <div class="info">
+                    <img src="img/1.png" alt="" id="img">
+                    <h2 id="modelo">titulo</h2>
+                    <p id="descripcion">descrtipcion</p>
+
+                    <span class="precio" id="precio">$12345</span>
+
+                    <div class="fila">
+                        <div class="size">
+                            <label for="">Cantidad</label>
+                            <input type="number" min="0">
+                        </div>
+                        <button>AGREGAR AL CARRITO</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </div>
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer">
+            <div class="social-icons">
+                <a href=""><img class="img-instagram" src="./img/img-instagram0.png" /></a>
+                <a href=""><img class="img-facebook" src="./img/img-facebook0.png" /></a>
+                <a href=""><img class="img-whatapp" src="./img/img-whatapp0.png" /></a>
+            </div>
+            <div class="txt-futer">
+                <div class="txt-copy">© 2024 - DISTRIDULCES.</div>
+                <div class="txt-footers">
+                    <a href="" class="txt-footer1">Politicas</a>
+                    <a href="" class="txt-footer2">Terminos y condiciones</a>
+                    <a href="" class="txt-footer3">Contactanos</a>
+                    <a href="" class="txt-footer4">Ubicanos</a>
+                    <a href="" class="txt-footer5">Productos</a>
+                    <a href="" class="txt-footer6">Quienes somos</a>
+                </div>
+            </div>
+            <img class="img-logo" src="./img/img-logo0.png" />
+        </div>
+
+    </footer>
+ 
+    <script src="script-productpage.js"></script>
+</body>
+
+</html>
