@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
     // Obtén referencias a los elementos relevantes
-    const enlaceInicio = document.getElementById('login');
+    const enlaceInicio = document.getElementById('btn-login');
     const modal = document.getElementById('modal');
     const cerrarModal = document.getElementById('cerrar-modal');
 

@@ -36,30 +36,41 @@ body {
     margin-bottom: 20px;
 }
 
-.category-section h2{
+.category-section h2 {
     font-family: "Merge One";
     font-size: 54px;
     margin: 0;
 }
 
-.category-buttons {
-    display: flex;
-    gap: 10px;
-    /* Espacio entre los elementos hijos */
+.agg-buttons {
+    background-color: #F2FFEC;
+    color: #1A8300;
+    padding: 12px 24px;
+    border: 2px solid #1A8300;
+    border-radius: 18px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
-.category-buttons label {
-    margin-right: 5px;
-    /* Espacio entre las etiquetas y los <select> */
+.agg-buttons img {
+    width: 30px;
+    height: auto;
+    position: relative;
+
 }
 
-.category-buttons select {
-    border: none;
-    /* Elimina el borde predeterminado de los <select> */
-    padding: 5px;
-    /* Añade un poco de relleno a los <select> para mejorar la apariencia */
-}
 
+.agg-buttons:hover {
+    background-color: #1A8300;
+    color: #F2FFEC;
+    border-color: #1A8300;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
 
 /* --------------------------------------------------- */
 
@@ -85,7 +96,6 @@ body {
     border-radius: 24px;
     text-align: center;
     margin: 0 10px;
-    cursor: pointer;
     border: 1px;
     border-style: solid;
     border-color: #2b6be7;
@@ -93,10 +103,6 @@ body {
     text-align: center;
 }
 
-
-.mostrador .fila .item:hover {
-    background-color: #e6e6e6;
-}
 
 .mostrador .fila .item .contenedor-foto {
     width: 100%;
@@ -122,6 +128,16 @@ body {
     font-family: "Inter-SemiBold", sans-serif;
     font-weight: bold;
     font-size: 20px;
+}
+
+.contenedor-edit-delete img {
+    width: 50px;
+    transform: scaleX(-1);
+    cursor: pointer;
+}
+
+.contenedor-edit-delete a {
+   text-decoration: none;
 }
 
 
@@ -154,7 +170,7 @@ body {
 .info img {
     display: block;
     margin: 30px auto;
-    width: 80%;
+    width: 80px;
 }
 
 .info h2 {
@@ -228,31 +244,136 @@ body {
     /* Elimina el contorno al hacer clic */
 }
 
- /* --------------------------- seccion responsive ------------------------------ */
-    
- .seleccion-mobile {
+.btn-agg-seccion {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* Estilos para el modal */
+.modal-edit {
     display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal-edit {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 1000;
   }
 
-  .mostrar-detalle-producto,
-  .esconder-detalle-producto {
+  .modal-delete {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal-delete {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    z-index: 1000;
+  }
+  
+  .modal-contenido {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+    position: relative;
+    text-align: center;
+    z-index: 1000;
+    border-radius: 30px;
+  }
+  
+  .modal-contenido h2 {
+    margin-top: 30px;
+    font-family: Poppins;
+    font-size: 40px;
+    color: #000;
+  }
+  
+  .modal-contenido h3 {
+    margin-top: 10px;
+    color: #636363;
+    font-family: Poppins;
+    font-size: 15px;
+  }
+  
+  .modal-contenido form {
+    padding: 20px;
+    margin-top: 30px;
+  }
+  
+  .modal-contenido input {
+    border-radius: 11px;
+    border: 1px solid #001F3F;
+    background: #FFF;
+  }
+  
+  .modal-contenido button {
+    margin-top: 20px;
+    width: 400px;
+    height: 45px;
+    background-color: #304C78;
+    border-radius: 100px;
+    color: #FFF;
+    font-family: Poppins;
+    font-size: 16px;
+  }
+  
+  .cerrar {
+  
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    font-size: 40px;
+    cursor: pointer;
+  }
+
+/* --------------------------- seccion responsive ------------------------------ */
+
+.seleccion-mobile {
+    display: none;
+}
+
+.mostrar-detalle-producto,
+.esconder-detalle-producto {
     cursor: pointer;
     transition: 0.4s;
-  }
+}
 
-  .mostrar-detalle-producto:hover,
-  .esconder-detalle-producto:hover {
+.mostrar-detalle-producto:hover,
+.esconder-detalle-producto:hover {
     color: #ffd700;
-  }
-  
-  #checki {
-    display: none;
-  }
-  
-  
-  @media (max-width:720px) {
+}
 
-    
+#checki {
+    display: none;
+}
+
+
+@media (max-width:720px) {
+
+
     .seleccion-mobile {
         display: block;
     }
@@ -271,7 +392,7 @@ body {
         margin-bottom: 20px;
     }
 
-    .category-section h2{
+    .category-section h2 {
         font-family: "Merge One";
         font-size: 30px;
     }
@@ -279,14 +400,14 @@ body {
 
     .mostrar-detalle-producto,
     .esconder-detalle-producto {
-      display: block;
+        display: block;
     }
 
     .seleccion-mobile {
         position: fixed;
         width: 100%;
         height: 100vh;
-        background: #fff ;
+        background: #fff;
         right: -100%;
         top: 0;
         text-align: center;
@@ -303,14 +424,14 @@ body {
     }
 
     #checki:checked~.seleccion-mobile {
-       right: 0; 
+        right: 0;
     }
 
     .mostrador .fila {
-      display: grid;
-      grid-template-columns:  1fr  1fr;
-      gap: 1rem;
-  }
-  
-  
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+
 }
