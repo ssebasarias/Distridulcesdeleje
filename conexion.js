@@ -1,61 +1,68 @@
-// conecta con la base de datos
-const { error } = require("console");
-let mysql = require("mysql");
+const mysql = require("mysql");
 
-let conexion = mysql.createConnection({
+const conexion = mysql.createConnection({
     host: "localhost",
     database: "distridulcesdeleje",
     user: "root",
     password: ""
 });
 
-// verifica conexion con la base de datos
-conexion.connect(function (err) {
-    if (err){
-        throw err;
-    }else {
-        console.log("conexion exitosa");
-    }
-});
+// Función para conectar a la base de datos
+function conectarDB() {
+    conexion.connect(function(err) {
+        if (err) {
+            throw err;
+        } else {
+            console.log("Conexión exitosa a la base de datos");
+        }
+    });
+}
 
-// Mostrar datos
-const productos = "SELECT * FROM productos";
-conexion.query(productos, function(error,lista){
-    if(error){
-        throw error;
-    } else {
-        console.log(lista);
-    }
-});
+// Función para desconectar de la base de datos
+function desconectarDB() {
+    conexion.end();
+}
 
-// Insertar datos
-const insertar = "INSERT INTO `productos` (`id`, `nombre`, `descripcion`, `precio`, `id_categoria`, `activo`) VALUES (NULL, 'nuevo', 'fdsghsdfgj', '4517546', '1', '1');";
-conexion.query(insertar, function(error,rows){
-    if(error){
-        throw error;
-    } else {
-        console.log("se insertó correctamente");
-    }
-})
+// Función para ejecutar consultas SQL genéricas
+function ejecutarConsulta(query, mensajeExito) {
+    conexion.query(query, function(error, resultado) {
+        if (error) {
+            throw error;
+        } else {
+            console.log(mensajeExito);
+        }
+    });
+}
 
-// Modificar datos
-const actualizar = "UPDATE `productos` SET `descripcion` = 'nueva descripcion' WHERE id = 14;";
-conexion.query(actualizar, function(error,rows){
-    if(error){
-        throw error;
-    } else {
-        console.log("se actualizó correctamente");
-    }
-})
+// Función para mostrar todos los productos
+function mostrarProductos() {
+    const query = "SELECT * FROM productos";
+    ejecutarConsulta(query, "Lista de productos:");
+}
 
-// Eliminar un dato
-const eliminar = "DELETE FROM productos WHERE `productos`.`id` = 16";
-conexion.query(actualizar, function(error,rows){
-    if(error){
-        throw error;
-    } else {
-        console.log("se eliminó correctamente");
-    }
-})
+// Función para insertar un nuevo producto
+function insertarProducto(nombre, descripcion, precio, idCategoria, activo) {
+    const query = `INSERT INTO productos (nombre, descripcion, precio, id_categoria, activo) VALUES ('${nombre}', '${descripcion}', ${precio}, ${idCategoria}, ${activo})`;
+    ejecutarConsulta(query, "Producto insertado correctamente");
+}
 
-conexion.end();
+// Función para actualizar un producto
+function actualizarProducto(id, descripcion) {
+    const query = `UPDATE productos SET descripcion = '${descripcion}' WHERE id = ${id}`;
+    ejecutarConsulta(query, "Producto actualizado correctamente");
+}
+
+// Función para eliminar un producto
+function eliminarProducto(id) {
+    const query = `DELETE FROM productos WHERE id = ${id}`;
+    ejecutarConsulta(query, "Producto eliminado correctamente");
+}
+
+module.exports = {
+    conectarDB,
+    desconectarDB,
+    mostrarProductos,
+    insertarProducto,
+    actualizarProducto,
+    eliminarProducto
+};

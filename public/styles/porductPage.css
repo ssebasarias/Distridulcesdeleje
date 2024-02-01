@@ -4,6 +4,7 @@ body {
     height: auto;
     position: relative;
     overflow: hidden;
+    display: flex;
 }
 
 /* ------------------------------------------ */
@@ -15,10 +16,6 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Open Sans';
-}
-
-.cotenedor-productpage {
-    display: flex;
 }
 
 .contenido {

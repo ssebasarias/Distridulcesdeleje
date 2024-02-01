@@ -5,6 +5,23 @@ let modeloSeleccionado = document.getElementById("modelo");
 let descripSeleccionada = document.getElementById("descripcion");
 let precioSeleccionado = document.getElementById("precio");
 
+const db = require("../../conexion");
+let conexion = db.conectarDB();
+function displayProducts(){
+    const query = "SELECT * FROM productos";
+    query.array.forEach(element => {
+        `<div class="item" onclick="cargar(this)">
+        <div class="contenedor-foto">
+            <img src="./img/img-products/seccion1/img-card0.png" alt="">
+        </div>
+        <div class="contenedor-texto">
+            <p class="descripcion">Barrilete</p>
+            <span class="precio">$ 5.300</span>
+        </div>
+    </div>`
+    });
+}
+
 function cargar(item) {
     quitarBordes();
     seleccion.style.width = "40%";
@@ -38,4 +55,3 @@ function quitarBordes() {
         items[i].style.backgroundColor = "";
     }
 }
-
