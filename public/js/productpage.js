@@ -1,12 +1,19 @@
-let contenido = document.getElementById("contenido");
-let seleccion = document.getElementById("seleccion");
-let imgSeleccionada = document.getElementById("img");
-let modeloSeleccionado = document.getElementById("modelo");
-let descripSeleccionada = document.getElementById("descripcion");
-let precioSeleccionado = document.getElementById("precio");
+// Seleccionar elementos comunes
+const contenido = document.getElementById("contenido");
+const seleccion = document.getElementById("seleccion");
 
+// Seleccionar elementos específicos
+const imgSeleccionada = document.getElementById("img");
+const modeloSeleccionado = document.getElementById("modelo");
+const precioSeleccionado = document.getElementById("precio");
+
+const imgSeleccionadaMobile = document.getElementById("img-mobile");
+const modeloSeleccionadoMobile = document.getElementById("modelo-mobile");
+const precioSeleccionadoMobile = document.getElementById("precio-mobile");
+
+// Función para cargar un producto
 function cargar(item) {
-    quitarBordes();
+    seleccionarProducto();
     seleccion.style.width = "40%";
     seleccion.style.height = "40%";
     seleccion.style.opacity = "1";
@@ -17,25 +24,36 @@ function cargar(item) {
     let top = rect.top + window.scrollY;
 
     // Establece la posición de "seleccion" al lado del elemento seleccionado
-    seleccion.style.top = (top - 152) + "px";
+    seleccion.style.top = top + "px";
 
-    imgSeleccionada.src = item.getElementsByTagName("img")[0].src;
-    modeloSeleccionado.innerHTML = item.getElementsByTagName("p")[0].innerHTML;
-    descripSeleccionada.innerHTML = item.getElementsByClassName("detalles")[0].innerHTML;
-    precioSeleccionado.innerHTML = item.getElementsByTagName("span")[0].innerHTML;
+    // Obtener datos del producto
+    const img = item.getElementsByTagName("img")[0];
+    const descripcion = item.getElementsByTagName("p")[0];
+    const precio = item.getElementsByTagName("span")[0];
+
+    // Asignar valores a los elementos comunes
+    imgSeleccionada.src = img.src;
+    modeloSeleccionado.innerHTML = descripcion.innerHTML;
+    precioSeleccionado.innerHTML = precio.innerHTML;
+
+    // Asignar valores a los elementos específicos para móvil
+    imgSeleccionadaMobile.src = img.src;
+    modeloSeleccionadoMobile.innerHTML = descripcion.innerHTML;
+    precioSeleccionadoMobile.innerHTML = precio.innerHTML;
 }
 
+// Función para cerrar la ventana emergente
 function cerrar() {
     contenido.style.width = "100%";
     seleccion.style.width = "0%";
     seleccion.style.opacity = "0";
-    quitarBordes();
+    seleccionarProducto();
 }
 
-function quitarBordes() {
+// Función para deseleccionar todos los productos
+function seleccionarProducto() {
     var items = document.getElementsByClassName("item");
     for (i = 0; i < items.length; i++) {
         items[i].style.backgroundColor = "";
     }
 }
-

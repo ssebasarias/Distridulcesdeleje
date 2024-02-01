@@ -256,42 +256,76 @@
             </div>
         </section>
 
-        <!-- ventana emergete de inicio de edicion -->
+        <!-- ventana emergente de agregar producto -->
+        <div id="modal-add" class="modal-add">
+            <div class="modal-contenido">
+                <span id="cerrar-modal" class="cerrar-modal">&times;</span>
+                <h3>Editar Producto</h3>
+                <form>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+
+                    <label for="descripcion">Descripción:</label>
+                    <textarea id="descripcion" name="descripcion" required></textarea>
+
+                    <label for="precio">Precio:</label>
+                    <input type="number" id="precio" name="precio" required>
+
+                    <label for="categoria">Categoría:</label>
+                    <select id="categoria" name="categoria" required>
+                        <option value="categoria1">Categoría 1</option>
+                        <option value="categoria2">Categoría 2</option>
+                        <!-- Agrega más opciones según sea necesario -->
+                    </select>
+
+                    <label for="imagen">Cargar archivo tipo PNG:</label>
+                    <input type="file" id="imagen" name="imagen" accept=".png" required>
+
+                    <button type="submit">Guardar Cambios</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- ventana emergente de edición -->
         <div id="modal-edit" class="modal-edit">
             <div class="modal-contenido">
                 <span id="cerrar-modal" class="cerrar-modal">&times;</span>
-                <h2>Bienvenido!</h2>
-                <h3>Ingresa tus datos para iniciar sesión en Distridulces</h3>
+                <h3>Editar Producto</h3>
                 <form>
-                    <label for="usuario">Usuario</label>
-                    <input type="text" id="usuario" name="usuario" required>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
 
-                    <label for="contrasena">Contraseña</label>
-                    <input type="password" id="contrasena" name="contrasena" required>
+                    <label for="descripcion">Descripción:</label>
+                    <textarea id="descripcion" name="descripcion" required></textarea>
 
-                    <button type="submit">Enviar</button>
+                    <label for="precio">Precio:</label>
+                    <input type="number" id="precio" name="precio" required>
+
+                    <label for="categoria">Categoría:</label>
+                    <select id="categoria" name="categoria" required>
+                        <option value="categoria1">Categoría 1</option>
+                        <option value="categoria2">Categoría 2</option>
+                        <!-- Agrega más opciones según sea necesario -->
+                    </select>
+
+                    <label for="imagen">Cargar archivo tipo PNG:</label>
+                    <input type="file" id="imagen" name="imagen" accept=".png" required>
+
+                    <button type="submit">Guardar Cambios</button>
                 </form>
             </div>
         </div>
 
-           <!-- ventana emergete de inicio de sesion -->
-           <div id="modal-delete" class="modal-delete">
+        <!-- ventana emergete eliminar -->
+        <div id="modal-delete" class="modal-delete">
             <div class="modal-contenido">
-                <span id="cerrar-modal" class="cerrar-modal">&times;</span>
-                <h2>B</h2>
-                <h3>Ingresa tus datos para iniciar sesión en Distridulces</h3>
+                <h2>¿Estás seguro?</h2>
                 <form>
-                    <label for="usuario">Usuario</label>
-                    <input type="text" id="usuario" name="usuario" required>
-
-                    <label for="contrasena">Contraseña</label>
-                    <input type="password" id="contrasena" name="contrasena" required>
-
-                    <button type="submit">Enviar</button>
+                    <input type="button" id="btn-si" value="Sí">
+                    <input type="button" id="btn-no" value="No">
                 </form>
             </div>
         </div>
-
 
         <!-- CONTENEDOR DEL ITEM SELECCIONADO -->
         <section class="seleccion" id="seleccion">
