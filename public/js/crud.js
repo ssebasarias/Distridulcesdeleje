@@ -170,3 +170,64 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
+// ====================== Ventana emergente agregar producto
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Obtén referencias a los elementos relevantes
+    const enlaceInicio = document.getElementById('btn-add');
+    const modal = document.getElementById('modal-add');
+    const cerrarModal = document.getElementById('cerrar-modal');
+
+    // Función para mostrar el modal
+    function mostrarModal() {
+        modal.style.display = 'block';
+    }
+
+    // Función para ocultar el modal
+    function ocultarModal() {
+        modal.style.display = 'none';
+    }
+
+    // Event listener para mostrar el modal al hacer clic en el botón de editar
+    enlaceInicio.addEventListener('click', mostrarModal);
+
+    // Event listener para ocultar el modal al hacer clic en el botón de cerrar
+    cerrarModal.addEventListener('click', ocultarModal);
+
+    // Cierra el modal si se hace clic fuera de él
+    window.addEventListener('click', function (event) {
+        if (event.target === modal) {
+            ocultarModal();
+        }
+    });
+
+    // Event listener para el formulario de edición
+    const formulario = document.querySelector('#modal-add form');
+    formulario.addEventListener('submit', function (event) {
+        event.preventDefault(); // Evita que el formulario se envíe de manera tradicional
+
+        // Aquí puedes agregar la lógica para procesar los datos del formulario, como validar y enviarlos a través de AJAX
+        console.log('Datos del formulario enviados:', obtenerDatosFormulario());
+        
+        // Cierra el modal después de enviar el formulario
+        ocultarModal();
+    });
+
+    // Función para obtener los datos del formulario
+    function obtenerDatosFormulario() {
+        const nombre = document.getElementById('nombre').value;
+        const descripcion = document.getElementById('descripcion').value;
+        const precio = document.getElementById('precio').value;
+        const categoria = document.getElementById('categoria').value;
+        const imagen = document.getElementById('imagen').files[0]; // Obtener el archivo de imagen seleccionado
+
+        // Retorna un objeto con los datos del formulario
+        return {
+            nombre: nombre,
+            descripcion: descripcion,
+            precio: precio,
+            categoria: categoria,
+            imagen: imagen
+        };
+    }
+});
