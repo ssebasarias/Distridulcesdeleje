@@ -60,9 +60,9 @@ function seleccionarProducto() {
 
 
 // ==================== Ventana eliminar produto
-document.addEventListener('DOMContentLoaded', function () {
+function manejarBotonEliminar() {
     // Obtén referencias a los elementos relevantes
-    const enlaceInicio = document.getElementById('btn-delete');
+    const enlacesInicio = document.getElementsByClassName('btn-delete');
     const modal = document.getElementById('modal-delete');
     const cerrarModal = document.getElementById('cerrar-modal');
 
@@ -77,7 +77,9 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // Asigna eventos a los elementos
-    enlaceInicio.addEventListener('click', mostrarModal);
+    for (let i = 0; i < enlacesInicio.length; i++) {
+        enlacesInicio[i].addEventListener('click', mostrarModal);
+    }
     cerrarModal.addEventListener('click', ocultarModal);
 
     // Cierra el modal si se hace clic fuera de él
@@ -92,26 +94,27 @@ document.addEventListener('DOMContentLoaded', function () {
     const btnNo = document.getElementById('btn-no');
 
     // Event listener para el botón de sí
-    btnSi.addEventListener('click', function() {
+    btnSi.addEventListener('click', function () {
         // Aquí puedes ejecutar la acción correspondiente cuando el usuario confirma con "Sí"
         console.log('El usuario ha confirmado con "Sí"');
         ocultarModal(); // Cerrar el modal después de la confirmación
     });
 
     // Event listener para el botón de no
-    btnNo.addEventListener('click', function() {
+    btnNo.addEventListener('click', function () {
         // Aquí puedes ejecutar la acción correspondiente cuando el usuario elige "No"
         console.log('El usuario ha elegido "No"');
         ocultarModal(); // Cerrar el modal después de la negación
     });
-});
+}
+
 
 
 // ====================== Ventana emergente editar producto
 
-document.addEventListener('DOMContentLoaded', function () {
+function manejarBotonEditar() {
     // Obtén referencias a los elementos relevantes
-    const enlaceInicio = document.getElementById('btn-edit');
+    const enlacesInicio = document.getElementsByClassName('btn-edit');
     const modal = document.getElementById('modal-edit');
     const cerrarModal = document.getElementById('cerrar-modal');
 
@@ -125,10 +128,10 @@ document.addEventListener('DOMContentLoaded', function () {
         modal.style.display = 'none';
     }
 
-    // Event listener para mostrar el modal al hacer clic en el botón de editar
-    enlaceInicio.addEventListener('click', mostrarModal);
-
-    // Event listener para ocultar el modal al hacer clic en el botón de cerrar
+    // Asigna eventos a los elementos
+    for (let i = 0; i < enlacesInicio.length; i++) {
+        enlacesInicio[i].addEventListener('click', mostrarModal);
+    }
     cerrarModal.addEventListener('click', ocultarModal);
 
     // Cierra el modal si se hace clic fuera de él
@@ -167,7 +170,8 @@ document.addEventListener('DOMContentLoaded', function () {
             imagen: imagen
         };
     }
-});
+}
+
 
 
 // ====================== Ventana emergente agregar producto

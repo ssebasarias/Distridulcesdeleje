@@ -20,11 +20,11 @@
                     fill="#304C78" />
             </svg>
             <div class="header-info-box">
-                <img class="sin-t-tulo-1-removebg-preview-1" src="./img/logo.png" />
+                <img class="sin-t-tulo-1-removebg-preview-1" src="../img/header/logo.png" />
                 <div class="info-box">
                     <div class="info-adress">
                         <div class="frame-61">
-                            <img class="address-icon" src="./img/address-icon0.png" />
+                            <img class="address-icon" src="../img/header/address-icon0.png" />
                             <div class="frame-60">
                                 <div class="address">Address</div>
                                 <div class="_123-new-york-usa">123, New York, USA</div>
@@ -33,7 +33,7 @@
                     </div>
                     <div class="info-phone">
                         <div class="frame-612">
-                            <img class="phone-icon" src="./img/phone-icon0.png" />
+                            <img class="phone-icon" src="../img/header/phone-icon0.png" />
                             <div class="frame-60">
                                 <div class="phone-number">Phone Number</div>
                                 <div class="_650-123-1212">(650) 123-1212</div>
@@ -42,17 +42,17 @@
                     </div>
                     <div class="info-email">
                         <div class="frame-613">
-                            <img class="email-icon" src="./img/email-icon0.png" />
+                            <img class="email-icon" src="../img/header/email-icon0.png" />
                             <div class="frame-60">
                                 <div class="email-us-here">Email Us Here</div>
                                 <div class="example-gmail-com">example@gmail.com</div>
                             </div>
                         </div>
                     </div>
-                    <a class="login" id="btn-login">
+                    <a class="login" id="btn-login" onclick="abrirVentanaEmergente()">
                         <div class="txt-iniciar-sesion">Iniciar sesion</div>
                         <div class="para-administradores">Para Administradores</div>
-                        <img class="user-img" src="./img/user.png" />
+                        <img class="user-img" src="../img/header/user.png" />
                     </a>
                 </div>
             </div>
@@ -61,16 +61,16 @@
             <nav class="navbar">
                 <ul class="options-navbar">
                     <li>
-                        <a href="./index.html#section-banner">Inicio</a>
+                        <a href="../pages/home.html" target="pages">Inicio</a>
                     </li>
                     <li>
-                        <a href="./product-page/ProductPage.html">Productos</a>
+                        <a href="../pages/productPage.html" target="pages">Productos</a>
                     </li>
                     <li>
-                        <a href="#section-aboutus">¿Quienes somos?</a>
+                        <a href="../pages/home.html#section-aboutus" target="pages">¿Quienes somos?</a>
                     </li>
                     <li>
-                        <a href="#contacto">Contactanos</a>
+                        <a href="../pages/home.html#contacto" target="pages">Contactanos</a>
                     </li>
                 </ul>
                 <div class="backgrount-search">
@@ -81,14 +81,14 @@
         </div>
 
         <div class="header-mobile">
-            <img class="logo-mobile" src="./img/img-logo-mobile.png" />
+            <img class="logo-mobile" src="../img/header/img-logo-mobile.png" />
             <input type="checkbox" id="check">
             <label for="check" class="mostrar-menu">
                 &#8801
             </label>
 
             <nav class="navbar-mobile">
-                <img class="logo-mobile-navbar" src="./img/img-logo-mobile.png" />
+                <img class="logo-mobile-navbar" src="../img/header/img-logo-mobile.png" />
                 <a href="#">Inicio</a>
                 <a href="#">¿Quienes Somos?</a>
                 <a href="#">Productos</a>
@@ -101,7 +101,7 @@
                 <div class="info-box-mobile">
                     <div class="info-adress">
                         <div class="frame-61">
-                            <img class="address-icon" src="./img/address-icon0.png" />
+                            <img class="address-icon" src="../img/header/address-icon0.png" />
                             <div class="frame-60">
                                 <div class="address">Address</div>
                                 <div class="_123-new-york-usa">123, New York, USA</div>
@@ -110,7 +110,7 @@
                     </div>
                     <div class="info-phone">
                         <div class="frame-612">
-                            <img class="phone-icon" src="./img/phone-icon0.png" />
+                            <img class="phone-icon" src="../img/header/phone-icon0.png" />
                             <div class="frame-60">
                                 <div class="phone-number">Phone Number</div>
                                 <div class="_650-123-1212">(650) 123-1212</div>
@@ -119,7 +119,7 @@
                     </div>
                     <div class="info-email">
                         <div class="frame-613">
-                            <img class="email-icon" src="./img/email-icon0.png" />
+                            <img class="email-icon" src="../img/header/email-icon0.png" />
                             <div class="frame-60">
                                 <div class="email-us-here">Email Us Here</div>
                                 <div class="example-gmail-com">example@gmail.com</div>
@@ -131,31 +131,31 @@
         </div>
     </header>
 
-    <!-- ventana emergete de inicio de sesion -->
-    <div id="modal" class="modal">
-        <form class="modal-contenido">
-            <span id="cerrar-modal" class="cerrar-modal">&times;</span>
-            <h1>Inicio de sesion</h1>
-            <div class="input-box">
-                <input type="text" placeholder="Usuario" required>
-            </div>
-            <div class="input-box">
-                <input type="password" placeholder="Contraseña" required>
-            </div>
+  <!-- ventana emergete de inicio de sesion -->
+  <div id="modal" class="modal">
+    <form class="modal-contenido">
+        <span id="cerrar-modal" class="cerrar-modal">&times;</span>
+        <h1>Inicio de sesion</h1>
+        <div class="input-box">
+            <input type="text" placeholder="Usuario" required>
+        </div>
+        <div class="input-box">
+            <input type="password" placeholder="Contraseña" required>
+        </div>
 
-            <div class="remember-forgot">
-                <label><input type="checkbox">Recuerdame</label>
-                <a href="#">¿Olvidaste tu Contraseña?</a>
-            </div>
+        <div class="remember-forgot">
+            <label><input type="checkbox">Recuerdame</label>
+            <a href="#">¿Olvidaste tu Contraseña?</a>
+        </div>
 
-            <button type="submit" class="btn">Iniciar</button>
+        <button type="submit" class="btn">Iniciar</button>
 
-            <div class="register-link">
-                <p>¿No tienes cuenta? <a href="#">Registrate aqui</a></p>
+        <div class="register-link">
+            <p>¿No tienes cuenta? <a href="#">Registrate aqui</a></p>
 
-            </div>
-        </form>
-    </div>
+        </div>
+    </form>
+</div>
 
 
 

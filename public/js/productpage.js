@@ -57,3 +57,5 @@ function seleccionarProducto() {
         items[i].style.backgroundColor = "";
     }
 }
+
+let db = require();
