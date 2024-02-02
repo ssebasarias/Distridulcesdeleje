@@ -49,7 +49,7 @@
                             </div>
                         </div>
                     </div>
-                    <a class="login" id="btn-login" onclick="abrirVentanaEmergente()">
+                    <a href="../pages/iniciarSesion.html" class="login" id="btn-login" onclick="abrirVentanaEmergente()">
                         <div class="txt-iniciar-sesion">Iniciar sesion</div>
                         <div class="para-administradores">Para Administradores</div>
                         <img class="user-img" src="../img/header/user.png" />
@@ -94,6 +94,11 @@
                 <a href="#">Productos</a>
                 <a href="#">Ubicanos</a>
                 <a href="#">Contactanos</a>
+                <a href="../pages/iniciarSesion.html" class="login" id="btn-login" onclick="abrirVentanaEmergente()">
+                    <div class="txt-iniciar-sesion">Iniciar sesion</div>
+                    <div class="para-administradores">Para Administradores</div>
+                    <img class="user-img" src="../img/header/user.png" />
+                </a>
                 <label for="check" class="esconder-menu">
                     &#215
                 </label>
@@ -130,34 +135,6 @@
             </nav>
         </div>
     </header>
-
-  <!-- ventana emergete de inicio de sesion -->
-  <div id="modal" class="modal">
-    <form class="modal-contenido">
-        <span id="cerrar-modal" class="cerrar-modal">&times;</span>
-        <h1>Inicio de sesion</h1>
-        <div class="input-box">
-            <input type="text" placeholder="Usuario" required>
-        </div>
-        <div class="input-box">
-            <input type="password" placeholder="Contraseña" required>
-        </div>
-
-        <div class="remember-forgot">
-            <label><input type="checkbox">Recuerdame</label>
-            <a href="#">¿Olvidaste tu Contraseña?</a>
-        </div>
-
-        <button type="submit" class="btn">Iniciar</button>
-
-        <div class="register-link">
-            <p>¿No tienes cuenta? <a href="#">Registrate aqui</a></p>
-
-        </div>
-    </form>
-</div>
-
-
 
     <script src="../js/header.js"></script>
 </body>

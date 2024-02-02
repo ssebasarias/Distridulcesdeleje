@@ -4,99 +4,137 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products</title>
-    <link rel="stylesheet" href="../styles/porductPage.css">
+    <title>ProductPage</title>
+    <link rel="stylesheet" href="../styles/crud.css">
 </head>
 
 <body>
-    <section class="contenido" id="contenido">
-        <!-- PRIMERA SECCION -->
-        <div class="category-section">
-            <h2 class="category-title">Seccion 1</h2>
-            <div class="category-buttons">
-                <label for="categoriaDropdown">Categoria:</label>
-                <select id="categoriaDropdown">
-                    <option value="seleccionar">Seleccionar</option>
-                </select>
-                <label for="filtrarDropdown">Filtrar:</label>
-                <select id="filtrarDropdown">
-                    <option value="seleccionar">Seleccionar</option>
-                </select>
-            </div>
-        </div>
-        <div class="mostrador" id="mostrador">
-            <div class="fila">
-                <div class="item" onclick="cargar(this)">
-                    <div class="contenedor-foto">
-                        <img src="./img/img-products/seccion1/img-card0.png" alt="">
-                    </div>
-                    <div class="contenedor-texto">
-                        <p class="descripcion">Barrilete</p>
-                        <span class="precio">$ 5.300</span>
-                    </div>
-                </div>
-                <div class="item" onclick="cargar(this)">
-                    <div class="contenedor-foto">
-                        <img src="./img/img-products/seccion1/img-card0.png" alt="">
-                    </div>
-                    <div class="contenedor-texto">
-                        <p class="descripcion">Barrilete</p>
-                        <span class="precio">$ 5.300</span>
-                    </div>
-                </div>
-                <div class="item" onclick="cargar(this)">
-                    <div class="contenedor-foto">
-                        <img src="./img/img-products/seccion1/img-card0.png" alt="">
-                    </div>
-                    <div class="contenedor-texto">
-                        <p class="descripcion">Barrilete</p>
-                        <span class="precio">$ 5.300</span>
-                    </div>
-                </div>
-                <div class="item" onclick="cargar(this)">
-                    <div class="contenedor-foto">
-                        <img src="./img/img-products/seccion1/img-card0.png" alt="">
-                    </div>
-                    <div class="contenedor-texto">
-                        <p class="descripcion">Barrilete</p>
-                        <span class="precio">$ 5.300</span>
-                    </div>
-                </div>
-                <div class="item" onclick="cargar(this)">
-                    <div class="contenedor-foto">
-                        <img src="./img/img-products/seccion1/img-card0.png" alt="">
-                    </div>
-                    <div class="contenedor-texto">
-                        <p class="descripcion">Barrilete</p>
-                        <span class="precio">$ 5.300</span>
-                    </div>
+    <div class="cotenedor-productpage">
+        <section class="contenido" id="contenido">
+            <!-- PRIMERA SECCION -->
+            <div class="category-section">
+                <h2 class="category-title">Seccion 1</h2>
+                <div class="category-buttons">
+                    <label for="categoriaDropdown">Categoria:</label>
+                    <select id="categoriaDropdown">
+                        <option value="seleccionar">Seleccionar</option>
+                    </select>
+                    <label for="filtrarDropdown">Filtrar:</label>
+                    <select id="filtrarDropdown">
+                        <option value="seleccionar">Seleccionar</option>
+                    </select>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- CONTENEDOR DEL ITEM SELECCIONADO -->
-    <section class="seleccion" id="seleccion">
-        <div class="cerrar" onclick="cerrar()">
-            &#x2715
-        </div>
-        <div class="info">
-            <img src="img/1.png" alt="" id="img">
-            <h2 id="modelo">titulo</h2>
-            <p id="descripcion">descrtipcion</p>
+            <div class="mostrador" id="mostrador">
+                <div class="fila">
+                    <input type="checkbox" id="checki">
+                    <label for="checki" class="mostrar-detalle-producto">
+                        <div class="item" onclick="cargar(this)">
+                            <div class="contenedor-foto">
+                                <img src="../img/home/img-card1.png" alt="">
+                            </div>
+                            <div class="contenedor-texto">
+                                <p class="descripcion">Barrilete</p>
+                                <span class="precio">$ 5.300</span>
+                            </div>
+                        </div>
+                    </label>
+                    <input type="checkbox" id="checki">
+                    <label for="checki" class="mostrar-detalle-producto">
+                        <div class="item" onclick="cargar(this)">
+                            <div class="contenedor-foto">
+                                <img src="../img/home/img-card1.png" alt="">
+                            </div>
+                            <div class="contenedor-texto">
+                                <p class="descripcion">Barrilete</p>
+                                <span class="precio">$ 5.300</span>
+                            </div>
+                        </div>
+                    </label>
+                    <input type="checkbox" id="checki">
+                    <label for="checki" class="mostrar-detalle-producto">
+                        <div class="item" onclick="cargar(this)">
+                            <div class="contenedor-foto">
+                                <img src="../img/home/img-card1.png" alt="">
+                            </div>
+                            <div class="contenedor-texto">
+                                <p class="descripcion">Barrilete</p>
+                                <span class="precio">$ 5.300</span>
+                            </div>
+                        </div>
+                    </label>
+                    <input type="checkbox" id="checki">
+                    <label for="checki" class="mostrar-detalle-producto">
+                        <div class="item" onclick="cargar(this)">
+                            <div class="contenedor-foto">
+                                <img src="../img/home/img-card1.png" alt="">
+                            </div>
+                            <div class="contenedor-texto">
+                                <p class="descripcion">Barrilete</p>
+                                <span class="precio">$ 5.300</span>
+                            </div>
+                        </div>
+                    </label>
+                    <input type="checkbox" id="checki">
+                    <label for="checki" class="mostrar-detalle-producto">
+                        <div class="item" onclick="cargar(this)">
+                            <div class="contenedor-foto">
+                                <img src="../img/home/img-card1.png" alt="">
+                            </div>
+                            <div class="contenedor-texto">
+                                <p class="descripcion">Barrilete</p>
+                                <span class="precio">$ 5.300</span>
+                            </div>
+                        </div>
+                    </label>
+                    <div class="seleccion-mobile">
+                        <div class="info">
+                            <img src="img/1.png" alt="" id="img-mobile">
+                            <h2 id="modelo-mobile">titulo</h2>
+                            <p id="descripcion-mobile">descrtipcion</p>
 
-            <span class="precio" id="precio">$12345</span>
+                            <span class="precio" id="precio-mobile">$12345</span>
 
-            <div class="fila">
-                <div class="size">
-                    <label for="">Cantidad</label>
-                    <input type="number" min="0">
+                            <div class="fila">
+                                <div class="size">
+                                    <label for="">Cantidad</label>
+                                    <input type="number" min="0">
+                                </div>
+                                <button>AGREGAR AL CARRITO</button>
+                            </div>
+                        </div>
+                        <label for="checki" class="esconder-detalle-producto">
+                            &#215
+                        </label>
+                    </div>
                 </div>
-                <button>AGREGAR AL CARRITO</button>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <script src="../js/productpage.js"></script>
+        <!-- CONTENEDOR DEL ITEM SELECCIONADO -->
+        <section class="seleccion" id="seleccion">
+            <div class="cerrar" onclick="cerrar()">
+                &#x2715
+            </div>
+            <div class="info">
+                <img src="img/1.png" alt="" id="img">
+                <h2 id="modelo">titulo</h2>
+                <p id="descripcion">descrtipcion</p>
+
+                <span class="precio" id="precio">$12345</span>
+
+                <div class="fila">
+                    <div class="size">
+                        <label for="">Cantidad</label>
+                        <input type="number" min="0">
+                    </div>
+                    <button>AGREGAR AL CARRITO</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="../js/crud.js"></script>
 </body>
 
 </html>
