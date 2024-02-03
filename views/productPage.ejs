@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProductPage</title>
+    <link rel="stylesheet" href="./vars.css" />
+    <link rel="stylesheet" href="/styles/productpage.css">
+</head>
+
+<body>
+    <div class="cotenedor-productpage">
+        <section class="contenido" id="contenido">
+            <% Object.entries(productosPorCategoria).forEach(([categoria, productos])=> { %>
+                <h2>
+                    <%= categoria %>
+                </h2>
+                <div class="mostrador" id="mostrador">
+                    <% productos.forEach(producto=> { %>
+                        <div class="item" onclick="cargar(this)">
+                            <img src="<%= producto.imagen %>" alt="<%= producto.nombre %>">
+                            <p class="descripcion">
+                                <%= producto.nombre %>
+                            </p>
+                            <span class="precio">
+                                <%= producto.descripcion %>
+                            </span>
+                            <p>
+                                <%= producto.descripcion %>
+                            </p>
+                        </div>
+                        <% }); %>
+                </div>
+                <% }); %>
+        </section>
+
+
+        <!-- CONTENEDOR DEL ITEM SELECCIONADO -->
+        <section class="seleccion" id="seleccion">
+            <div class="cerrar" onclick="cerrar()">
+                &#x2715
+            </div>
+            <div class="info">
+                <img src="img/1.png" alt="" id="img">
+                <h2 id="modelo">titulo</h2>
+                <p id="descripcion">descrtipcion</p>
+
+                <span class="precio" id="precio">$12345</span>
+
+                <div class="fila">
+                    <div class="size">
+                        <label for="">Cantidad</label>
+                        <input type="number" min="0">
+                    </div>
+                    <button>AGREGAR AL CARRITO</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script src="../js/crud.js"></script>
+</body>
+
+</html>
