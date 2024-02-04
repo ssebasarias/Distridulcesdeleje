@@ -19,8 +19,14 @@ app.set('view engine', 'ejs');
 // Middleware para servir archivos estáticos
 app.use(express.static('public'));
 
-// Ruta para manejar las solicitudes GET a la página principal
+// Ruta para manejar las solicitudes GET a la página de principal
 app.get('/', (req, res) => {
+    res.render('index'); 
+});
+
+
+// Ruta para manejar las solicitudes GET a la página de productos
+app.get('/productPage', (req, res) => {
     // Consultar productos y sus categorías desde la base de datos
     const query = `
         SELECT productos.*, categorias.nombre AS categoria_nombre
@@ -38,14 +44,11 @@ app.get('/', (req, res) => {
             productosPorCategoria[producto.categoria_nombre].push(producto);
         });
         // Renderizar la vista 'index' y pasar los datos de los productos por categoría
-        res.render('index', { productosPorCategoria });
+        res.render('productPage', { productosPorCategoria });
     });
 });
 
-// Ruta para manejar las solicitudes GET a la página de productos
-app.get('/productos', (req, res) => {
-    res.render('productPage'); // Renderizar la vista 'productPage'
-});
+
 
 // Iniciar servidor
 const port = 3000;

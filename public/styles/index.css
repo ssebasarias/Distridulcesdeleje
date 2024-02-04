@@ -2,7 +2,6 @@ body, html {
   margin: 0;
   padding: 0;
   height: 100%;
-  overflow: hidden;
 }
 
 header {
@@ -24,3 +23,11 @@ iframe {
   border: none; /* Para eliminar el borde del iframe */
 }
 
+footer {
+  background-color: #222; /* Cambia el color de fondo según tu preferencia */
+  color: #fff;
+  text-align: center;
+  padding: 20px 0; /* Ajusta el espacio entre los elementos del footer */
+  bottom: 0;
+  width: 100%;
+}

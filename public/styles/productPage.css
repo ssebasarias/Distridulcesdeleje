@@ -3,7 +3,6 @@ body {
     width: 100%;
     height: auto;
     position: relative;
-    overflow: hidden;
     display: flex;
 }
 
@@ -16,6 +15,10 @@ body {
     padding: 0;
     box-sizing: border-box;
     font-family: 'Open Sans';
+}
+
+.cotenedor-productpage {
+    display: flex;
 }
 
 .contenido {
@@ -34,7 +37,7 @@ body {
     margin-bottom: 20px;
 }
 
-.category-section h2{
+.category-section h2 {
     font-family: "Merge One";
     font-size: 54px;
     margin: 0;
@@ -61,21 +64,14 @@ body {
 
 /* --------------------------------------------------- */
 
-
 .mostrador {
     width: 100%;
+    display: flex;
+    margin-bottom: 20px;
     transition: .5s ease;
 }
 
-.mostrador .fila {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    text-align: left;
-    margin-bottom: 40px;
-}
-
-.mostrador .fila .item {
+.mostrador .item {
     max-width: 210px;
     padding: 10px;
     width: 189px;
@@ -92,30 +88,30 @@ body {
 }
 
 
-.mostrador .fila .item:hover {
+.mostrador .item:hover {
     background-color: #e6e6e6;
 }
 
-.mostrador .fila .item .contenedor-foto {
+.mostrador .item .contenedor-foto {
     width: 100%;
     height: 50%;
     overflow: hidden;
 }
 
-.mostrador .fila .item .contenedor-foto img {
+.mostrador .item .contenedor-foto img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.mostrador .fila .item .descripcion {
+.mostrador .item .nombre {
     color: #707070;
     font-family: "Inter-SemiBold", sans-serif;
     font-size: 16px;
     font-weight: bold;
 }
 
-.mostrador .fila .item .precio {
+.mostrador .item .precio {
     color: #2b6be7;
     font-family: "Inter-SemiBold", sans-serif;
     font-weight: bold;
@@ -174,24 +170,24 @@ body {
     display: block;
 }
 
-.info .fila {
+.info {
     display: flex;
     align-items: flex-end;
 }
 
-.info .fila label {
+.info label {
     display: block;
     margin-bottom: 10px;
 }
 
-.info .fila input {
+.info input {
     width: 100px;
     font-size: 18px;
     padding: 6px;
     margin-right: 30px;
 }
 
-.info .fila button {
+.info button {
     height: 40px;
     border: none;
     padding: 0 10px;
@@ -202,7 +198,7 @@ body {
     visibility: hidden;
 }
 
-.info .fila button:hover {
+.info button:hover {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
 }
 
@@ -226,31 +222,31 @@ body {
     /* Elimina el contorno al hacer clic */
 }
 
- /* --------------------------- seccion responsive ------------------------------ */
-    
- .seleccion-mobile {
-    display: none;
-  }
+/* --------------------------- seccion responsive ------------------------------ */
 
-  .mostrar-detalle-producto,
-  .esconder-detalle-producto {
+.seleccion-mobile {
+    display: none;
+}
+
+.mostrar-detalle-producto,
+.esconder-detalle-producto {
     cursor: pointer;
     transition: 0.4s;
-  }
+}
 
-  .mostrar-detalle-producto:hover,
-  .esconder-detalle-producto:hover {
+.mostrar-detalle-producto:hover,
+.esconder-detalle-producto:hover {
     color: #ffd700;
-  }
-  
-  #checki {
-    display: none;
-  }
-  
-  
-  @media (max-width:720px) {
+}
 
-    
+#checki {
+    display: none;
+}
+
+
+@media (max-width:720px) {
+
+
     .seleccion-mobile {
         display: block;
     }
@@ -269,7 +265,7 @@ body {
         margin-bottom: 20px;
     }
 
-    .category-section h2{
+    .category-section h2 {
         font-family: "Merge One";
         font-size: 30px;
     }
@@ -277,14 +273,14 @@ body {
 
     .mostrar-detalle-producto,
     .esconder-detalle-producto {
-      display: block;
+        display: block;
     }
 
     .seleccion-mobile {
         position: fixed;
         width: 100%;
         height: 100vh;
-        background: #fff ;
+        background: #fff;
         right: -100%;
         top: 0;
         text-align: center;
@@ -301,14 +297,14 @@ body {
     }
 
     #checki:checked~.seleccion-mobile {
-       right: 0; 
+        right: 0;
     }
 
-    .mostrador .fila {
-      display: grid;
-      grid-template-columns:  1fr  1fr;
-      gap: 1rem;
-  }
-  
-  
+    .mostrador {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+
 }
