@@ -77,18 +77,14 @@ body {
 
 .mostrador {
     width: 100%;
-    transition: .5s ease;
-}
-
-.mostrador .fila {
-    width: 100%;
     display: flex;
     justify-content: space-between;
     text-align: left;
     margin-bottom: 40px;
+    transition: .5s ease;
 }
 
-.mostrador .fila .item {
+.item {
     max-width: 210px;
     padding: 10px;
     width: 189px;
@@ -101,29 +97,33 @@ body {
     border-color: #2b6be7;
     display: grid;
     text-align: center;
+    display: inline-block;
+  /* Para que las cards se muestren en línea */
+  vertical-align: top;
+  /* Para alinear las cards en la parte superior */
 }
 
 
-.mostrador .fila .item .contenedor-foto {
+.item .contenedor-foto {
     width: 100%;
     height: 50%;
     overflow: hidden;
 }
 
-.mostrador .fila .item .contenedor-foto img {
+.item .contenedor-foto img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.mostrador .fila .item .descripcion {
+.item .descripcion {
     color: #707070;
     font-family: "Inter-SemiBold", sans-serif;
     font-size: 16px;
     font-weight: bold;
 }
 
-.mostrador .fila .item .precio {
+.item .precio {
     color: #2b6be7;
     font-family: "Inter-SemiBold", sans-serif;
     font-weight: bold;
@@ -192,24 +192,24 @@ body {
     display: block;
 }
 
-.info .fila {
+.info {
     display: flex;
     align-items: flex-end;
 }
 
-.info .fila label {
+.info label {
     display: block;
     margin-bottom: 10px;
 }
 
-.info .fila input {
+.info input {
     width: 100px;
     font-size: 18px;
     padding: 6px;
     margin-right: 30px;
 }
 
-.info .fila button {
+.info button {
     height: 40px;
     border: none;
     padding: 0 10px;
@@ -220,7 +220,7 @@ body {
     visibility: hidden;
 }
 
-.info .fila button:hover {
+.info button:hover {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4);
 }
 
@@ -426,15 +426,18 @@ input[type="button"]:hover {
 /* ----------------------- editar productos */
 /* Estilos para el modal de edición */
 .modal-edit {
-    display: none; /* Por defecto, el modal está oculto */
+    display: none;
+    /* Por defecto, el modal está oculto */
     position: fixed;
     z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
-    overflow: auto; /* Permite hacer scroll si es necesario */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Fondo oscuro semi-transparente */
+    overflow: auto;
+    /* Permite hacer scroll si es necesario */
 }
 
 /* Estilos para el contenido del modal */
@@ -444,7 +447,8 @@ input[type="button"]:hover {
     padding: 20px;
     border: 1px solid #888;
     width: 50%;
-    max-width: 600px; /* Ancho máximo del modal */
+    max-width: 600px;
+    /* Ancho máximo del modal */
     border-radius: 10px;
 }
 
@@ -486,7 +490,8 @@ input[type="button"]:hover {
 
 /* Estilos para el botón de enviar en el formulario */
 .modal-contenido button[type="submit"] {
-    background-color: #4CAF50; /* Color de fondo verde */
+    background-color: #4CAF50;
+    /* Color de fondo verde */
     color: white;
     padding: 10px 20px;
     border: none;
@@ -495,7 +500,8 @@ input[type="button"]:hover {
 }
 
 .modal-contenido button[type="submit"]:hover {
-    background-color: #45a049; /* Color de fondo verde más oscuro al pasar el mouse */
+    background-color: #45a049;
+    /* Color de fondo verde más oscuro al pasar el mouse */
 }
 
 /* Estilos para el campo de carga de archivo */
@@ -513,15 +519,18 @@ input[type="button"]:hover {
 /* ----------------------- editar productos */
 /* Estilos para el modal de edición */
 .modal-add {
-    display: none; /* Por defecto, el modal está oculto */
+    display: none;
+    /* Por defecto, el modal está oculto */
     position: fixed;
     z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro semi-transparente */
-    overflow: auto; /* Permite hacer scroll si es necesario */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Fondo oscuro semi-transparente */
+    overflow: auto;
+    /* Permite hacer scroll si es necesario */
 }
 
 /* Estilos para el contenido del modal */
@@ -531,7 +540,8 @@ input[type="button"]:hover {
     padding: 20px;
     border: 1px solid #888;
     width: 50%;
-    max-width: 600px; /* Ancho máximo del modal */
+    max-width: 600px;
+    /* Ancho máximo del modal */
     border-radius: 10px;
 }
 
@@ -573,7 +583,8 @@ input[type="button"]:hover {
 
 /* Estilos para el botón de enviar en el formulario */
 .modal-contenido button[type="submit"] {
-    background-color: #4CAF50; /* Color de fondo verde */
+    background-color: #4CAF50;
+    /* Color de fondo verde */
     color: white;
     padding: 10px 20px;
     border: none;
@@ -582,7 +593,8 @@ input[type="button"]:hover {
 }
 
 .modal-contenido button[type="submit"]:hover {
-    background-color: #45a049; /* Color de fondo verde más oscuro al pasar el mouse */
+    background-color: #45a049;
+    /* Color de fondo verde más oscuro al pasar el mouse */
 }
 
 /* Estilos para el campo de carga de archivo */
@@ -675,7 +687,7 @@ input[type="button"]:hover {
         right: 0;
     }
 
-    .mostrador .fila {
+        {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1rem;

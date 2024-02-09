@@ -14,8 +14,8 @@ const precioSeleccionadoMobile = document.getElementById("precio-mobile");
 // Función para cargar un producto
 function cargar(item) {
     seleccionarProducto();
-    seleccion.style.width = "10%";
-    seleccion.style.height = "15%";
+    seleccion.style.width = "40%";
+    seleccion.style.height = "40%";
     seleccion.style.opacity = "1";
     item.style.backgroundColor = "#e6e6e6";
 
@@ -28,17 +28,17 @@ function cargar(item) {
 
     // Obtener datos del producto
     const img = item.getElementsByTagName("img")[0];
-    const nombre = item.getElementsByTagName("p")[0];
+    const descripcion = item.getElementsByTagName("p")[0];
     const precio = item.getElementsByTagName("span")[0];
 
     // Asignar valores a los elementos comunes
     imgSeleccionada.src = img.src;
-    modeloSeleccionado.innerHTML = nombre.innerHTML;
+    modeloSeleccionado.innerHTML = descripcion.innerHTML;
     precioSeleccionado.innerHTML = precio.innerHTML;
 
     // Asignar valores a los elementos específicos para móvil
     imgSeleccionadaMobile.src = img.src;
-    modeloSeleccionadoMobile.innerHTML = nombre.innerHTML;
+    modeloSeleccionadoMobile.innerHTML = descripcion.innerHTML;
     precioSeleccionadoMobile.innerHTML = precio.innerHTML;
 }
 

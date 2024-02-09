@@ -59,6 +59,114 @@ function seleccionarProducto() {
 }
 
 
+// ====================== Ventana editar producto
+
+function manejarBotonEditar() {
+    // Obtén referencias a los elementos relevantes
+    const enlacesInicio = document.getElementsByClassName('btn-edit');
+    const modal = document.getElementById('modal-edit');
+    const cerrarModal = document.getElementById('cerrar-modal');
+
+    // Función para mostrar el modal
+    function mostrarModal() {
+        modal.style.display = 'block';
+    }
+
+    // Función para ocultar el modal
+    function ocultarModal() {
+        modal.style.display = 'none';
+    }
+
+    // Asigna eventos a los elementos
+    for (let i = 0; i < enlacesInicio.length; i++) {
+        enlacesInicio[i].addEventListener('click', mostrarModal);
+    }
+    cerrarModal.addEventListener('click', ocultarModal);
+
+    // Cierra el modal si se hace clic fuera de él
+    window.addEventListener('click', function (event) {
+        if (event.target === modal) {
+            ocultarModal();
+        }
+    });
+}
+
+function cargarInformacionProducto(idProducto) {
+    // Realizar una solicitud AJAX para obtener la información del producto desde el servidor
+    fetch(`/obtener-producto/${idProducto}`)
+        .then(response => response.json())
+        .then(data => {
+            // Actualizar los valores de los campos del formulario con la información del producto
+            document.getElementById("nombre-edit").value = data.nombre;
+            document.getElementById("descripcion-edit").value = data.descripcion;
+            document.getElementById("precio-edit").value = data.precio;
+
+            // Obtener las categorías disponibles del servidor
+            fetch('/categorias')
+                .then(response => response.json())
+                .then(categorias => {
+                    // Obtener el menú desplegable de categorías
+                    const selectCategoria = document.getElementById('categoria-edit');
+                    // Limpiar las opciones existentes del menú desplegable
+                    selectCategoria.innerHTML = '';
+                    // Agregar las categorías como opciones al menú desplegable
+                    categorias.forEach(categoria => {
+                        const option = document.createElement('option');
+                        option.value = categoria;
+                        option.textContent = categoria;
+                        // Si la categoría coincide con la del producto, marcarla como seleccionada
+                        if (categoria === data.categoria) {
+                            option.selected = true;
+                        }
+                        selectCategoria.appendChild(option);
+                    });
+                })
+                .catch(error => console.error('Error al obtener las categorías:', error));
+        })
+        .catch(error => console.error('Error al obtener la información del producto:', error));
+}
+
+document.getElementById("editar-formulario").addEventListener("submit", function (event) {
+    event.preventDefault(); // Evita que el formulario se envíe de forma convencional
+
+    // Obtener los valores de los campos del formulario
+    const nombre = document.getElementById("nombre-edit").value;
+    const descripcion = document.getElementById("descripcion-edit").value;
+    const precio = document.getElementById("precio-edit").value;
+    const categoria = document.getElementById("categoria-edit").value;
+
+    // Obtener el ID del producto desde la URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const idProducto = urlParams.get('id'); // Suponiendo que el ID del producto está en la URL
+
+    // Crear un objeto con los datos del producto
+    const datosProducto = {
+        nombre: nombre,
+        descripcion: descripcion,
+        precio: precio,
+        categoria: categoria
+    };
+
+    // Realizar una solicitud AJAX para actualizar los datos del producto en el servidor
+    fetch(`/actualizar-producto/${idProducto}`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(datosProducto)
+    })
+        .then(response => response.json())
+        .then(data => {
+            // Manejar la respuesta del servidor si es necesario
+            console.log('Datos actualizados:', data);
+            // Redirigir a la página de CRUD después de la actualización
+            window.location.href = '/crud';
+        })
+        .catch(error => console.error('Error al actualizar los datos del producto:', error));
+});
+
+
+
 // ==================== Ventana eliminar produto
 function manejarBotonEliminar() {
     // Obtén referencias a los elementos relevantes
@@ -109,72 +217,7 @@ function manejarBotonEliminar() {
 }
 
 
-
-// ====================== Ventana emergente editar producto
-
-function manejarBotonEditar() {
-    // Obtén referencias a los elementos relevantes
-    const enlacesInicio = document.getElementsByClassName('btn-edit');
-    const modal = document.getElementById('modal-edit');
-    const cerrarModal = document.getElementById('cerrar-modal');
-
-    // Función para mostrar el modal
-    function mostrarModal() {
-        modal.style.display = 'block';
-    }
-
-    // Función para ocultar el modal
-    function ocultarModal() {
-        modal.style.display = 'none';
-    }
-
-    // Asigna eventos a los elementos
-    for (let i = 0; i < enlacesInicio.length; i++) {
-        enlacesInicio[i].addEventListener('click', mostrarModal);
-    }
-    cerrarModal.addEventListener('click', ocultarModal);
-
-    // Cierra el modal si se hace clic fuera de él
-    window.addEventListener('click', function (event) {
-        if (event.target === modal) {
-            ocultarModal();
-        }
-    });
-
-    // Event listener para el formulario de edición
-    const formulario = document.querySelector('#modal-edit form');
-    formulario.addEventListener('submit', function (event) {
-        event.preventDefault(); // Evita que el formulario se envíe de manera tradicional
-
-        // Aquí puedes agregar la lógica para procesar los datos del formulario, como validar y enviarlos a través de AJAX
-        console.log('Datos del formulario enviados:', obtenerDatosFormulario());
-        
-        // Cierra el modal después de enviar el formulario
-        ocultarModal();
-    });
-
-    // Función para obtener los datos del formulario
-    function obtenerDatosFormulario() {
-        const nombre = document.getElementById('nombre').value;
-        const descripcion = document.getElementById('descripcion').value;
-        const precio = document.getElementById('precio').value;
-        const categoria = document.getElementById('categoria').value;
-        const imagen = document.getElementById('imagen').files[0]; // Obtener el archivo de imagen seleccionado
-
-        // Retorna un objeto con los datos del formulario
-        return {
-            nombre: nombre,
-            descripcion: descripcion,
-            precio: precio,
-            categoria: categoria,
-            imagen: imagen
-        };
-    }
-}
-
-
-
-// ====================== Ventana emergente agregar producto
+// ====================== Ventana agregar producto
 
 document.addEventListener('DOMContentLoaded', function () {
     // Obtén referencias a los elementos relevantes
@@ -205,33 +248,22 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Event listener para el formulario de edición
-    const formulario = document.querySelector('#modal-add form');
-    formulario.addEventListener('submit', function (event) {
-        event.preventDefault(); // Evita que el formulario se envíe de manera tradicional
-
-        // Aquí puedes agregar la lógica para procesar los datos del formulario, como validar y enviarlos a través de AJAX
-        console.log('Datos del formulario enviados:', obtenerDatosFormulario());
-        
-        // Cierra el modal después de enviar el formulario
-        ocultarModal();
-    });
-
-    // Función para obtener los datos del formulario
-    function obtenerDatosFormulario() {
-        const nombre = document.getElementById('nombre').value;
-        const descripcion = document.getElementById('descripcion').value;
-        const precio = document.getElementById('precio').value;
-        const categoria = document.getElementById('categoria').value;
-        const imagen = document.getElementById('imagen').files[0]; // Obtener el archivo de imagen seleccionado
-
-        // Retorna un objeto con los datos del formulario
-        return {
-            nombre: nombre,
-            descripcion: descripcion,
-            precio: precio,
-            categoria: categoria,
-            imagen: imagen
-        };
-    }
 });
+
+// Obtener las categorías existentes desde el servidor al cargar la página
+window.onload = function() {
+    fetch('/categorias')
+        .then(response => response.json())
+        .then(categorias => {
+            const selectCategoria = document.getElementById('categoria-add');
+            selectCategoria.innerHTML = '';
+            categorias.forEach(categoria => {
+                const option = document.createElement('option');
+                option.value = categoria;
+                option.textContent = categoria;
+                selectCategoria.appendChild(option);
+            });
+        })
+        .catch(error => console.error('Error al obtener las categorías:', error));
+};
+

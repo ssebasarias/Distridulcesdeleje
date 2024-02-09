@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud</title>
+    <link rel="stylesheet" href="styles/crud.css">
+</head>
+
+<body>
+    <div class="cotenedor-productpage">
+
+        <section class="contenido" id="contenido">
+            <% Object.entries(productosPorCategoria).forEach(([categoria, productos])=> { %>
+                <div class="category-section">
+                    <h2>
+                        <%= categoria %>
+                    </h2>
+                    <a class="agg-buttons" id="btn-add">
+                        <img src="../img/crud/add.png"" alt=" Icono">
+                        <span> AGREGAR NUEVO PRODUCTO </span>
+                    </a>
+                </div>
+
+                <div class="mostrador" id="mostrador">
+                    <% productos.forEach(producto=> { %>
+                        <div class="item" onclick="cargar(this, '<%= producto.id %>')">
+                            <div class="contenedor-foto">
+                                <img src="data:image/jpeg;base64,<%= Buffer.from(producto.imagen).toString('base64') %>"
+                                    alt="<%= producto.nombre %>">
+                            </div>
+                            <div class="contenedor-texto">
+                                <p class="nombre">
+                                    <%= producto.nombre %>
+                                </p>
+                                <span class="precio">
+                                    <%= producto.precio %>
+                                </span>
+                            </div>
+                            <div class="contenedor-edit-delete">
+                                <a class="btn-edit" id="btn-edit" onclick="manejarBotonEditar()">
+                                    <img class="btn-edit" src="../img/crud/edit.png" alt="Icono">
+                                </a>
+                                <a class="btn-delete" id="btn-delete" onclick="manejarBotonEliminar()">
+                                    <img class="btn-delete" src="../img/crud/delete.png" alt="Icono">
+                                </a>
+                            </div>
+                        </div>
+                        <% }); %>
+                </div>
+                <% }); %>
+        </section>
+
+        <!-- ventana emergente de agregar producto -->
+        <div id="modal-add" class="modal-add">
+            <div class="modal-contenido">
+                <span id="cerrar-modal" class="cerrar-modal">&times;</span>
+                <h3>Agregar Producto</h3>
+                <form action="" method="POST" id="agregar-formulario">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre-add" name="nombre" required>
+
+                    <label for="descripcion">Descripción:</label>
+                    <textarea id="descripcion-add" name="descripcion" required></textarea>
+
+                    <label for="precio">Precio:</label>
+                    <input type="number" id="precio-add" name="precio" required>
+
+                    <label for="categoria">Categoría:</label>
+                    <select id="categoria-add" name="categoria" required>
+                    </select>
+
+                    <label for="imagen">Cargar archivo tipo PNG:</label>
+                    <input type="file" id="imagen-add" name="imagen" accept=".png">
+
+                    <button type="submit">Guardar Cambios</button>
+                </form>
+            </div>
+        </div>
+
+
+        <!-- ventana emergente de edición -->
+        <div id="modal-edit" class="modal-edit">
+            <div class="modal-contenido">
+                <span id="cerrar-modal" class="cerrar-modal">&times;</span>
+                <h3>Editar Producto</h3>
+                <form id="editar-formulario" action="" method="POST">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre-edit" name="nombre" required>
+
+                    <label for="descripcion">Descripción:</label>
+                    <textarea id="descripcion-edit" name="descripcion" required></textarea>
+
+                    <label for="precio">Precio:</label>
+                    <input type="number" id="precio-edit" name="precio" required>
+
+                    <label for="categoria">Categoría:</label>
+                    <select id="categoria-edit" name="categoria" required>
+                        <!-- Opciones de categoría -->
+                    </select>
+
+                    <label for="imagen">Cargar archivo tipo PNG:</label>
+                    <input type="file" id="imagen-edit" name="imagen" accept=".png">
+
+                    <button type="submit">Guardar Cambios</button>
+                </form>
+            </div>
+        </div>
+
+
+        <!-- ventana emergete eliminar -->
+        <div id="modal-delete" class="modal-delete">
+            <div class="modal-contenido">
+                <h2>¿Estás seguro?</h2>
+                <form>
+                    <input type="button" id="btn-si" value="Sí">
+                    <input type="button" id="btn-no" value="No">
+                </form>
+            </div>
+        </div>
+
+        <!-- CONTENEDOR DEL ITEM SELECCIONADO -->
+        <section class="seleccion" id="seleccion">
+            <div class="cerrar" onclick="cerrar()">
+                &#x2715
+            </div>
+            <div class="info">
+                <img src="" alt="" id="img-select">
+                <h2 id="nombre-select">titulo</h2>
+                <p id="descripcion-select">descrtipcion</p>
+
+                <span class="precio" id="precio-select">$9999</span>
+
+                <div class="fila">
+                    <div class="size">
+                        <label for="">Cantidad</label>
+                        <input type="number" min="0">
+                    </div>
+                    <button>AGREGAR AL CARRITO</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="btn-agg-seccion">
+        <a class="agg-buttons">
+            <img src="/img/crud/add.png" alt="Icono">
+            <span> AGREGAR NUEVA SECCION </span>
+        </a>
+    </div>
+
+    <script src="./js/crud.js"></script>
+</body>
+
+</html>
