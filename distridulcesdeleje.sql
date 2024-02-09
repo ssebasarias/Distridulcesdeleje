@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-02-2024 a las 17:04:13
+-- Tiempo de generación: 09-02-2024 a las 05:49:00
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -98,21 +98,24 @@ INSERT INTO `productos` (`id`, `nombre`, `descripcion`, `precio`, `categoria_id`
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `usuarios`
+-- Estructura de tabla para la tabla `users`
 --
 
-CREATE TABLE `usuarios` (
+CREATE TABLE `users` (
   `id` int(11) NOT NULL,
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
+  `user` varchar(50) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `rol` varchar(50) NOT NULL,
+  `pass` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 --
--- Volcado de datos para la tabla `usuarios`
+-- Volcado de datos para la tabla `users`
 --
 
-INSERT INTO `usuarios` (`id`, `username`, `password`) VALUES
-(1, 'admin', '123');
+INSERT INTO `users` (`id`, `user`, `name`, `rol`, `pass`) VALUES
+(1, 'admin', 'administrador 1', 'admin', '$2a$08$0D/DiJfR3klvw3s4QSoTqugw30nlG6sSBvaqS1.i3e62jwyHnTFgG'),
+(2, 'Javier1', 'Javier', 'admin', '$2a$08$AX4SLlg2hKRjLiKTCJx96utOKylD.UZgZ5L2VU7fllO90fBmRJk5a');
 
 --
 -- Índices para tablas volcadas
@@ -132,9 +135,9 @@ ALTER TABLE `productos`
   ADD KEY `categoria_id` (`categoria_id`);
 
 --
--- Indices de la tabla `usuarios`
+-- Indices de la tabla `users`
 --
-ALTER TABLE `usuarios`
+ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -154,10 +157,10 @@ ALTER TABLE `productos`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
--- AUTO_INCREMENT de la tabla `usuarios`
+-- AUTO_INCREMENT de la tabla `users`
 --
-ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas
