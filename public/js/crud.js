@@ -12,7 +12,7 @@ const modeloSeleccionadoMobile = document.getElementById("modelo-mobile");
 const precioSeleccionadoMobile = document.getElementById("precio-mobile");
 
 // Función para cargar un producto
-function cargar(item) {
+function cargar(item, id) {
     seleccionarProducto();
     seleccion.style.width = "40%";
     seleccion.style.height = "40%";
@@ -40,6 +40,8 @@ function cargar(item) {
     imgSeleccionadaMobile.src = img.src;
     modeloSeleccionadoMobile.innerHTML = descripcion.innerHTML;
     precioSeleccionadoMobile.innerHTML = precio.innerHTML;
+
+    obtenerCategoria(id);
 }
 
 // Función para cerrar la ventana emergente
@@ -247,23 +249,8 @@ document.addEventListener('DOMContentLoaded', function () {
             ocultarModal();
         }
     });
-
 });
 
-// Obtener las categorías existentes desde el servidor al cargar la página
-window.onload = function() {
-    fetch('/categorias')
-        .then(response => response.json())
-        .then(categorias => {
-            const selectCategoria = document.getElementById('categoria-add');
-            selectCategoria.innerHTML = '';
-            categorias.forEach(categoria => {
-                const option = document.createElement('option');
-                option.value = categoria;
-                option.textContent = categoria;
-                selectCategoria.appendChild(option);
-            });
-        })
-        .catch(error => console.error('Error al obtener las categorías:', error));
-};
-
+function obtenerCategoria(id) {
+    
+}

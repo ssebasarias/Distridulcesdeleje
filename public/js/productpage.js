@@ -1,21 +1,15 @@
-// Seleccionar elementos comunes
-const contenido = document.getElementById("contenido");
-const seleccion = document.getElementById("seleccion");
-
-// Seleccionar elementos específicos
-const imgSeleccionada = document.getElementById("img");
-const modeloSeleccionado = document.getElementById("modelo");
-const precioSeleccionado = document.getElementById("precio");
-
-const imgSeleccionadaMobile = document.getElementById("img-mobile");
-const modeloSeleccionadoMobile = document.getElementById("modelo-mobile");
-const precioSeleccionadoMobile = document.getElementById("precio-mobile");
+let mostrador = document.getElementById("mostrador");
+let seleccion = document.getElementById("seleccion");
+let imgSeleccionada = document.getElementById("img");
+let modeloSeleccionado = document.getElementById("modelo");
+let descripSeleccionada = document.getElementById("descripcion");
+let precioSeleccionado = document.getElementById("precio");
 
 // Función para cargar un producto
 function cargar(item) {
     seleccionarProducto();
+    mostrador.style.width = "60%";
     seleccion.style.width = "40%";
-    seleccion.style.height = "40%";
     seleccion.style.opacity = "1";
     item.style.backgroundColor = "#e6e6e6";
 
@@ -26,20 +20,13 @@ function cargar(item) {
     // Establece la posición de "seleccion" al lado del elemento seleccionado
     seleccion.style.top = top + "px";
 
-    // Obtener datos del producto
-    const img = item.getElementsByTagName("img")[0];
-    const descripcion = item.getElementsByTagName("p")[0];
-    const precio = item.getElementsByTagName("span")[0];
+    imgSeleccionada.src = item.getElementsByTagName("img")[0].src;
 
-    // Asignar valores a los elementos comunes
-    imgSeleccionada.src = img.src;
-    modeloSeleccionado.innerHTML = descripcion.innerHTML;
-    precioSeleccionado.innerHTML = precio.innerHTML;
+    modeloSeleccionado.innerHTML =  item.getElementsByTagName("p")[0].innerHTML;
 
-    // Asignar valores a los elementos específicos para móvil
-    imgSeleccionadaMobile.src = img.src;
-    modeloSeleccionadoMobile.innerHTML = descripcion.innerHTML;
-    precioSeleccionadoMobile.innerHTML = precio.innerHTML;
+    descripSeleccionada.innerHTML = "Descripción del modelo ";
+
+    precioSeleccionado.innerHTML =  item.getElementsByTagName("span")[0].innerHTML;
 }
 
 // Función para cerrar la ventana emergente

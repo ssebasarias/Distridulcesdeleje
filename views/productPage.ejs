@@ -22,7 +22,8 @@
                     <% productos.forEach(producto=> { %>
                         <div class="item" onclick="cargar(this)">
                             <div class="contenedor-foto">
-                                <img src="data:image/jpeg;base64,<%= Buffer.from(producto.imagen).toString('base64') %>" alt="<%= producto.nombre %>">
+                                <img src="data:image/jpeg;base64,<%= Buffer.from(producto.imagen).toString('base64') %>"
+                                    alt="<%= producto.nombre %>">
                             </div>
                             <p class="nombre">
                                 <%= producto.nombre %>
@@ -34,10 +35,11 @@
                         <% }); %>
                 </div>
                 <% }); %>
-        </section>
 
+
+        </section>
         <!-- CONTENEDOR DEL ITEM SELECCIONADO -->
-        <section class="seleccion" id="seleccion">
+        <div class="seleccion" id="seleccion">
             <div class="cerrar" onclick="cerrar()">
                 &#x2715
             </div>
@@ -56,7 +58,7 @@
                     <button>AGREGAR AL CARRITO</button>
                 </div>
             </div>
-        </section>
+        </div>
     </div>
 
     <script src="resources/js/productpage.js"></script>

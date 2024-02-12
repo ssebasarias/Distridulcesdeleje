@@ -30,6 +30,7 @@ app.use(session({
 
 //Invocacion modulo conexion de la BD
 const connection = require('./database/db');
+const { error } = require('console');
 
 app.get('/login', (req, res)=>{
     res.render('login');
