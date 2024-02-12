@@ -41,7 +41,7 @@ function cargar(item, id) {
     modeloSeleccionadoMobile.innerHTML = descripcion.innerHTML;
     precioSeleccionadoMobile.innerHTML = precio.innerHTML;
 
-    obtenerCategoria(id);
+    obtenerProducto(id);
 }
 
 // Función para cerrar la ventana emergente
@@ -60,197 +60,44 @@ function seleccionarProducto() {
     }
 }
 
-
-// ====================== Ventana editar producto
-
-function manejarBotonEditar() {
-    // Obtén referencias a los elementos relevantes
-    const enlacesInicio = document.getElementsByClassName('btn-edit');
-    const modal = document.getElementById('modal-edit');
-    const cerrarModal = document.getElementById('cerrar-modal');
-
-    // Función para mostrar el modal
-    function mostrarModal() {
-        modal.style.display = 'block';
+function mostrarFormulario(formulario) {
+      window.location.href = `/${formulario}`;
     }
 
-    // Función para ocultar el modal
-    function ocultarModal() {
-        modal.style.display = 'none';
+    function editarProducto(id) {
+      if (id) {
+        window.location.href = `/editar/${id}`;
+      } else {
+        alert('ID de producto inválido');
+      }
     }
 
-    // Asigna eventos a los elementos
-    for (let i = 0; i < enlacesInicio.length; i++) {
-        enlacesInicio[i].addEventListener('click', mostrarModal);
-    }
-    cerrarModal.addEventListener('click', ocultarModal);
-
-    // Cierra el modal si se hace clic fuera de él
-    window.addEventListener('click', function (event) {
-        if (event.target === modal) {
-            ocultarModal();
-        }
-    });
-}
-
-function cargarInformacionProducto(idProducto) {
-    // Realizar una solicitud AJAX para obtener la información del producto desde el servidor
-    fetch(`/obtener-producto/${idProducto}`)
-        .then(response => response.json())
-        .then(data => {
-            // Actualizar los valores de los campos del formulario con la información del producto
-            document.getElementById("nombre-edit").value = data.nombre;
-            document.getElementById("descripcion-edit").value = data.descripcion;
-            document.getElementById("precio-edit").value = data.precio;
-
-            // Obtener las categorías disponibles del servidor
-            fetch('/categorias')
-                .then(response => response.json())
-                .then(categorias => {
-                    // Obtener el menú desplegable de categorías
-                    const selectCategoria = document.getElementById('categoria-edit');
-                    // Limpiar las opciones existentes del menú desplegable
-                    selectCategoria.innerHTML = '';
-                    // Agregar las categorías como opciones al menú desplegable
-                    categorias.forEach(categoria => {
-                        const option = document.createElement('option');
-                        option.value = categoria;
-                        option.textContent = categoria;
-                        // Si la categoría coincide con la del producto, marcarla como seleccionada
-                        if (categoria === data.categoria) {
-                            option.selected = true;
-                        }
-                        selectCategoria.appendChild(option);
-                    });
-                })
-                .catch(error => console.error('Error al obtener las categorías:', error));
-        })
-        .catch(error => console.error('Error al obtener la información del producto:', error));
-}
-
-document.getElementById("editar-formulario").addEventListener("submit", function (event) {
-    event.preventDefault(); // Evita que el formulario se envíe de forma convencional
-
-    // Obtener los valores de los campos del formulario
-    const nombre = document.getElementById("nombre-edit").value;
-    const descripcion = document.getElementById("descripcion-edit").value;
-    const precio = document.getElementById("precio-edit").value;
-    const categoria = document.getElementById("categoria-edit").value;
-
-    // Obtener el ID del producto desde la URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const idProducto = urlParams.get('id'); // Suponiendo que el ID del producto está en la URL
-
-    // Crear un objeto con los datos del producto
-    const datosProducto = {
-        nombre: nombre,
-        descripcion: descripcion,
-        precio: precio,
-        categoria: categoria
-    };
-
-    // Realizar una solicitud AJAX para actualizar los datos del producto en el servidor
-    fetch(`/actualizar-producto/${idProducto}`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(datosProducto)
-    })
-        .then(response => response.json())
-        .then(data => {
-            // Manejar la respuesta del servidor si es necesario
-            console.log('Datos actualizados:', data);
-            // Redirigir a la página de CRUD después de la actualización
-            window.location.href = '/crud';
-        })
-        .catch(error => console.error('Error al actualizar los datos del producto:', error));
-});
-
-
-
-// ==================== Ventana eliminar produto
-function manejarBotonEliminar() {
-    // Obtén referencias a los elementos relevantes
-    const enlacesInicio = document.getElementsByClassName('btn-delete');
-    const modal = document.getElementById('modal-delete');
-    const cerrarModal = document.getElementById('cerrar-modal');
-
-    // Función para mostrar el modal
-    function mostrarModal() {
-        modal.style.display = 'block';
-    }
-
-    // Función para ocultar el modal
-    function ocultarModal() {
-        modal.style.display = 'none';
-    }
-
-    // Asigna eventos a los elementos
-    for (let i = 0; i < enlacesInicio.length; i++) {
-        enlacesInicio[i].addEventListener('click', mostrarModal);
-    }
-    cerrarModal.addEventListener('click', ocultarModal);
-
-    // Cierra el modal si se hace clic fuera de él
-    window.addEventListener('click', function (event) {
-        if (event.target === modal) {
-            ocultarModal();
-        }
-    });
-
-    // Obtener referencia a los botones de sí y no
-    const btnSi = document.getElementById('btn-si');
-    const btnNo = document.getElementById('btn-no');
-
-    // Event listener para el botón de sí
-    btnSi.addEventListener('click', function () {
-        // Aquí puedes ejecutar la acción correspondiente cuando el usuario confirma con "Sí"
-        console.log('El usuario ha confirmado con "Sí"');
-        ocultarModal(); // Cerrar el modal después de la confirmación
-    });
-
-    // Event listener para el botón de no
-    btnNo.addEventListener('click', function () {
-        // Aquí puedes ejecutar la acción correspondiente cuando el usuario elige "No"
-        console.log('El usuario ha elegido "No"');
-        ocultarModal(); // Cerrar el modal después de la negación
-    });
-}
-
-
-// ====================== Ventana agregar producto
-
-document.addEventListener('DOMContentLoaded', function () {
-    // Obtén referencias a los elementos relevantes
-    const enlaceInicio = document.getElementById('btn-add');
-    const modal = document.getElementById('modal-add');
-    const cerrarModal = document.getElementById('cerrar-modal');
-
-    // Función para mostrar el modal
-    function mostrarModal() {
-        modal.style.display = 'block';
-    }
-
-    // Función para ocultar el modal
-    function ocultarModal() {
-        modal.style.display = 'none';
-    }
-
-    // Event listener para mostrar el modal al hacer clic en el botón de editar
-    enlaceInicio.addEventListener('click', mostrarModal);
-
-    // Event listener para ocultar el modal al hacer clic en el botón de cerrar
-    cerrarModal.addEventListener('click', ocultarModal);
-
-    // Cierra el modal si se hace clic fuera de él
-    window.addEventListener('click', function (event) {
-        if (event.target === modal) {
-            ocultarModal();
-        }
-    });
-});
-
-function obtenerCategoria(id) {
+    function eliminarProducto(id) {
+      if (id) {
+        if (confirm('¿Estás seguro de que deseas eliminar este producto?')) {
+          // Crear una instancia de XMLHttpRequest
+          var xhr = new XMLHttpRequest();
+          
+          // Configurar la solicitud DELETE
+          xhr.open('DELETE', '/eliminar/' + id, true);
     
-}
+          // Configurar el manejo de la respuesta
+          xhr.onload = function() {
+            if (xhr.status === 200) {
+              alert('Producto eliminado');
+              // Puedes redirigir a la página principal u otro lugar después de eliminar el producto
+              window.location.href = 'crud';
+            } else {
+              alert('Error al eliminar el producto');
+            }
+          };
+    
+          // Enviar la solicitud DELETE al servidor
+          xhr.send();
+        } else {
+          alert('Operación cancelada');
+        }
+      } else {
+        alert('ID de producto inválido');
+      }
+    }

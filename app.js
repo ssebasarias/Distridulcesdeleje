@@ -1,5 +1,7 @@
 //Invocacion Express
 const express = require('express');
+const multer = require('multer');
+const bodyParser = require('body-parser');
 const app = express();
 
 //seteamos urlencoded para capturar los datos del formulario
@@ -113,7 +115,7 @@ app.post('/auth', async (req, res)=>{
 
 app.get('/', (req, res)=>{
     if(req.session.loggedin) {
-        res.render('index',{
+        res.render('indexcrud',{
             login: true,
             name: req.session.name
         })
@@ -132,6 +134,7 @@ app.get('/logout', (req, res)=>{
         res.redirect('/')
     })
 })
+
 
 app.get('/productPage', (req, res) => {
     // Consultar productos y sus categorías desde la base de datos
@@ -155,6 +158,8 @@ app.get('/productPage', (req, res) => {
     });
 });
 
+// ============================== CRUD
+
 app.get('/crud', (req, res) => {
     // Consultar productos y sus categorías desde la base de datos
     const query = `
@@ -176,6 +181,131 @@ app.get('/crud', (req, res) => {
         res.render('crud', { productosPorCategoria });
     });
 });
+
+// Middleware para el análisis del cuerpo de la solicitud
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// Middleware para la carga de archivos
+const storage = multer.memoryStorage();
+
+const upload = multer({
+  storage: storage
+}).single('imagen');
+
+// Ruta para la página de formulario de agregar producto
+app.get('/agregar', (req, res) => {
+  // Consulta a la base de datos para obtener todas las categorías
+  connection.query('SELECT id, nombre FROM categorias', (err, categorias) => {
+    if (err) {
+      res.render('error', { error: err });
+    } else {
+      res.render('agregar', { categorias: categorias });
+    }
+  });
+});
+
+// Ruta para manejar la solicitud de agregar producto
+app.post('/agregar', (req, res) => {
+  upload(req, res, (err) => {
+    if (err) {
+      res.render('error', { error: err });
+    } else {
+      const { nombre, descripcion, precio, categoria } = req.body;
+      const imagen = req.file.buffer; // Obtener el búfer de la imagen
+
+      const sql = 'INSERT INTO productos (nombre, descripcion, precio, categoria_id, imagen) VALUES (?, ?, ?, ?, ?)';
+      const values = [nombre, descripcion, precio, categoria, imagen];
+
+      connection.query(sql, values, (err, result) => {
+        if (err) {
+          res.render('error', { error: err });
+        } else {
+          res.redirect('crud');
+        }
+      });
+    }
+  });
+});
+
+app.get('/editar', (req, res) => {
+    // Aquí puedes renderizar la plantilla editar.ejs o redirigir a otra página
+    res.render('editar');
+  });
+  
+  // Ruta para mostrar el formulario de edición de un producto específico
+  app.get('/editar/:id', (req, res) => {
+    const productId = req.params.id;
+    // Lógica para obtener los detalles del producto con el ID especificado, luego renderiza la plantilla editar.ejs con los detalles del producto
+    connection.query('SELECT * FROM productos WHERE id = ?', [productId], (err, result) => {
+      if (err) {
+        res.render('error', { error: err });
+      } else {
+        // También necesitas obtener las categorías para mostrarlas en el formulario de edición
+        connection.query('SELECT * FROM categorias', (err, categorias) => {
+          if (err) {
+            res.render('error', { error: err });
+          } else {
+            res.render('editar', { producto: result[0], categorias: categorias });
+          }
+        });
+      }
+    });
+  });
+  
+  // Ruta para manejar la solicitud POST para editar un producto
+  app.post('/editar/:id', (req, res) => {
+    upload(req, res, (err) => {
+      if (err) {
+        res.render('error', { error: err });
+      } else {
+        const productId = req.params.id;
+        const { nombre, descripcion, precio, categoria } = req.body;
+        let imagen = req.file ? req.file.buffer : null; // Obtener el búfer de la imagen si se proporciona una nueva imagen
+  
+        // Si no se proporciona una nueva imagen, mantener la imagen existente en la base de datos
+        if (!imagen) {
+            connection.query('SELECT imagen FROM productos WHERE id = ?', [productId], (err, result) => {
+            if (err) {
+              res.render('error', { error: err });
+            } else {
+              // Usar la imagen existente en la base de datos
+              imagen = result[0].imagen;
+              updateProduct();
+            }
+          });
+        } else {
+          updateProduct();
+        }
+  
+        // Función para actualizar el producto en la base de datos
+        function updateProduct() {
+          const sql = 'UPDATE productos SET nombre = ?, descripcion = ?, precio = ?, categoria_id = ?, imagen = ? WHERE id = ?';
+          const values = [nombre, descripcion, precio, categoria, imagen, productId];
+          connection.query(sql, values, (err, result) => {
+            if (err) {
+              res.render('error', { error: err });
+            } else {
+              res.redirect('/crud');
+            }
+          });
+        }
+      }
+    });
+  });
+
+
+// Ruta para manejar la solicitud DELETE para eliminar un producto
+app.delete('/eliminar/:id', (req, res) => {
+  const productId = req.params.id;
+  connection.query('DELETE FROM productos WHERE id = ?', [productId], (err, result) => {
+    if (err) {
+      res.render('error', { error: err });
+    } else {
+      res.sendStatus(200);
+    }
+  });
+});
+
 
 app.listen(3000, (req, res)=>{
     console.log('SERVIDOR ABIERTO EN http://localhost:3000');
