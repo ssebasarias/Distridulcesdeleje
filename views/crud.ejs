@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crud</title>
+    <title>DistridulcesdelEje-crud</title>
     <link rel="stylesheet" href="resources/styles/crud.css">
 </head>
 
@@ -57,24 +57,20 @@
             <div class="modal-contenido">
                 <span id="cerrar-modal" class="cerrar-modal">&times;</span>
                 <h3>Agregar Producto</h3>
-                <form action="" method="POST" id="agregar-formulario">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre-add" name="nombre" required>
+                <form action="/add" method="POST" id="agregar-formulario">
+                    <label for="name">Nombre:</label>
+                    <input type="text" name="name" required>
 
                     <label for="descripcion">Descripción:</label>
-                    <textarea id="descripcion-add" name="descripcion" required></textarea>
+                    <input type="text" name="descripcion" required></input>
 
-                    <label for="precio">Precio:</label>
-                    <input type="number" id="precio-add" name="precio" required>
+                    <label for="price">Precio:</label>
+                    <input type="number" name="price" required>
 
-                    <label for="categoria">Categoría:</label>
-                    <select id="categoria-add" name="categoria" required>
-                    </select>
+                    <label for="categoria">categoria:</label>
+                    <input type="text">
 
-                    <label for="imagen">Cargar archivo tipo PNG:</label>
-                    <input type="file" id="imagen-add" name="imagen" accept=".png">
-
-                    <button type="submit">Guardar Cambios</button>
+                    <input type="submit" class="guardar" value="Save">Guardar Cambios</button>
                 </form>
             </div>
         </div>

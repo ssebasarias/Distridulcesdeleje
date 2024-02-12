@@ -63,6 +63,28 @@ app.post('/register', async (req, res)=>{
     })
 })
 
+//add productos
+app.post('/add', async (req, res)=>{
+    const name = req.body.name;
+    const descripcion = req.body.descripcion;
+    const price = req.body.price;
+    connection.query('INSERT INTO products SET ?', {name:name, descripcion:descripcion, price:price}, async(error, results)=>{
+        if(error) {
+            console.log(error);
+        }else{
+            res.render('register',{
+                alert: true,
+                alertTitle: "Registration",
+                alertMessage: "Sucessful Registration!",
+                alertIcon:'success',
+                showConfirmButton: false,
+                time:1500,
+                ruta:''
+            })
+        }
+    })
+})
+
 //Autoenticacion
 
 app.post('/auth', async (req, res)=>{
@@ -112,7 +134,7 @@ app.post('/auth', async (req, res)=>{
 
 app.get('/', (req, res)=>{
     if(req.session.loggedin) {
-        res.render('index',{
+        res.render('indexcrud',{
             login: true,
             name: req.session.name
         })

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DistridulcesdelEje</title>
+    <title>DistridulcesdelEje-IndexCrud</title>
     <link rel="stylesheet" href="resources/styles/stylehome.css">
 </head>
 <body>
@@ -49,12 +49,6 @@
                         <div class="txt-cerrar-sesion">Hola! <%= name %> <br><br> <strong style="color:#001f3f;">Cerrar sesion</strong></div>
                         <img class="user-img" src="resources/img/header/user.png" />
                     </a>
-                <% } else { %>
-                    <h1><strong><%= name %></strong></h1>
-                    <a href="login" class="a-logout">
-                        <div class="txt-iniciar-sesion"><strong style="color:#001f3f;">Iniciar Sesion</strong></div>
-                        <img class="user-img" src="resources/img/header/user.png" />
-                    </a>
                 <% } %>
             </div>
         </div>
@@ -66,10 +60,10 @@
                     <a href="/" target="pages">Inicio</a>
                 </li>
                 <li>
-                    <a href="http://localhost:3000/productPage" target="pages">Productos</a>
+                    <a href="http://localhost:3000/crud" target="pages">Productos</a>
                 </li>
                 <li>
-                    <a href="http://localhost:3000/crud" target="pages">¿Quienes somos?</a>
+                    <a href="/" target="pages">¿Quienes somos?</a>
                 </li>
                 <li>
                     <a href="resources/pages/home.html#contacto" target="pages">Contactanos</a>
