@@ -17,15 +17,22 @@
                     <h2>
                         <%= categoria %>
                     </h2>
-                    <a class="agg-buttons" id="btn-add" onclick="mostrarFormulario('agregar')">
-                        <img src="resources/img/crud/add.png"" alt=" Icono">
-                        <span> AGREGAR NUEVO PRODUCTO </span>
-                    </a>
+                    <div class="btn-agg-seccion">
+                        <a class="agg-buttons" onclick="mostrarFormulario('agregar_categoria')">
+                            <img src="resources/img/crud/add.png" alt="Icono">
+                            <span> CATEGORIA </span>
+                        </a>
+                        <a class="agg-buttons" id="btn-add" onclick="mostrarFormulario('agregar')">
+                            <img src="resources/img/crud/add.png"" alt=" Icono">
+                            <span> PRODUCTO </span>
+                        </a>
+                    </div>
                 </div>
 
                 <div class="mostrador" id="mostrador">
                     <% productos.forEach(producto=> { %>
-                        <div class="item" onclick="cargar(this, '<%= producto.id %>')">
+                        <div class="item"
+                            onclick="cargar(this, '<%= producto.nombre %>','<%= producto.descripcion %>','<%= producto.precio %>')">
                             <div class="contenedor-foto">
                                 <img src="data:image/jpeg;base64,<%= Buffer.from(producto.imagen).toString('base64') %>"
                                     alt="<%= producto.nombre %>">
@@ -35,14 +42,14 @@
                                     <%= producto.nombre %>
                                 </p>
                                 <span class="precio">
-                                    <%= producto.precio %>
+                                    $<%= producto.precio %>
                                 </span>
                             </div>
                             <div class="contenedor-edit-delete">
                                 <a class="btn-edit" onclick="editarProducto('<%= producto.id %>')">
                                     <img src="resources/img/crud/edit.png" alt="Icono">
                                 </a>
-                                
+
                                 <a class="btn-delete" id="btn-delete" onclick="eliminarProducto('<%= producto.id %>')">
                                     <img class="btn-delete" src="resources/img/crud/delete.png" alt="Icono">
                                 </a>
@@ -53,15 +60,36 @@
                 <% }); %>
         </section>
 
+        <!-- CONTENEDOR DEL ITEM SELECCIONADO -->
+        <div class="seleccion" id="seleccion">
+            <div class="cerrar" onclick="cerrar()">
+                &#x2715
+            </div>
+            <div class="info">
+                <div class="contenedor_img"><img src="" alt="" id="img"></div>
+                <div class="contenedor_detalles">
+                    <h2 id="nombre"></h2>
+                    <p id="descripcion"></p>
+                    <span class="precio" id="precio"></span>
+                </div>
+            </div>
+        </div>
+        </section>
 
-    <div class="btn-agg-seccion">
-        <a class="agg-buttons">
-            <img src="/img/crud/add.png" alt="Icono">
-            <span> AGREGAR NUEVA SECCION </span>
-        </a>
     </div>
 
-    <script src="resources/js/crud.js"></script>
+    <!-- Formulario para agregar nueva categoría -->
+    <div id="formularioAgregarCategoria" style="display: none;">
+        <h3>Agregar Nueva Categoría</h3>
+        <form id="formAgregarCategoria">
+            <label for="nombreCategoria">Nombre de la Categoría:</label>
+            <input type="text" id="nombreCategoria" name="nombre" required><br><br>
+
+            <button type="submit">Agregar Categoría</button>
+        </form>
+    </div>
+</body>
+<script src="resources/js/crud.js"></script>
 </body>
 
 </html>

@@ -135,7 +135,6 @@ app.get('/logout', (req, res)=>{
     })
 })
 
-
 app.get('/productPage', (req, res) => {
     // Consultar productos y sus categorías desde la base de datos
     const query = `
@@ -302,6 +301,22 @@ app.delete('/eliminar/:id', (req, res) => {
       res.render('error', { error: err });
     } else {
       res.sendStatus(200);
+    }
+  });
+});
+
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.post('/agregar_categoria', (req, res) => {
+  const { nombre } = req.body;
+  // Lógica para agregar la nueva categoría a la base de datos
+  connection.query('INSERT INTO categorias (nombre) VALUES (?)', [nombre], (err, result) => {
+    if (err) {
+      console.error('Error al agregar la categoría:', err);
+      res.status(500).send('Error al agregar la categoría');
+    } else {
+      console.log('Categoría agregada correctamente');
+      res.status(200).send('Categoría agregada correctamente');
     }
   });
 });
