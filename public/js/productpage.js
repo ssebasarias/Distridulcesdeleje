@@ -14,7 +14,7 @@ function cargar(item, nombre, descripcion, precio) {
   
     // Calcula la posición del elemento seleccionado
     let rect = item.getBoundingClientRect();
-    let top = rect.top + window.scrollY;
+    let top = (rect.top - 180) + window.scrollY;
   
     // Establece la posición de "seleccion" al lado del elemento seleccionado
     seleccion.style.top = top + "px";

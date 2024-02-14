@@ -119,3 +119,7 @@ document.getElementById('formAgregarCategoria').addEventListener('submit', funct
   // Enviar los datos del formulario como JSON
   xhr.send(JSON.stringify({ nombre: nombreCategoria }));
 });
+
+function cerrarVentana() {
+  document.getElementById('formularioAgregarCategoria').style.display = 'none';
+}
