@@ -137,6 +137,30 @@ app.get('/logout', (req, res)=>{
     })
 })
 
+app.get('/home', (req, res) => {
+  // Consultar productos y sus categorías desde la base de datos
+  const query = `
+      SELECT productos.*, categorias.nombre AS categoria_nombre
+      FROM productos
+      JOIN categorias ON productos.categoria_id = categorias.id
+  `;
+  connection.query(query, (error, results) => {
+      if (error) throw error;
+      // Organizar los productos por categoría
+      const productosPorCategoria = {};
+      results.forEach(producto => {
+          if (!productosPorCategoria[producto.categoria_nombre]) {
+              productosPorCategoria[producto.categoria_nombre] = [];
+          }
+          productosPorCategoria[producto.categoria_nombre].push(producto);
+      });
+      // Renderizar la vista 'index' y pasar los datos de los productos por categoría
+      res.render('home', { productosPorCategoria });
+  });
+});
+
+// ================================ Product Page
+
 app.get('/productPage', (req, res) => {
     // Consultar productos y sus categorías desde la base de datos
     const query = `

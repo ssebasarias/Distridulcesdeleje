@@ -68,16 +68,16 @@
     <nav class="navbar">
       <ul class="options-navbar">
         <li>
-          <a href="/" target="pages">Inicio</a>
+          <a href="/home">Inicio</a>
         </li>
         <li>
-          <a href="productPage" target="pages">Productos</a>
+          <a href="/productPage">Productos</a>
         </li>
         <li>
-          <a href="" target="pages">¿Quienes somos?</a>
+          <a href="#title-Distridulces">¿Quienes somos?</a>
         </li>
         <li>
-          <a href="/" target="pages">Contactanos</a>
+          <a href="#contacto" >Contactanos</a>
         </li>
       </ul>
       <div class="backgrount-search">
@@ -166,7 +166,7 @@
 
     <div class="slider-mobile">
       <div class="fila">
-        <div class="item" onclick="cargar(this)">
+        <div class="item">
           <div class="contenedor-foto">
             <img src="img/img-card1.png" alt="">
           </div>
@@ -174,9 +174,9 @@
             <p class="descripcion">Barrilete</p>
             <span class="precio">$ 5.300</span>
           </div>
-          <p class="detalles" id="detalles"> Dulce de colores muy rico</p>
+          <p class="detalles">Dulce de colores muy rico</p>
         </div>
-        <div class="item" onclick="cargar(this)">
+        <div class="item">
           <div class="contenedor-foto">
             <img src="img/img-card1.png" alt="">
           </div>
@@ -184,9 +184,9 @@
             <p class="descripcion">Barrilete</p>
             <span class="precio">$ 5.300</span>
           </div>
-          <p class="detalles" id="detalles"> Dulce de colores muy rico</p>
+          <p class="detalles">Dulce de colores muy rico</p>
         </div>
-        <div class="item" onclick="cargar(this)">
+        <div class="item">
           <div class="contenedor-foto">
             <img src="img/img-card1.png" alt="">
           </div>
@@ -194,9 +194,9 @@
             <p class="descripcion">Barrilete</p>
             <span class="precio">$ 5.300</span>
           </div>
-          <p class="detalles" id="detalles"> Dulce de colores muy rico</p>
+          <p class="detalles">Dulce de colores muy rico</p>
         </div>
-        <div class="item" onclick="cargar(this)">
+        <div class="item">
           <div class="contenedor-foto">
             <img src="img/img-card1.png" alt="">
           </div>
@@ -204,9 +204,9 @@
             <p class="descripcion">Barrilete</p>
             <span class="precio">$ 5.300</span>
           </div>
-          <p class="detalles" id="detalles"> Dulce de colores muy rico</p>
+          <p class="detalles">Dulce de colores muy rico</p>
         </div>
-        <div class="item" onclick="cargar(this)">
+        <div class="item">
           <div class="contenedor-foto">
             <img src="img/img-card1.png" alt="">
           </div>
@@ -214,14 +214,19 @@
             <p class="descripcion">Barrilete</p>
             <span class="precio">$ 5.300</span>
           </div>
-          <p class="detalles" id="detalles"> Dulce de colores muy rico</p>
+          <p class="detalles">Dulce de colores muy rico</p>
         </div>
+        <!-- Agrega más elementos de slider aquí si es necesario -->
       </div>
+      <button class="prev-btn">Anterior</button>
+      <button class="next-btn">Siguiente</button>
+    </div>
 
       <a href="productPage" class="btn-mas-productos">Ver más productos</a>
     </div>
   </section>
-  <section class="title-Distridulces">
+
+  <section class="title-Distridulces" id="title-Distridulces">
     DISTRIDULCES
   </section>
 
@@ -334,6 +339,11 @@
     </form>
   </section>
 
+  <br>
+  <br>
+  <br>
+  <br>
+
   <footer>
     <div class="footer">
       <div class="social-icons">
@@ -357,4 +367,32 @@
   </footer>
 </body>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const slider = document.querySelector('.slider-mobile');
+    const fila = document.querySelector('.fila');
+    const items = document.querySelectorAll('.item');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+  
+    let currentPosition = 0;
+    const itemWidth = items[0].offsetWidth;
+  
+    nextBtn.addEventListener('click', () => {
+      if (currentPosition > -(itemWidth * (items.length - 1))) {
+        currentPosition -= itemWidth;
+        fila.style.transform = `translateX(${currentPosition}px)`;
+      }
+    });
+  
+    prevBtn.addEventListener('click', () => {
+      if (currentPosition < 0) {
+        currentPosition += itemWidth;
+        fila.style.transform = `translateX(${currentPosition}px)`;
+      }
+    });
+  });
+  
+
+</script>
 </html>

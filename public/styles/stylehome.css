@@ -652,21 +652,6 @@ section {
 
 }
 
-.productos {
-  color: #001f3f;
-  text-align: left;
-  font-family: "MergeOne-Regular", sans-serif;
-  font-size: 24px;
-  line-height: 130%;
-  font-weight: 400;
-  position: relative;
-  width: 741px;
-  height: 96px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-
 .title-productos {
   text-align: left;
   font-family: "MergeOne-Regular", sans-serif;
@@ -676,15 +661,24 @@ section {
   font-weight: 800;
   color: #001f3f;
 }
+.slider-mobile {
+  overflow: hidden;
+}
 
 .fila {
   width: 100%;
   display: flex;
   justify-content: space-between;
   margin-bottom: 40px;
+
+  display: flex;
+  transition: transform 0.5s ease;
 }
 
 .fila .item {
+  flex: 0 0 auto;
+  margin-right: 10px;
+
   max-width: 210px;
   padding: 10px;
   width: 189px;
@@ -734,6 +728,39 @@ section {
 .fila .item .detalles {
   visibility: hidden;
 }
+
+.slider-mobile {
+  overflow: hidden;
+  position: relative;
+}
+
+.fila {
+  display: flex;
+}
+
+.item {
+  flex: 0 0 auto;
+  margin-right: 10px;
+}
+
+.prev-btn, .next-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+
 
 .btn-mas-productos {
   display: inline-block;

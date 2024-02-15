@@ -3,6 +3,7 @@ body {
     width: 100%;
     height: auto;
     position: relative;
+    overflow-x: hidden;
 }
 /* ------------------------------------------ */
 .modal {
@@ -27,6 +28,7 @@ section {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 70px;
   }
   
   .header-mobile {
