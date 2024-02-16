@@ -6,71 +6,137 @@
   <title>Tienda de Abarrotes</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #f7f7f7;
+      background: linear-gradient(-45deg, #08bb67, #08bb67, #08786d, #2874A6, #2874A6);
+      animation: animate 8s ease infinite;
+      background-size: 400% 400%;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       margin: 0;
       padding: 0;
+      background-color: #f8f8f8;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
-    .container {
+
+    @keyframes animate {
+      0% {
+        background-position: 0 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0 50%;
+      }
+    }
+
+    .pantalla-inicio {
       text-align: center;
-      padding: 50px;
+      padding: 40px;
     }
-    h1 {
-      color: #f39c12;
+
+    .logo {
+      max-width: 100%;
+      /* Ajustar a la anchura máxima del contenedor */
+      height: auto;
+      /* Para mantener la proporción original */
+      margin-bottom: 20px;
     }
-    .btn-container {
-      margin-top: 50px;
-    }
-    .btn {
-      background-color: #3498db;
+
+    .titulo-bienvenida {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 10px;
       color: #fff;
+    }
+
+    .texto-bienvenida {
+      font-size: 18px;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    .botones {
+      display: flex;
+      justify-content: center;
+    }
+
+    .boton {
+      display: inline-block;
+      margin: 0 10px;
+      padding: 15px 30px;
+      font-size: 18px;
+      text-align: center;
       text-decoration: none;
-      padding: 10px 20px;
+      cursor: pointer;
       border-radius: 5px;
-      margin: 10px;
+      background-color: #fff;
+      color: #005499;
+      transition: background-color 0.3s, color 0.3s;
     }
-    .btn-start, .btn-logout {
-      position: absolute;
-      top: 20px;
+
+    .boton:hover {
+      background-color: #005499;
+      color: #fff;
     }
-    .btn-start {
-      left: 50%;
-      transform: translateX(-50%);
+
+    .txt-iniciar-sesion:hover {
+      color: #fff;
     }
-    .btn-logout {
-      right: 20px;
+
+    .btn-img-user {
+      max-width: 50px;
+      /* Ajustar el tamaño de la imagen */
+      height: auto;
+      /* Mantener la proporción original */
+      vertical-align: middle;
+      margin-left: 5px;
+      margin-bottom: 20px;
     }
-    .a-logout {
-      text-decoration: none;
-      color: #001f3f;
+
+    .btn-img {
+      max-width: 70px;
+      /* Ajustar el tamaño de la imagen */
+      height: auto;
+      /* Mantener la proporción original */
+      vertical-align: middle;
+      margin-left: 5px;
+      margin-bottom: 20px;
     }
-    .a-logout:hover strong {
-      text-decoration: underline;
-    }
-    .txt-cerrar-sesion {
-      font-size: 14px;
-    }
-    .user-img {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      margin-top: 10px;
+
+    @media (max-width:720px) {
+      body {
+        overflow-x: hidden;
+      }
     }
   </style>
 </head>
-<body>
-  <div class="container">
-    <h1>Bienvenido a Distridulces del eje</h1>
-    <div class="btn-container">
-      <a href="/homecrud" class="btn btn-start">Inicio</a>
-      <a href="/crud" class="btn">Productos</a>
+  <body>
+    <div class="pantalla-inicio">
+      <img src="resources/img/header/logo.png" alt="Logo" class="logo">
+      <div class="titulo-bienvenida">Hola! Bienvenido a Distridulces del eje</div>
+      <div class="texto-bienvenida">Espero te encuentres bien <%= name %>!</div>
+      <div class="texto-bienvenida">¿Que haremos hoy <%= name %>?</div>
+      <div class="botones">
+        <a href="/homecrud" class="boton">
+          <img class="btn-img" src="resources/img/home/inicio.png" alt="Ir a inicio">
+          <div class="txt-home">Administrar inicio</div>
+        </a>
+        <a href="/crud" class="boton">
+          <img class="btn-img" src="resources/img/home/productos.png" alt="Ir a productos">
+          <div class="txt-productos">Administrar productos</div>
+        </a>
+        <% if (login) { %>
+          <a href="logout" class="boton">
+            <img class="btn-img-user" src="resources/img/header/user.png" alt="Usuario" />
+            <div class="txt-iniciar-sesion"><strong>Cerrar sesión</strong></div>
+          </a>
+        <% } %>
+      </div>
     </div>
-    <% if (login) { %>
-      <a href="logout" class="a-logout btn-logout">
-        <div class="txt-cerrar-sesion">Hola! <%= name %> <br><br> <strong>Cerrar sesión</strong></div>
-        <img class="user-img" src="resources/img/header/user.png" alt="Usuario" />
-      </a>
-    <% } %>
-  </div>
-</body>
+  </body>
 </html>
