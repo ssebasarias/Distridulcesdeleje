@@ -24,8 +24,11 @@ const bcryptjs = require('bcryptjs');
 
 // Configuración de Multer para la carga de archivos
 const storage = multer.memoryStorage(); // Almacenar los datos binarios de la imagen en la memoria
-const upload = multer({ storage: storage });
+const uploadMemory  = multer({ storage: storage });
 
+const upload = multer({
+  storage: storage
+}).single('imagen');
 
 //var de session
 const session = require('express-session');
@@ -203,7 +206,7 @@ app.get('/homecrud', (req, res) => {
 });
 
 // Ruta para manejar la carga de imágenes
-app.post('/upload', upload.single('fileToUpload'), (req, res) => {
+app.post('/upload', uploadMemory.single('fileToUpload'), (req, res) => {
   const image = req.file.buffer; // Datos binarios de la imagen
   // Guardar los datos binarios de la imagen en la base de datos
   connection.query('INSERT INTO banners (image) VALUES (?)', [image], (error, results, fields) => {
@@ -282,8 +285,6 @@ app.get('/crud', (req, res) => {
 // Middleware para el análisis del cuerpo de la solicitud
 app.use(bodyParser.urlencoded({ extended: true }));
 
-
-// Ruta para la página de formulario de agregar producto
 app.get('/agregar', (req, res) => {
   // Consulta a la base de datos para obtener todas las categorías
   connection.query('SELECT id, nombre FROM categorias', (err, categorias) => {
