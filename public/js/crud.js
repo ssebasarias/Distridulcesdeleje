@@ -29,12 +29,6 @@ function cargar(item, nombre, descripcion, precio) {
   precioSeleccionado.textContent = "$ " + precio;
 }
 
-// Función para cerrar la ventana emergente
-function cerrar() {
-  seleccion.style.opacity = "0";
-  seleccionarProducto();
-}
-
 // Función para deseleccionar todos los productos
 function seleccionarProducto() {
   var items = document.getElementsByClassName("item");

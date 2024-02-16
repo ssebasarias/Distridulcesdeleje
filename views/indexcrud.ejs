@@ -1,24 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DistridulcesdelEje-IndexCrud</title>
-    <link rel="stylesheet" href="resources/styles/stylehome.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda de Abarrotes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      text-align: center;
+      padding: 50px;
+    }
+    h1 {
+      color: #f39c12;
+    }
+    .btn-container {
+      margin-top: 50px;
+    }
+    .btn {
+      background-color: #3498db;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      margin: 10px;
+    }
+    .btn-start, .btn-logout {
+      position: absolute;
+      top: 20px;
+    }
+    .btn-start {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .btn-logout {
+      right: 20px;
+    }
+    .a-logout {
+      text-decoration: none;
+      color: #001f3f;
+    }
+    .a-logout:hover strong {
+      text-decoration: underline;
+    }
+    .txt-cerrar-sesion {
+      font-size: 14px;
+    }
+    .user-img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-top: 10px;
+    }
+  </style>
 </head>
 <body>
-
-    <div class="container">
-        <h1>Bienvenido a Distridulces del eje</h1>
-        <a href="/homecrud" class="btn">Home</a>
-        <a href="/crud" class="btn">Productos</a>
-        <% if (login) { %>
-            <a href="logout" class="a-logout">
-                <div class="txt-cerrar-sesion">Hola! <%= name %> <br><br> <strong style="color:#001f3f;">Cerrar sesion</strong></div>
-                <img class="user-img" src="resources/img/header/user.png" />
-            </a>
-        <% } %>
-      </div>
-  
+  <div class="container">
+    <h1>Bienvenido a Distridulces del eje</h1>
+    <div class="btn-container">
+      <a href="/homecrud" class="btn btn-start">Inicio</a>
+      <a href="/crud" class="btn">Productos</a>
+    </div>
+    <% if (login) { %>
+      <a href="logout" class="a-logout btn-logout">
+        <div class="txt-cerrar-sesion">Hola! <%= name %> <br><br> <strong>Cerrar sesión</strong></div>
+        <img class="user-img" src="resources/img/header/user.png" alt="Usuario" />
+      </a>
+    <% } %>
+  </div>
 </body>
 </html>
