@@ -22,6 +22,11 @@ app.set('view engine', 'ejs');
 //invocacion a bcryptjs
 const bcryptjs = require('bcryptjs');
 
+// Configuración de Multer para la carga de archivos
+const storage = multer.memoryStorage(); // Almacenar los datos binarios de la imagen en la memoria
+const upload = multer({ storage: storage });
+
+
 //var de session
 const session = require('express-session');
 app.use(session({
@@ -127,10 +132,7 @@ app.get('/', (req, res)=>{
     }
 })
 
-
-
 //Logout
-
 app.get('/logout', (req, res)=>{
     req.session.destroy(()=>{
         res.redirect('/')
@@ -139,25 +141,95 @@ app.get('/logout', (req, res)=>{
 
 app.get('/home', (req, res) => {
   // Consultar productos y sus categorías desde la base de datos
-  const query = `
+  const queryProductos = `
       SELECT productos.*, categorias.nombre AS categoria_nombre
       FROM productos
       JOIN categorias ON productos.categoria_id = categorias.id
   `;
-  connection.query(query, (error, results) => {
-      if (error) throw error;
-      // Organizar los productos por categoría
-      const productosPorCategoria = {};
-      results.forEach(producto => {
-          if (!productosPorCategoria[producto.categoria_nombre]) {
-              productosPorCategoria[producto.categoria_nombre] = [];
-          }
-          productosPorCategoria[producto.categoria_nombre].push(producto);
+  connection.query(queryProductos, (errorProductos, resultsProductos) => {
+      if (errorProductos) {
+          console.error('Error al obtener los productos de la base de datos:', errorProductos);
+          return res.status(500).send('Error interno del servidor');
+      }
+      // Consultar los banners desde la base de datos
+      connection.query('SELECT * FROM banners', (errorBanners, banners) => {
+        if (errorBanners) {
+          console.error('Error al obtener los banners de la base de datos:', errorBanners);
+          return res.status(500).send('Error interno del servidor');
+        }
+        // Organizar los productos por categoría
+        const productosPorCategoria = {};
+        resultsProductos.forEach(producto => {
+            if (!productosPorCategoria[producto.categoria_nombre]) {
+                productosPorCategoria[producto.categoria_nombre] = [];
+            }
+            productosPorCategoria[producto.categoria_nombre].push(producto);
+        });
+        // Renderizar la vista 'home' y pasar los datos de los productos y banners
+        res.render('home', { productosPorCategoria, banners });
       });
-      // Renderizar la vista 'index' y pasar los datos de los productos por categoría
-      res.render('home', { productosPorCategoria });
   });
 });
+app.get('/homecrud', (req, res) => {
+  // Consultar productos y sus categorías desde la base de datos
+  const queryProductos = `
+      SELECT productos.*, categorias.nombre AS categoria_nombre
+      FROM productos
+      JOIN categorias ON productos.categoria_id = categorias.id
+  `;
+  connection.query(queryProductos, (errorProductos, resultsProductos) => {
+      if (errorProductos) {
+          console.error('Error al obtener los productos de la base de datos:', errorProductos);
+          return res.status(500).send('Error interno del servidor');
+      }
+      // Consultar los banners desde la base de datos
+      connection.query('SELECT * FROM banners', (errorBanners, banners) => {
+        if (errorBanners) {
+          console.error('Error al obtener los banners de la base de datos:', errorBanners);
+          return res.status(500).send('Error interno del servidor');
+        }
+        // Organizar los productos por categoría
+        const productosPorCategoria = {};
+        resultsProductos.forEach(producto => {
+            if (!productosPorCategoria[producto.categoria_nombre]) {
+                productosPorCategoria[producto.categoria_nombre] = [];
+            }
+            productosPorCategoria[producto.categoria_nombre].push(producto);
+        });
+        // Renderizar la vista 'home' y pasar los datos de los productos y banners
+        res.render('homecrud', { productosPorCategoria, banners });
+      });
+  });
+});
+
+// Ruta para manejar la carga de imágenes
+app.post('/upload', upload.single('fileToUpload'), (req, res) => {
+  const image = req.file.buffer; // Datos binarios de la imagen
+  // Guardar los datos binarios de la imagen en la base de datos
+  connection.query('INSERT INTO banners (image) VALUES (?)', [image], (error, results, fields) => {
+    if (error) {
+      console.error('Error al insertar la imagen en la base de datos:', error);
+      return res.status(500).send('Error interno del servidor');
+    }
+    console.log('Imagen subida exitosamente.');
+    res.redirect('homecrud'); // Redirigir al usuario de vuelta a la página principal después de cargar la imagen
+  });
+});
+
+// Ruta para manejar la eliminación de imágenes
+app.post('/delete/:id', (req, res) => {
+  const imageId = req.params.id; // Obtener el ID de la imagen a eliminar de los parámetros de la ruta
+  connection.query('DELETE FROM banners WHERE id = ?', [imageId], (error, results, fields) => {
+    if (error) {
+      console.error('Error al eliminar la imagen de la base de datos:', error);
+      return res.status(500).send('Error interno del servidor');
+    }
+    console.log('Imagen eliminada exitosamente.');
+    res.redirect('homecrud'); // Redirigir al usuario de vuelta a la página principal después de eliminar la imagen
+  });
+});
+
+
 
 // ================================ Product Page
 
@@ -210,12 +282,6 @@ app.get('/crud', (req, res) => {
 // Middleware para el análisis del cuerpo de la solicitud
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Middleware para la carga de archivos
-const storage = multer.memoryStorage();
-
-const upload = multer({
-  storage: storage
-}).single('imagen');
 
 // Ruta para la página de formulario de agregar producto
 app.get('/agregar', (req, res) => {

@@ -47,22 +47,27 @@
             </div>
           </div>
         </div>
-          <% if (login) { %>
-            <a href="logout" class="a-logout">
-                <div class="txt-cerrar-sesion">Hola! <%= name %> <br><br> <strong style="color:#001f3f;">Cerrar sesion</strong></div>
-                <img class="user-img" src="resources/img/header/user.png" />
-            </a>
-        <% } else { %>
-            <h1><strong><%= name %></strong></h1>
+
+        <% if (login) { %>
+          <a href="logout" class="a-logout">
+            <div class="txt-cerrar-sesion">Hola! <%= name %> <br><br> <strong style="color:#001f3f;">Cerrar
+                  sesion</strong></div>
+            <img class="user-img" src="resources/img/header/user.png" />
+          </a>
+          <% } else { %>
+            <h1><strong>
+                <%= name %>
+              </strong></h1>
             <a href="login" class="a-logout">
-                <div class="txt-iniciar-sesion"><strong style="color:#001f3f;">Iniciar Sesion</strong></div>
-                <img class="user-img" src="resources/img/header/user.png" />
+              <div class="txt-iniciar-sesion"><strong style="color:#001f3f;">Iniciar Sesion</strong></div>
+              <img class="user-img" src="resources/img/header/user.png" />
             </a>
-        <% } %>
+            <% } %>
+
       </div>
     </div>
 
-    
+
 
     <!-- Navbar -->
     <nav class="navbar">
@@ -74,10 +79,10 @@
           <a href="/productPage">Productos</a>
         </li>
         <li>
-          <a href="#title-Distridulces">¿Quienes somos?</a>
+          <a href="/home#title-Distridulces">¿Quienes somos?</a>
         </li>
         <li>
-          <a href="#contacto" >Contactanos</a>
+          <a href="/home#contacto">Contactanos</a>
         </li>
       </ul>
       <div class="backgrount-search">
@@ -101,7 +106,7 @@
       <a href="productPage" target="pages">- Productos</a>
       <a href="/">- Contactanos</a>
       <% if (login) { %>
-        <h1>  Hola! <strong>
+        <h1> Hola! <strong>
             <%= name %>
           </strong></h1>
         <a href="logout" class="a-logout-mobile">Logout</a>
@@ -114,7 +119,6 @@
             <label for="check" class="esconder-menu">
               &#215
             </label>
-
             <div class="info-box-mobile">
               <div class="info-adress">
                 <div class="frame-61">
@@ -147,202 +151,173 @@
     </nav>
   </div>
 
-  <!-- Sección Banner -->
-  <section id="inicio">
-    <section class="section-banner" id="section-banner">
-      <div class="slide">
-        <ul>
-          <li><img class="img-banner-center" src="resources/img/home/img_banner.jpg" /></li>
-          <li><img class="img-banner-rh" src="resources/img/home/img_banner.jpg" /></li>
-          <li><img class="img-banner-lf" src="resources/img/home/img_banner.jpg" /></li>
-        </ul>
+  <body>
+
+    <!-- Sección Banner -->
+    
+
+    <div class="button-container">
+      <button id="addImageButton" onclick="showUploadForm()">Agregar Imagen</button>
+      <button id="deleteImageButton" onclick="deleteImage()">Eliminar Imagen</button>
+
+    </div>
+
+    <form id="uploadForm" action="/upload" method="POST" enctype="multipart/form-data" style="display: none;">
+      <input type="file" id="fileInput" name="fileToUpload">
+      <input type="submit" value="Subir imagen">
+    </form>
+
+    <!-- Sección Productos -->
+    <section class="productos-section" id="productos">
+      <h2 class="title-productos">PRODUCTOS DE ALTA CALIDAD</h2>
+
+      <div class="slider-mobile">
+        <div class="fila">
+          <% Object.entries(productosPorCategoria).forEach(([categoria, productos])=> { %>
+            <% productos.forEach(producto=> { %>
+              <div class="item">
+                <div class="contenedor-foto">
+                  <img src="data:image/jpeg;base64,<%= Buffer.from(producto.imagen).toString('base64') %>"
+                    alt="<%= producto.nombre %>">
+                </div>
+                <div class="contenedor-texto">
+                  <p class="nombre">
+                    <%= producto.nombre %>
+                  </p>
+                  <p class="descripcion">
+                    <%= producto.descripcion %>
+                  </p>
+                  <span class="precio">
+                    $<%= producto.precio %>
+                  </span>
+                </div>
+              </div>
+              <% }); %>
+
+                <% }); %>
+        </div>
+        <button class="prev-btn">&larr;</button>
+        <button class="next-btn">&rarr;</button>
       </div>
     </section>
-  </section>
 
-  <!-- Sección Productos -->
-  <section class="productos-section" id="productos">
-    <h2 class="title-productos">PRODUCTOS DE ALTA CALIDAD</h2>
+    </section>
+    <section class="title-Distridulces" id="title-Distridulces">
+      DISTRIDULCES
+    </section>
 
-    <div class="slider-mobile">
-      <div class="fila">
-        <div class="item">
-          <div class="contenedor-foto">
-            <img src="img/img-card1.png" alt="">
-          </div>
-          <div class="contenedor-texto">
-            <p class="descripcion">Barrilete</p>
-            <span class="precio">$ 5.300</span>
-          </div>
-          <p class="detalles">Dulce de colores muy rico</p>
+    <!-- Sección mision -->
+    <section class="mision" id="section-aboutus">
+
+      <div class="txt-content-mision">
+        <img class="imgMision" src="resources/img/home/img_mision.png" />
+        <div class="content-txt-mision">
+          <h2 class="txt-title-mision">MISION</h2>
+          <p>
+            Llevar hasta los hogares colombianos los productos de nuestros aliados a través de nuestros
+            clientes, creando
+            oportunidad
+            de negocio para todos. Apoyados en una estructura de organización simple, recurso humano empoderado
+            y
+            tecnología de punta.
+            <br>
+            Desarrollamos un trabajo planeado y direccionado hacia el cumplimiento de indicadores para
+            satisfacción de
+            clientes y proveedores,
+            logrando así nuestra consolidación en el futuro.
+          </p>
         </div>
-        <div class="item">
-          <div class="contenedor-foto">
-            <img src="img/img-card1.png" alt="">
-          </div>
-          <div class="contenedor-texto">
-            <p class="descripcion">Barrilete</p>
-            <span class="precio">$ 5.300</span>
-          </div>
-          <p class="detalles">Dulce de colores muy rico</p>
-        </div>
-        <div class="item">
-          <div class="contenedor-foto">
-            <img src="img/img-card1.png" alt="">
-          </div>
-          <div class="contenedor-texto">
-            <p class="descripcion">Barrilete</p>
-            <span class="precio">$ 5.300</span>
-          </div>
-          <p class="detalles">Dulce de colores muy rico</p>
-        </div>
-        <div class="item">
-          <div class="contenedor-foto">
-            <img src="img/img-card1.png" alt="">
-          </div>
-          <div class="contenedor-texto">
-            <p class="descripcion">Barrilete</p>
-            <span class="precio">$ 5.300</span>
-          </div>
-          <p class="detalles">Dulce de colores muy rico</p>
-        </div>
-        <div class="item">
-          <div class="contenedor-foto">
-            <img src="img/img-card1.png" alt="">
-          </div>
-          <div class="contenedor-texto">
-            <p class="descripcion">Barrilete</p>
-            <span class="precio">$ 5.300</span>
-          </div>
-          <p class="detalles">Dulce de colores muy rico</p>
-        </div>
-        <!-- Agrega más elementos de slider aquí si es necesario -->
       </div>
-      <button class="prev-btn">Anterior</button>
-      <button class="next-btn">Siguiente</button>
-    </div>
 
-      <a href="productPage" class="btn-mas-productos">Ver más productos</a>
-    </div>
-  </section>
+      <div class="txt-content-vision">
+        <img class="img-vision" src="resources/img/home/img_Vision.png" />
+        <div class="content-txt-vision">
+          <h2 class="txt-title-vision">VISION</h2>
+          <p>
+            Ser en el año 2028 la empresa preferida
+            por los clientes del canal tradicional en el eje cafetero para la compra
+            de productos de consumo masivo y
+            consolidarnos como lideres en ventas y distribución.
+            ola
+          </p>
+        </div>
 
-  <section class="title-Distridulces" id="title-Distridulces">
-    DISTRIDULCES
-  </section>
 
-  <!-- Sección mision -->
-  <section class="mision" id="section-aboutus">
-
-    <div class="txt-content-mision">
-      <img class="imgMision" src="resources/img/home/img_mision.png" />
-      <div class="content-txt-mision">
-        <h2 class="txt-title-mision">MISION</h2>
-        <p>
-          Llevar hasta los hogares colombianos los productos de nuestros aliados a través de nuestros clientes, creando
-          oportunidad
-          de negocio para todos. Apoyados en una estructura de organización simple, recurso humano empoderado y
-          tecnología de punta.
-          <br>
-          Desarrollamos un trabajo planeado y direccionado hacia el cumplimiento de indicadores para satisfacción de
-          clientes y proveedores,
-          logrando así nuestra consolidación en el futuro.
-        </p>
       </div>
-    </div>
+    </section>
 
-    <div class="txt-content-vision">
-      <img class="img-vision" src="resources/img/home/img_Vision.png" />
-      <div class="content-txt-vision">
-        <h2 class="txt-title-vision">VISION</h2>
+    <!-- Sección valores -->
+    <section class="valores">
+
+      <div class="txt-content-valores">
+        <h2 class="txt-title-valores">VALORES</h2>
         <p>
           Ser en el año 2028 la empresa preferida
           por los clientes del canal tradicional en el eje cafetero para la compra
           de productos de consumo masivo y
           consolidarnos como lideres en ventas y distribución.
-          ola
+        </p>
+      </div>
+      <img class="img-valores" src="resources/img/home/img_valores.jpg" />
+
+    </section>
+
+    <!-- Sección lineacorporativa -->
+    <section class="lineacorporativa">
+
+      <img class="img-lineacorporativa" src="resources/img/home/img_lineacorporativa.jpg" />
+      <div class="txt-content-lineacorporativa">
+        <h2 class="txt-title-lineacorporativa">LINEA CORPORATIVA</h2>
+        <p>
+          Somos un equipo de personas soñadoras y apasionadas que ponemos amor a todo lo que hacemos.
+          Así, logramos materializar cada anhelo y proyecto en nuestras vidas. si te gusta soñar y hacer
+          esos sueños realidad ven y haz parte de la familia Distridulces.
         </p>
       </div>
 
+    </section>
 
-    </div>
-  </section>
+    <!-- Sección Contáctanos -->
+    <section class="contacto" id="contacto">
 
-  <!-- Sección valores -->
-  <section class="valores">
-
-    <div class="txt-content-valores">
-      <h2 class="txt-title-valores">VALORES</h2>
+      <h2>Contactanos</h2>
       <p>
-        Ser en el año 2028 la empresa preferida
-        por los clientes del canal tradicional en el eje cafetero para la compra
-        de productos de consumo masivo y
-        consolidarnos como lideres en ventas y distribución.
+        No dude en comunicarse con nosotros mediante el formulario de contacto a
+        continuación. Estamos aquí para responder cualquier pregunta que pueda tener y
+        brindarle el mejor servicio posible.
       </p>
-    </div>
-    <img class="img-valores" src="resources/img/home/img_valores.jpg" />
+      <!-- Formulario de contacto -->
 
-  </section>
+      <form action="https://formsubmit.co/sebgameover5@gmail.com" method="POST">
 
-  <!-- Sección lineacorporativa -->
-  <section class="lineacorporativa">
+        <table>
+          <tr>
+            <td>
+              <input class="lbl-nombre" type="text" name="name" id="name" placeholder="NOMBRE">
+            </td>
+            <td>
+              <input class="lbl-telefono" type="tel" name="phone" id="phone" placeholder="TELEFONO">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <input class="lbl-correo" type="email" name="email" id="email" placeholder="CORREO">
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <textarea class="lbl-mensaje" name="message" id="message" placeholder="MENSAJE"></textarea>
+            </td>
+          </tr>
+        </table>
 
-    <img class="img-lineacorporativa" src="resources/img/home/img_lineacorporativa.jpg" />
-    <div class="txt-content-lineacorporativa">
-      <h2 class="txt-title-lineacorporativa">LINEA CORPORATIVA</h2>
-      <p>
-        Somos un equipo de personas soñadoras y apasionadas que ponemos amor a todo lo que hacemos.
-        Así, logramos materializar cada anhelo y proyecto en nuestras vidas. si te gusta soñar y hacer
-        esos sueños realidad ven y haz parte de la familia Distridulces.
-      </p>
-    </div>
+        <input class="enviar-contact" type="submit" value="Enviar">
 
-  </section>
-
-  <!-- Sección Contáctanos -->
-  <section class="contacto" id="contacto">
-
-    <h2>Contactanos</h2>
-    <p>
-      No dude en comunicarse con nosotros mediante el formulario de contacto a
-      continuación. Estamos aquí para responder cualquier pregunta que pueda tener y
-      brindarle el mejor servicio posible.
-    </p>
-    <!-- Formulario de contacto -->
-
-    <form action="https://formsubmit.co/sebgameover5@gmail.com" method="POST">
-
-      <table>
-        <tr>
-          <td>
-            <input class="lbl-nombre" type="text" name="name" id="name" placeholder="NOMBRE">
-          </td>
-          <td>
-            <input class="lbl-telefono" type="tel" name="phone" id="phone" placeholder="TELEFONO">
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2">
-            <input class="lbl-correo" type="email" name="email" id="email" placeholder="CORREO">
-          </td>
-        </tr>
-        <tr>
-          <td colspan="2">
-            <textarea class="lbl-mensaje" name="message" id="message" placeholder="MENSAJE"></textarea>
-          </td>
-        </tr>
-      </table>
-
-      <input class="enviar-contact" type="submit" value="Enviar">
-
-      <input type="hidden" name="_next" value="http://127.0.0.1:5501/">
-      <input type="hidden" name="_captcha" value="false">
-    </form>
-  </section>
-
-  <br>
-  <br>
-  <br>
-  <br>
+        <input type="hidden" name="_next" value="http://127.0.0.1:5501/">
+        <input type="hidden" name="_captcha" value="false">
+      </form>
+    </section>
+  </body>
 
   <footer>
     <div class="footer">
@@ -365,34 +340,117 @@
       <img class="img-logo" src="resources/img/footer/img-logo0.png" />
     </div>
   </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const slider = document.querySelector('.slider-mobile');
+      const fila = document.querySelector('.fila');
+      const items = document.querySelectorAll('.item');
+      const prevBtn = document.querySelector('.prev-btn');
+      const nextBtn = document.querySelector('.next-btn');
+
+      let currentPosition = 0;
+      const itemWidth = items[0].offsetWidth;
+      const numItems = items.length;
+      const totalWidth = itemWidth * numItems;
+
+      // Definir función para mover el slider
+      function moveSlider() {
+        if (currentPosition <= -totalWidth) {
+          currentPosition = 0;
+        } else {
+          currentPosition -= itemWidth;
+        }
+        fila.style.transform = `translateX(${currentPosition}px)`;
+      }
+
+      // Establecer intervalo para el slider automático
+      const interval = setInterval(moveSlider, 3000);
+
+      // Detener el slider automático al pasar el mouse sobre el slider
+      slider.addEventListener('mouseenter', () => clearInterval(interval));
+
+      // Reanudar el slider automático al retirar el mouse del slider
+      slider.addEventListener('mouseleave', () => setInterval(moveSlider, 5000));
+
+      // Agregar eventos a los botones de navegación
+      nextBtn.addEventListener('click', () => {
+        moveSlider();
+      });
+
+      prevBtn.addEventListener('click', () => {
+        if (currentPosition >= 0) {
+          currentPosition = -totalWidth + itemWidth;
+        } else {
+          currentPosition += itemWidth;
+        }
+        fila.style.transform = `translateX(${currentPosition}px)`;
+      });
+    });
+
+
+    // Inicializar el índice del slider
+    let currentIndex = 0;
+
+    function showUploadForm() {
+      document.getElementById('uploadForm').style.display = 'block';
+    }
+
+    function deleteImage() {
+      // Obtener la imagen actualmente mostrada
+      const currentImage = document.querySelector('.slider img');
+
+      if (!currentImage) {
+        console.error('No se encontró ninguna imagen para eliminar.');
+        return; // Salir de la función si no se encuentra ninguna imagen
+      }
+
+      // Obtener la ID de la imagen del atributo 'alt'
+      const imageId = currentImage.alt;
+
+      // Construir la URL con la ID de la imagen
+      const deleteUrl = `/delete/${imageId}`;
+
+      // Crear una solicitud POST para eliminar la imagen
+      fetch(deleteUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ imageId: imageId }) // Enviar la ID de la imagen en el cuerpo de la solicitud
+      })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Error al eliminar la imagen');
+          }
+          console.log('Imagen eliminada exitosamente.');
+          // Puedes redirigir o actualizar la página aquí si es necesario
+          window.location.reload();
+        })
+        .catch(error => {
+          console.error('Error al eliminar la imagen:', error.message);
+          // Manejar el error adecuadamente, como mostrar un mensaje al usuario
+        });
+    }
+
+
+    // Función para avanzar al siguiente slide
+    function nextSlide() {
+      const slider = document.querySelector('.slider');
+      const slides = slider.querySelectorAll('img');
+      const slideWidth = slides[0].clientWidth;
+
+      currentIndex = (currentIndex + 1) % slides.length;
+      const offset = -currentIndex * slideWidth;
+
+      slider.style.transform = `translateX(${offset}px)`;
+    }
+
+    // Automáticamente avanzar al siguiente slide cada 3 segundos
+    setInterval(nextSlide, 3000);
+  </script>
+
+
 </body>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-    const slider = document.querySelector('.slider-mobile');
-    const fila = document.querySelector('.fila');
-    const items = document.querySelectorAll('.item');
-    const prevBtn = document.querySelector('.prev-btn');
-    const nextBtn = document.querySelector('.next-btn');
-  
-    let currentPosition = 0;
-    const itemWidth = items[0].offsetWidth;
-  
-    nextBtn.addEventListener('click', () => {
-      if (currentPosition > -(itemWidth * (items.length - 1))) {
-        currentPosition -= itemWidth;
-        fila.style.transform = `translateX(${currentPosition}px)`;
-      }
-    });
-  
-    prevBtn.addEventListener('click', () => {
-      if (currentPosition < 0) {
-        currentPosition += itemWidth;
-        fila.style.transform = `translateX(${currentPosition}px)`;
-      }
-    });
-  });
-  
-
-</script>
 </html>

@@ -21,6 +21,17 @@
         </section>
     </section>
 
+    <div class="button-container">
+        <button id="addImageButton" onclick="showUploadForm()">Agregar Imagen</button>
+        <button id="deleteImageButton" onclick="deleteImage()">Eliminar Imagen</button>
+    
+      </div>
+    
+      <form id="uploadForm" action="/upload" method="POST" enctype="multipart/form-data" style="display: none;">
+        <input type="file" id="fileInput" name="fileToUpload">
+        <input type="submit" value="Subir imagen">
+      </form>
+
     <!-- Sección Productos -->
     <section class="productos-section" id="productos">
         <h2 class="title-productos">PRODUCTOS DE ALTA CALIDAD</h2>
@@ -222,7 +233,48 @@
       
 
       // Inicializar el índice del slider
-    let currentIndex = 0;     
+    let currentIndex = 0;
+
+    function showUploadForm() {
+      document.getElementById('uploadForm').style.display = 'block';
+    }
+
+    function deleteImage() {
+        // Obtener la imagen actualmente mostrada
+        const currentImage = document.querySelector('.slider img');
+        
+        if (!currentImage) {
+          console.error('No se encontró ninguna imagen para eliminar.');
+          return; // Salir de la función si no se encuentra ninguna imagen
+        }
+        
+        // Obtener la ID de la imagen del atributo 'alt'
+        const imageId = currentImage.alt;
+      
+        // Construir la URL con la ID de la imagen
+        const deleteUrl = `/delete/${imageId}`;
+      
+        // Crear una solicitud POST para eliminar la imagen
+        fetch(deleteUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ imageId: imageId }) // Enviar la ID de la imagen en el cuerpo de la solicitud
+        })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Error al eliminar la imagen');
+          }
+          console.log('Imagen eliminada exitosamente.');
+          window.location.reload();
+        })
+        .catch(error => {
+          console.error('Error al eliminar la imagen:', error.message);
+          // Manejar el error adecuadamente, como mostrar un mensaje al usuario
+        });
+      }
+      
 
     // Función para avanzar al siguiente slide
     function nextSlide() {
