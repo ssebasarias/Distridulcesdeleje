@@ -4,6 +4,7 @@ body {
     height: auto;
     position: relative;
     overflow-x: hidden;
+    margin: auto;
 }
 
 /* Estilos para el modal */

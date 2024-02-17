@@ -46,6 +46,12 @@
                 </div>
               </div>
             </div>
+
+              <a href="logout" class="a-logout">
+              <div class="txt-iniciar-sesion"><strong style="color:#001f3f;">Cerrar sesion</strong></div>
+              <img class="user-img" src="resources/img/header/user.png" />
+              </a>
+
           </div>
         </div>
     
@@ -55,16 +61,16 @@
         <nav class="navbar">
           <ul class="options-navbar">
             <li>
-              <a href="/home">Inicio</a>
+              <a href="/homecrud">Inicio</a>
             </li>
             <li>
-              <a href="/productPage">Productos</a>
+              <a href="/crud">Productos</a>
             </li>
             <li>
-              <a href="/home#title-Distridulces">¿Quienes somos?</a>
+              <a href="/homecrud#title-Distridulces">¿Quienes somos?</a>
             </li>
             <li>
-              <a href="/home#contacto">Contactanos</a>
+              <a href="/homecrud#contacto">Contactanos</a>
             </li>
           </ul>
           <div class="backgrount-search">
@@ -83,10 +89,14 @@
     
         <nav class="navbar-mobile">
           <img class="logo-mobile-navbar" src="resources/img/header/img-logo-mobile.png" />
-          <a href="/">- Inicio</a>
-          <a href="/">- ¿Quienes Somos?</a>
-          <a href="productPage" target="pages">- Productos</a>
-          <a href="/">- Contactanos</a>
+          <a href="/homecrud">- Inicio</a>
+          <a href="/homecrud#title-Distridulces">- ¿Quienes Somos?</a>
+          <a href="crud" target="pages">- Productos</a>
+          <a href="/homecrud#contacto">- Contactanos</a>
+          <a href="logout">Cerrar sesion</a>
+          <label for="check" class="esconder-menu">
+            &#215
+          </label>
           
                 <div class="info-box-mobile">
                   <div class="info-adress">
@@ -173,6 +183,7 @@
                 <button class="prev-btn">&larr;</button>
                 <button class="next-btn">&rarr;</button>
         </div>
+        <a href="crud" class="btn-mas-productos">Editar productos</a>
     </section>
 
     </section>
