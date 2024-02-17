@@ -237,6 +237,22 @@ section {
     position: relative;
   }
 
+  /* ------ login ------*/
+  
+  .a-logout {
+    flex-shrink: 0;
+    width: 170px;
+    height: 73px;
+    position: static;
+    border-radius: 20px;
+    cursor: pointer;
+    border: 1px;
+    background-color: #f2f2f2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   /* -------------------------- nabvar ------------------------- */
 
 .navbar {

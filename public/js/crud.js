@@ -69,7 +69,6 @@ function eliminarProducto(id) {
       xhr.onload = function () {
         if (xhr.status === 200) {
           alert('Producto eliminado');
-          // Puedes redirigir a la página principal u otro lugar después de eliminar el producto
           window.location.href = 'crud';
         } else {
           alert('Error al eliminar el producto');
