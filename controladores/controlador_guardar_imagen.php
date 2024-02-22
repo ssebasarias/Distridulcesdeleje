@@ -1,6 +1,6 @@
 <?php
 
-include("../configuraciones/bd.php");
+include("../configuraciones/db.php");
 
 $nombre =  $_POST['nombre'];
 $imagen = addslashes(file_get_contents($_FILES['imagen']['tmp_name']));

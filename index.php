@@ -62,7 +62,7 @@
               <a href="index.php">Inicio</a>
             </li>
             <li>
-              <a href="secciones/vista_alumnos.php">Productos</a>
+              <a href="productos.php">Productos</a>
             </li>
             <li>
               <a href="secciones/vista_cursos.php">¿Quienes somos?</a>
@@ -133,7 +133,7 @@
               
             <?php
                 
-                include("configuraciones/bd.php");
+                include("configuraciones/db.php");
 
                 $query = "SELECT * FROM imgsbanner";
                 $resultado= $conexion->query($query);
@@ -151,34 +151,31 @@
     <section class="productos-section" id="productos">
         <h2 class="title-productos">PRODUCTOS DE ALTA CALIDAD</h2>
 
-        <div class="slider-mobile">
-            <div class="fila">
-                <% Object.entries(productosPorCategoria).forEach(([categoria, productos])=> { %>
-                        <% productos.forEach(producto=> { %>
-                            <div class="item">
-                                <div class="contenedor-foto">
-                                    <img src="data:image/jpeg;base64,<%= Buffer.from(producto.imagen).toString('base64') %>"
-                                        alt="<%= producto.nombre %>">
-                                </div>
-                                <div class="contenedor-texto">
-                                    <p class="nombre">
-                                        <%= producto.nombre %>
-                                    </p>
-                                    <p class="descripcion">
-                                        <%= producto.descripcion %>
-                                    </p>
-                                    <span class="precio">
-                                        $<%= producto.precio %>
-                                    </span>
-                                </div>
-                            </div>
-                            <% }); %>
-                    
-                    <% }); %>
-                </div>
-                <button class="prev-btn">&larr;</button>
-                <button class="next-btn">&rarr;</button>
-        </div>
+          <div class="slider-mobile">
+              <div class="fila">
+
+              <?php 
+              include 'controladores/funciones.php';
+              $categoria_id = isset($_GET['categoria']) ? $_GET['categoria'] : null;
+              $productos = obtener_productos($conexion, $categoria_id);
+
+              foreach ($productos as $producto) { ?>
+          <div class="item" onclick="cargarModal('<?php echo $producto['nombre']; ?>','<?php echo $producto['descripcion']; ?>','<?php echo $producto['precio']; ?>','data:image/jpeg;base64,<?php echo base64_encode($producto['imagen']); ?>')">
+            <div class="contenedor-foto">
+              <img src="data:image/jpeg;base64,<?php echo base64_encode($producto['imagen']); ?>" alt="<?php echo $producto['nombre']; ?>">
+            </div>
+            <div class="contenedor-texto">
+              <p class="nombre"><?php echo $producto['nombre']; ?></p>
+              <p class="descripcion"><?php echo $producto['descripcion']; ?></p>
+              <span class="precio">$<?php echo $producto['precio']; ?></span>
+            </div>
+          </div>
+        <?php } ?>
+             
+              </div>
+                  <button class="prev-btn">&larr;</button>
+                  <button class="next-btn">&rarr;</button>
+          </div>
         <a href="productPage" class="btn-mas-productos">Más productos</a>
     </section>
 

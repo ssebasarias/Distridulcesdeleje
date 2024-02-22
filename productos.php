@@ -73,16 +73,16 @@ $productos = obtener_productos($conexion, $categoria_id);
     <nav class="navbar">
       <ul class="options-navbar">
         <li>
-          <a href="/home">Inicio</a>
+          <a href="index.php">Inicio</a>
         </li>
         <li>
-          <a href="./productos.php">Productos</a>
+          <a href="productos.php">Productos</a>
         </li>
         <li>
-          <a href="/home#title-Distridulces">¿Quienes somos?</a>
+          <a href="#">¿Quienes somos?</a>
         </li>
         <li>
-          <a href="/home#contacto">Contactanos</a>
+          <a href="#">Contactanos</a>
         </li>
       </ul>
       <div class="backgrount-search">

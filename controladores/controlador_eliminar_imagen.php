@@ -1,6 +1,6 @@
 <?php 
 
-include("../configuraciones/bd.php");
+include("../configuraciones/db.php");
 
 $nombre = $_REQUEST['nombre'];
 

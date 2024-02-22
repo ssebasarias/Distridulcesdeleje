@@ -89,7 +89,7 @@ if (empty($_SESSION["id"])) {
               <a href="indexcrud.php">Administrar inicio</a>
             </li>
             <li>
-              <a href="#">Administrar productos</a>
+              <a href="productCrud.php">Administrar productos</a>
             </li>
             <li>
               <a href="#">¿Quienes somos?</a>
@@ -166,7 +166,7 @@ if (empty($_SESSION["id"])) {
                 <tbody>
                 <?php
                 
-                include("configuraciones/bd.php");
+                include("configuraciones/db.php");
 
                 $query = "SELECT * FROM imgsbanner";
                 $resultado= $conexion->query($query);

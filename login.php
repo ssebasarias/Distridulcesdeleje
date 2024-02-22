@@ -15,7 +15,7 @@
             <a href="index.php" id="cerrar-form" class="cerrar-form"> &#215</a>
             <h1>Iniciar sesion</h1>
             <?php
-            include "configuraciones/bd.php";  
+            include "configuraciones/db.php";  
             include "controladores/controlador_login.php";
             ?>
             <p>¡Hola colaborador! Ingresa tus credenciales para entrar al area de administración.</p>
