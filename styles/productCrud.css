@@ -309,10 +309,8 @@ body {
 
 .options-navbar {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
-  flex-shrink: 0;
+  justify-content: center;
   position: relative;
   list-style-type: none;
 }

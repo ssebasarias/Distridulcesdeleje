@@ -91,12 +91,6 @@ if (empty($_SESSION["id"])) {
             <li>
               <a href="productCrud.php">Administrar productos</a>
             </li>
-            <li>
-              <a href="#">¿Quienes somos?</a>
-            </li>
-            <li>
-              <a href="#">Contactanos</a>
-            </li>
           </ul>
         </nav>
       </div>
@@ -110,10 +104,9 @@ if (empty($_SESSION["id"])) {
     
         <nav class="navbar-mobile">
           <img class="logo-mobile-navbar" src="img/header/img-logo-mobile.png" />
-          <a href="index.php">- Inicio</a>
+          <a href="indexcrud.php">- Inicio</a>
           <a href="secciones/vista_cursos.php">- ¿Quienes Somos?</a>
-          <a href="secciones/vista_alumnos.php" target="pages">- Productos</a>
-          <a href="/home#contacto">- Contactanos</a>
+          <a href="productCrud.php">- Productos</a>
 
           <label for="check" class="esconder-menu">
             &#215

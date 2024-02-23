@@ -95,12 +95,6 @@ $productos = obtener_productos($conexion, $categoria_id);
             <li>
               <a href="productCrud.php">Administrar productos</a>
             </li>
-            <li>
-              <a href="#">¿Quienes somos?</a>
-            </li>
-            <li>
-              <a href="#">Contactanos</a>
-            </li>
           </ul>
         </nav>
       </div>
@@ -155,9 +149,9 @@ $productos = obtener_productos($conexion, $categoria_id);
         </nav>
     </div>
 
+    <h1 class="text-center text-secundary font-weigth-bold p-4">Administrador de productos</h1>
 
-   
-      
+
   <div class="container">
   <div class="row justify-content-end">
     <div class="col-auto">
@@ -323,19 +317,36 @@ $productos = obtener_productos($conexion, $categoria_id);
   </div>
 </div>
 
-  <div class="product-detail" id="myModal" onclick="cerrarModal(event)">
-    <div class="product-detail-close">
-      <img src="./img/product/icon_close.png" alt="close" onclick="cerrarModal(event)">
-    </div>
-    <img src="" alt="" id="img">
-    <div class="product-info">
-      <p id="precio"></p>
-      <p id="nombre"></p>
-      <p id="descripcion"></p>
-    </div>
-  </div>
+<h1 class="text-center text-secundary font-weigth-bold p-4">Administrador de Categorias</h1>
 
-    
+<div class="p-3 table-responsive">
+            <table class="table table-hover table-stripped">
+            <thead class="big-dark text-white">
+                    <tr>
+                        <th scope="col">CATEGORIA</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                <?php
+                
+                include("configuraciones/db.php");
+
+                $query = "SELECT * FROM categorias";
+                $resultado= $conexion->query($query);
+                while($row = $resultado->fetch_assoc()) {
+                ?>
+                    <tr>
+                        <td><?php echo $row['nombre']; ?></td>
+                        <td><a href="controladores/controlador_eliminar_categoria.php?nombre=<?php echo $row['nombre'];?>" 
+                        class="btn btn-danger">Eliminar</a></td>
+                    </tr>
+                <?php      
+                    }
+                ?>
+                </tbody>
+            </table>
+        </div>    
   
 </body>
 <script src="./js/productCrud.js"></script>
