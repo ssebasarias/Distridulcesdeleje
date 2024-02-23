@@ -72,16 +72,25 @@ function cargarCategorias() {
 }
 
 
-function abrirVentanaEditar(id,nombre,descripcion,precio) {
+function abrirVentanaEditar(id,nombre,descripcion,precio,descuento) {
   var modal = document.getElementById("formularioEditar");
   document.getElementById('idProductoEditar').value = id;
   document.getElementById('nombreEditar').value = nombre;
   document.getElementById('precioEditar').value = precio;
   document.getElementById('descripcionEditar').value = descripcion;
+  document.getElementById('descuentoEditar').value = descuento;
   modal.style.display = "block";
 }
-function cerrarVentanaEditar() {
+
+function abrirVentanaAgregar(){
+  var modal = document.getElementById("formularioAgregar");
+  var modal = document.getElementById("formularioAgregarCategoria");
+  modal.style.display = "block";
+}
+function cerrarVentana() {
   var modal = document.getElementById("formularioEditar");
+  var modal = document.getElementById("formularioAgregar");
+  var modal = document.getElementById("formularioAgregarCategoria");
   modal.style.display = "none";
 }
 

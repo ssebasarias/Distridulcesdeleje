@@ -13,9 +13,10 @@ function obtener_categorias($conexion) {
     return $categorias;
 }
 
+
 // Función para obtener todos los productos o los productos de una categoría específica
 function obtener_productos($conexion, $categoria_id = null) {
-    $productos_query = "SELECT nombre, descripcion, precio, imagen, categoria_id FROM productos";
+    $productos_query = "SELECT * FROM productos";
     if ($categoria_id !== null) {
         $productos_query .= " WHERE categoria_id = $categoria_id";
     }
@@ -49,3 +50,5 @@ function obtenerProductosConDescuento($conexion) {
     // Retornar el array de productos con descuento
     return $productos_con_descuento;
 }
+
+

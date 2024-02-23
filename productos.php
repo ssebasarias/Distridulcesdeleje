@@ -157,7 +157,8 @@ $productos = obtener_productos($conexion, $categoria_id);
   <div class="cotenedor-productpage">
     <section class="" id="contenido">
       <div class="mostrador" id="mostrador">
-        <?php foreach ($productos as $producto) { ?>
+        <?php
+        foreach ($productos as $producto) { ?>
           <div class="item" onclick="cargarModal('<?php echo $producto['nombre']; ?>','<?php echo $producto['descripcion']; ?>','<?php echo $producto['precio']; ?>','data:image/jpeg;base64,<?php echo base64_encode($producto['imagen']); ?>')">
             <div class="contenedor-foto">
               <img src="data:image/jpeg;base64,<?php echo base64_encode($producto['imagen']); ?>" alt="<?php echo $producto['nombre']; ?>">

@@ -7,19 +7,6 @@ body {
     margin: auto;
 }
 /* ------------------------------------------ */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-section {
-    width: 100%;
-}
 
 .header-desktop {
     background-color: #fff;
@@ -360,22 +347,6 @@ section {
 }
 
 /* --------------------------------------------------- */
-.category-section {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    border-bottom: 2px solid #ffd700;
-    margin-bottom: 20px;
-}
-
-.category-section h2 {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: #001f3f;
-    font-size: 54px;
-    margin: 0;
-}
 
 .agg-buttons {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -569,43 +540,6 @@ section {
     width: 100%;
   }
 }
-/* --------------------------------------- */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
-.modal-content {
-  background-color: #fefefe;
-  margin: 10% auto; /* 10% de arriba hacia abajo, centrado horizontalmente */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%; /* Ancho del contenido del modal */
-  max-width: 600px; /* Ancho máximo del modal */
-}
-
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-
 
 /* --------------------------------------- */
 .footer {

@@ -164,7 +164,7 @@
                     <img src="data:image/jpeg;base64,<?php echo base64_encode($producto['imagen']); ?>" alt="<?php echo $producto['nombre']; ?>">
                   </div>
                   <div class="contenedor-texto">
-                    <p class="nombre"><?php echo $producto['nombre']; ?></p>
+                    <p class="nombre"><?php echo $producto['nombre']; ?> <?php echo $producto['descuento']; ?>%</p>
                     <p class="descripcion"><?php echo $producto['descripcion']; ?></p>
                     <span class="precio">$<?php echo $producto['precio_descuento']; ?></span>
                   </div>
