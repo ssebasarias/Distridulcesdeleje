@@ -32,46 +32,6 @@ function cerrarModal(event) {
   }
 }
 
-// Cargar las categorías al cargar la página
-window.onload = function () {
-  cargarCategorias();
-};
-
-// Función para obtener las categorías desde el servidor
-function obtenerCategorias() {
-  return new Promise((resolve, reject) => {
-    fetch('/funciones.php?accion=obtener_categorias')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Error al obtener las categorías');
-        }
-        return response.json();
-      })
-      .then(data => resolve(data))
-      .catch(error => reject(error.message));
-  });
-}
-
-// Función para cargar las categorías desde la base de datos
-function cargarCategorias() {
-  // Realiza una petición AJAX para obtener las categorías desde el servidor
-  obtenerCategorias()
-    .then(categorias => {
-      // Una vez se obtienen las categorías, las mostramos en el menú
-      const categoryList = document.getElementById("categoryList");
-      categorias.forEach(categoria => {
-        const listItem = document.createElement("li");
-        listItem.innerHTML = `<a href="#" onclick="cargarProductos('${categoria.id}')">${categoria.nombre}</a>`;
-        categoryList.appendChild(listItem);
-      });
-    })
-    .catch(error => {
-      console.error("Error al cargar las categorías:", error);
-      // Aquí podrías mostrar un mensaje de error al usuario
-    });
-}
-
-
 function abrirVentanaEditar(id,nombre,descripcion,precio,descuento) {
   var modal = document.getElementById("formularioEditar");
   document.getElementById('idProductoEditar').value = id;
@@ -88,9 +48,13 @@ function abrirVentanaAgregar(){
   modal.style.display = "block";
 }
 function cerrarVentana() {
-  var modal = document.getElementById("formularioEditar");
   var modal = document.getElementById("formularioAgregar");
   var modal = document.getElementById("formularioAgregarCategoria");
+  modal.style.display = "none";
+}
+
+function cerrarVentanaEditar(){
+  var modal = document.getElementById("formularioEditar");
   modal.style.display = "none";
 }
 
@@ -98,7 +62,7 @@ function actualizarProducto() {
   // Obtener los nuevos valores del formulario de edición
   var id = document.getElementById('idProductoEditar').value;
   var nuevoNombre = document.getElementById('nombreEditar').value;
-  var nuevoPrecio = document.getElementById('precioEditar').value;
+  var nuevoPrecio = document.getElementById('precioEditar').value;a
   var nuevaDescripcion = document.getElementById('descripcionEditar').value;
   var nuevaImagen = document.getElementById('imagenEditar').files[0];
 

@@ -13,7 +13,6 @@ function obtener_categorias($conexion) {
     return $categorias;
 }
 
-
 // Función para obtener todos los productos o los productos de una categoría específica
 function obtener_productos($conexion, $categoria_id = null) {
     $productos_query = "SELECT * FROM productos";

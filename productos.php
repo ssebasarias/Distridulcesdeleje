@@ -19,7 +19,13 @@ $productos = obtener_productos($conexion, $categoria_id);
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Productos</title>
-  <link rel="stylesheet" href="./styles/productPage.css">
+  <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
+    />
+  <link rel="stylesheet" href="./styles/productCrud.css">
 </head>
 
 <body>
@@ -61,9 +67,9 @@ $productos = obtener_productos($conexion, $categoria_id);
           </div>
         </div>
 
-        <a href="login" class="a-logout">
-          <div class="txt-iniciar-sesion"><strong style="color:#001f3f;">Iniciar Sesion</strong></div>
-          <img class="user-img" src="./img/header/user.png" />
+        <a href="login.php" class="a-logout">
+            <div class="txt-iniciar-sesion"><strong style="color:#001f3f;">Iniciar Sesion</strong></div>
+            <img class="user-img" src="img/header/user.png" />
         </a>
       </div>
     </div>
@@ -142,35 +148,38 @@ $productos = obtener_productos($conexion, $categoria_id);
     </nav>
   </div>
 
-<!-- Sección de categorías -->
-<section class="category-menu">
-    <h2>Categorías</h2>
-    <ul id="categoryList">
-      <?php 
-        foreach ($categorias as $categoria) {
-          echo "<li><a href='/productos.php?categoria={$categoria['id']}'>{$categoria['nombre']}</a></li>";
-        }
-      ?>
-    </ul>
-  </section>
-
   <div class="cotenedor-productpage">
-    <section class="" id="contenido">
-      <div class="mostrador" id="mostrador">
-        <?php
-        foreach ($productos as $producto) { ?>
-          <div class="item" onclick="cargarModal('<?php echo $producto['nombre']; ?>','<?php echo $producto['descripcion']; ?>','<?php echo $producto['precio']; ?>','data:image/jpeg;base64,<?php echo base64_encode($producto['imagen']); ?>')">
-            <div class="contenedor-foto">
-              <img src="data:image/jpeg;base64,<?php echo base64_encode($producto['imagen']); ?>" alt="<?php echo $producto['nombre']; ?>">
+  <section class="category-menu">
+  <h2>Categorías</h2>
+  <ul class="list-group list-group-flush">
+    <li class ="list-group-item"><a class="list-group-item" href="productos.php">Todos los productos</a></li>
+    <?php
+      foreach ($categorias as $categoria) {
+        echo "<li class ='list-group-item'><a class='list-group-item' href='/productos.php?categoria={$categoria['id']}'>{$categoria['nombre']}</a></li>";
+      }
+      ?>
+    </section>
+    <section class="mostrador" id="mostrador">
+        <?php foreach ($productos as $producto) { ?>
+            <div class="item" onclick="cargarModal('<?php echo $producto['nombre']; ?>','<?php echo $producto['descripcion']; ?>','<?php echo $producto['precio']; ?>','data:image/jpeg;base64,<?php echo base64_encode($producto['imagen']); ?>')">
+              <div class="contenedor-foto">
+                <img src="data:image/jpeg;base64,<?php echo base64_encode($producto['imagen']); ?>" alt="<?php echo $producto['nombre']; ?>">
+              </div>
+              <div class="contenedor-texto">
+                <p class="nombre"><?php echo $producto['nombre']; ?></p>
+                <p class="descripcion"><?php echo $producto['descripcion']; ?></p>
+                <span class="precio">$<?php echo $producto['precio']; ?></span>
+              </div>
+              <div class="contenedor-edit-delete">
+                <a type="button" data-bs-toggle="modal" data-bs-target="#editarProducto" onclick="abrirVentanaEditar('<?php echo $producto['id']; ?>','<?php echo $producto['nombre']; ?>','<?php echo $producto['descripcion']; ?>','<?php echo $producto['precio']; ?>','<?php echo $producto['descuento']; ?>')">
+                    <img src="./img/crud/edit.png" alt="Icono">
+                </a>
+                <a class="btn-delete" id="btn-delete" href="controladores/eliminarProducto.php?id=<?php echo $producto['id'];?>">
+                    <img class="btn-delete" src="./img/crud/delete.png" alt="Icono">
+                </a>
+              </div>
             </div>
-            <div class="contenedor-texto">
-              <p class="nombre"><?php echo $producto['nombre']; ?></p>
-              <p class="descripcion"><?php echo $producto['descripcion']; ?></p>
-              <span class="precio">$<?php echo $producto['precio']; ?></span>
-            </div>
-          </div>
-        <?php } ?>
-      </div>
+            <?php } ?>
     </section>
   </div>
 
@@ -191,5 +200,16 @@ $productos = obtener_productos($conexion, $categoria_id);
 </body>
 <script src="./js/productPage.js"></script>
 </body>
+<script
+        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+            crossorigin="anonymous"
+        ></script>
+
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+            integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+            crossorigin="anonymous"
+        ></script>
 
 </html>

@@ -30,7 +30,7 @@ $productos = obtener_productos($conexion, $categoria_id);
             integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
             crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="./styles/productCrud.css">
+    <link rel="stylesheet" href="styles/productCrud.css">
 </head>
 
 <body>
@@ -154,36 +154,105 @@ $productos = obtener_productos($conexion, $categoria_id);
                 </div>
         </nav>
     </div>
+
+
    
       
-  <div class="btn-agg-seccion">
-    <a class="agg-buttons" onclick="abrirVentanaAgregar()">
-      <img src="./img/crud/add.png" alt="Icono">
-      <span> +CATEGORIA </span>
-    </a>
-    <a class="agg-buttons" id="btn-add" onclick="abrirVentanaAgregar()">
-      <img src="./img/crud/add.png"" alt=" Icono">
-      <span> +PRODUCTO </span>
-    </a>
+  <div class="container">
+  <div class="row justify-content-end">
+    <div class="col-auto">
+      <a type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#agregarCategoria">
+        <img height="25px" src="./img/crud/add.png" alt="Icono">
+        Agregar Categoria
+      </a>
+    </div>
+    <div class="col-auto">
+      <a type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#agregarProducto">
+        <img height="25px" src="./img/crud/add.png" alt="Icono">
+        Agregar Producto
+      </a>
+    </div>
   </div>
-      
+</div>
 
-      <!-- Sección de categorías -->
-<section class="category-menu">
-    <h2>Categorías</h2>
-    <ul id="categoryList">
-      <?php
+<div class="modal fade" id="agregarCategoria" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Categoria</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form id="formAgregarCategoria" action="controladores/agregarCategoria.php" method="POST" enctype="multipart/form-data">
+            <label for="nombreCategoria">Nombre de la Categoría:</label>
+            <input type="text" id="nombreCategoria" name="nombre" required><br>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-success">Agregar Categoría</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="agregarProducto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Agregar Producto</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <form id="formAgregarProducto" enctype="multipart/form-data" action="controladores/agregarProducto.php" method="POST">
+
+              <label for="nombreAgregar" class="form-label">Nombre:</label>
+              <input class="form-control" type="text" id="nombreAgregar" name="nombre" required><br>
+
+              <label for="precioAgregar" class="form-label">Precio:</label>
+              <input class="form-control" type="number" id="precioAgregar" name="precio" required><br>
+             
+              <label for="descripcionAgregar" class="form-label">Descripción:</label>
+              <textarea class="form-control" id="descripcionAgregar" name="descripcion" required></textarea><br>
+         
+              <label for="descuentoAgregar" class="form-label">Descuento:</label>
+              <input class="form-control" type="number" id="descuentoAgregar" name="descuento" required></input><br>
+          
+              <label for="categoriaSelect" class="form-label">Categoria:</label>
+              <select id="categoriaSelect" name="categoria_id">
+                <option value="">Selecciona una categoría</option>
+                <?php
+                foreach ($categorias as $categoria) {
+                    echo "<option value='{$categoria['id']}'>{$categoria['nombre']}</option>";
+                }
+                ?>
+              </select><br>
+        
+              <label for="imagenAgregar" class="form-label">Imagen:</label>
+              <input class="form-control" type="file" id="imagenAgregar" name="imagen" accept="image/*" required>  
+        
+              <div class="modal-footer">
+                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                  <button type="submit" class="btn btn-success">Agregar Producto</button>
+               </form>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+  <div class="cotenedor-productpage">
+  <section class="category-menu">
+  <h2>Categorías</h2>
+  <ul class="list-group list-group-flush">
+    <li class ="list-group-item"><a class="list-group-item" href="productCrud.php">Todos los productos</a></li>
+    <?php
       foreach ($categorias as $categoria) {
-        echo "<li><a href='/productos.php?categoria={$categoria['id']}'>{$categoria['nombre']}</a></li>";
+        echo "<li class ='list-group-item'><a class='list-group-item' href='/productCrud.php?categoria={$categoria['id']}'>{$categoria['nombre']}</a></li>";
       }
       ?>
-    </ul>
-  </section>
-
-    
-        <div class="cotenedor-productpage">
-    <section class="" id="contenido">
-      <div class="mostrador" id="mostrador">
+    </section>
+    <section class="mostrador" id="mostrador">
         <?php foreach ($productos as $producto) { ?>
             <div class="item" onclick="cargarModal('<?php echo $producto['nombre']; ?>','<?php echo $producto['descripcion']; ?>','<?php echo $producto['precio']; ?>','data:image/jpeg;base64,<?php echo base64_encode($producto['imagen']); ?>')">
               <div class="contenedor-foto">
@@ -195,7 +264,7 @@ $productos = obtener_productos($conexion, $categoria_id);
                 <span class="precio">$<?php echo $producto['precio']; ?></span>
               </div>
               <div class="contenedor-edit-delete">
-                <a class="btn-edit" onclick="abrirVentanaEditar('<?php echo $producto['id']; ?>','<?php echo $producto['nombre']; ?>','<?php echo $producto['descripcion']; ?>','<?php echo $producto['precio']; ?>','<?php echo $producto['descuento']; ?>')">
+                <a type="button" data-bs-toggle="modal" data-bs-target="#editarProducto" onclick="abrirVentanaEditar('<?php echo $producto['id']; ?>','<?php echo $producto['nombre']; ?>','<?php echo $producto['descripcion']; ?>','<?php echo $producto['precio']; ?>','<?php echo $producto['descuento']; ?>')">
                     <img src="./img/crud/edit.png" alt="Icono">
                 </a>
                 <a class="btn-delete" id="btn-delete" href="controladores/eliminarProducto.php?id=<?php echo $producto['id'];?>">
@@ -204,9 +273,55 @@ $productos = obtener_productos($conexion, $categoria_id);
               </div>
             </div>
             <?php } ?>
-          </div>
     </section>
   </div>
+
+  <div class="modal fade" id="editarProducto" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Editar Producto</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      <form id="formAgregarProducto" enctype="multipart/form-data" action="controladores/editarProducto.php" method="POST">
+
+              <input type="hidden" id="idProductoEditar" name="id" value="">
+
+              <label for="nombreAgregar" class="form-label">Nombre:</label>
+              <input class="form-control" type="text" id="nombreEditar" name="nombre" required><br>
+
+              <label for="precioAgregar" class="form-label">Precio:</label>
+              <input class="form-control" type="number" id="precioEditar" name="precio" required><br>
+            
+              <label for="descripcionAgregar" class="form-label">Descripción:</label>
+              <textarea class="form-control" id="descripcionEditar" name="descripcion" required></textarea><br>
+         
+              <label for="descuentoAgregar" class="form-label">Descuento:</label>
+              <input class="form-control" type="number" id="descuentoEditar" name="descuento" required></input><br>
+           
+              <label for="categoriaSelect" class="form-label">Categoria:</label>
+              <select id="categoriaSelect" name="categoria_id" required>
+                <option value="">Selecciona una categoría</option>
+                <?php
+                foreach ($categorias as $categoria) {
+                    echo "<option value='{$categoria['id']}'>{$categoria['nombre']}</option>";
+                }
+                ?>
+              </select><br>
+         
+              <label for="imagenAgregar" class="form-label">Imagen:</label>
+              <input class="form-control" type="file" id="imagenEditar" name="imagen" accept="image/*">  
+
+              <div class="modal-footer">
+                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                  <button type="submit" class="btn btn-success">Editar Producto</button>
+               </form>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
 
   <div class="product-detail" id="myModal" onclick="cerrarModal(event)">
     <div class="product-detail-close">
@@ -220,133 +335,8 @@ $productos = obtener_productos($conexion, $categoria_id);
     </div>
   </div>
 
-    <!-- Formulario para agregar nueva categoría -->
-    <div id="formularioAgregarCategoria" class="modal" style="display: none;">
-        <h3>Agregar Nueva Categoría</h3>
-        <span id="cerrarVentana" onclick="cerrarVentana()">&times;</span>
-        <form id="formAgregarCategoria" action="controladores/agregarCategoria.php" method="POST" enctype="multipart/form-data">
-            <label for="nombreCategoria">Nombre de la Categoría:</label>
-            <input type="text" id="nombreCategoria" name="nombre" required><br>
-            <button type="submit">Agregar Categoría</button>
-        </form>
-    </div>
-
-    <div id="formularioEditar" class="modal" style="display: none;">
-      <div class="modal-content">
-          <span id="cerrarVentanaEditar" class="close" onclick="cerrarVentana()">&times;</span>
-          <h3>Editar Producto</h3>
-          <form id="formEditarProducto" enctype="multipart/form-data" action="controladores/editarProducto.php" method="POST">
-              <input type="hidden" id="idProductoEditar" name="id" value="">
-              <label for="nombreEditar">Nombre:</label>
-              <input type="text" id="nombreEditar" name="nombre" required><br>
-
-              <label for="precioEditar">Precio:</label>
-              <input type="number" id="precioEditar" name="precio" required><br>
-
-              <label for="descripcionEditar">Descripción:</label>
-              <textarea id="descripcionEditar" name="descripcion" required></textarea><br>
-
-              <label for="descuentoEditar">Descuento:</label>
-              <input type="number" id="descuentoEditar" name="descuento" required></input><br>
-
-              <label for="imagenEditar">Imagen:</label>
-              <input type="file" id="imagenEditar" name="imagen" accept="image/*">  
-
-              <button type="submit">Guardar Cambios</button>
-          </form>
-      </div>
-    </div>
-
-    <div id="formularioAgregar" class="modal" style="display: none;">
-      <div class="modal-content">
-          <span id="cerrarVentanaAgregar" class="close" onclick="cerrarVentana()">&times;</span>
-          <h3>Agregar Producto</h3>
-          <form id="formAgregarProducto" enctype="multipart/form-data" action="controladores/agregarProducto.php" method="POST">
-              <input type="hidden" id="idProductoAgregar" name="id" value="">
-
-              <div class="mb-3">
-                <label for="nombreAgregar" class="form-label">Nombre:</label>
-                <input class="form-control" type="text" id="nombreAgregar" name="nombre" required><br>
-              </div>
-
-              <div class="mb-3">
-              <label for="precioAgregar" class="form-label">Precio:</label>
-              <input class="form-control" type="number" id="precioAgregar" name="precio" required><br>
-              </div>
-
-              <div class="mb-3">
-              <label for="descripcionAgregar" class="form-label">Descripción:</label>
-              <textarea class="form-control" id="descripcionAgregar" name="descripcion" required></textarea><br>
-              </div>
-
-              <div class="mb-3">
-              <label for="descuentoAgregar" class="form-label">Descuento:</label>
-              <input class="form-control" type="number" id="descuentoAgregar" name="descuento" required></input><br>
-              </div>
-
-              <div class="mb-3">
-              <label for="categoriaSelect" class="form-label">Categoria:</label>
-              <select id="categoriaSelect" name="categoria_id">
-                <option value="">Selecciona una categoría</option>
-                <?php
-                foreach ($categorias as $categoria) {
-                    echo "<option value='{$categoria['id']}'>{$categoria['nombre']}</option>";
-                }
-                ?>
-              </select><br>
-              </div>
-
-              <div class="mb-3">
-              <label for="imagenAgregar" class="form-label">Imagen:</label>
-              <input class="form-control" type="file" id="imagenAgregar" name="imagen" accept="image/*" required>  
-              </div>
-
-              <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
-      </div>
-    </div>
-
-    <form>
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1">
-  </div>
-  <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-  Launch demo modal
-</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
+    
+  
 </body>
 <script src="./js/productCrud.js"></script>
 <script
