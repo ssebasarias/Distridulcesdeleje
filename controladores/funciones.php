@@ -28,3 +28,24 @@ function obtener_productos($conexion, $categoria_id = null) {
     }
     return $productos;
 }
+
+function obtenerProductosConDescuento($conexion) {
+    $productos_con_descuento = array();
+
+    // Consulta para obtener los productos con descuento mayor que cero
+    $query = "SELECT *, (precio - (precio * (descuento / 100))) AS precio_descuento FROM productos WHERE descuento > 0";
+
+    // Ejecutar la consulta
+    $resultado = $conexion->query($query);
+
+    // Verificar si hay resultados
+    if ($resultado->num_rows > 0) {
+        // Recorrer los resultados y almacenarlos en un array
+        while ($row = $resultado->fetch_assoc()) {
+            $productos_con_descuento[] = $row;
+        }
+    }
+
+    // Retornar el array de productos con descuento
+    return $productos_con_descuento;
+}

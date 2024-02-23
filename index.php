@@ -156,21 +156,20 @@
 
               <?php 
               include 'controladores/funciones.php';
-              $categoria_id = isset($_GET['categoria']) ? $_GET['categoria'] : null;
-              $productos = obtener_productos($conexion, $categoria_id);
+              $productos = obtenerProductosConDescuento($conexion);
 
               foreach ($productos as $producto) { ?>
-          <div class="item" onclick="cargarModal('<?php echo $producto['nombre']; ?>','<?php echo $producto['descripcion']; ?>','<?php echo $producto['precio']; ?>','data:image/jpeg;base64,<?php echo base64_encode($producto['imagen']); ?>')">
-            <div class="contenedor-foto">
-              <img src="data:image/jpeg;base64,<?php echo base64_encode($producto['imagen']); ?>" alt="<?php echo $producto['nombre']; ?>">
-            </div>
-            <div class="contenedor-texto">
-              <p class="nombre"><?php echo $producto['nombre']; ?></p>
-              <p class="descripcion"><?php echo $producto['descripcion']; ?></p>
-              <span class="precio">$<?php echo $producto['precio']; ?></span>
-            </div>
-          </div>
-        <?php } ?>
+                <div class="item" onclick="cargarModal('<?php echo $producto['nombre']; ?>','<?php echo $producto['descripcion']; ?>','<?php echo $producto['precio']; ?>','data:image/jpeg;base64,<?php echo base64_encode($producto['imagen']); ?>')">
+                  <div class="contenedor-foto">
+                    <img src="data:image/jpeg;base64,<?php echo base64_encode($producto['imagen']); ?>" alt="<?php echo $producto['nombre']; ?>">
+                  </div>
+                  <div class="contenedor-texto">
+                    <p class="nombre"><?php echo $producto['nombre']; ?></p>
+                    <p class="descripcion"><?php echo $producto['descripcion']; ?></p>
+                    <span class="precio">$<?php echo $producto['precio_descuento']; ?></span>
+                  </div>
+                </div>
+              <?php } ?>
              
               </div>
                   <button class="prev-btn">&larr;</button>
