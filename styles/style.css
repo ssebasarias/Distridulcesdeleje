@@ -384,6 +384,9 @@ body {
   }
 
 /* ======================================================== */
+
+
+
 /* ======================================================== */
 
 .login-form,
@@ -483,139 +486,10 @@ section {
     background-color: #0056b3;
 }
 
-
 /* --------------------------- productos --------------------------------*/
-:root {
-    --red: #2874A6;
-    --darkred: #ffd700;
-    --platinum: #e5e5e5;
-    --black: #2b2d42;
-    --white: #fff;
-    --thumb: #edf2f4;
-}
 
-.container {
-    max-width: 1400px;
-    padding: 0 15px;
-    margin: 0 auto;
-}
-
-h2 {
-    font-size: 32px;
-    margin-bottom: 1em;
-}
-
-.cards {
-    display: flex;
-    padding: 25px 30px;
-    margin: 0 50px;
-    list-style: none;
-    overflow-x: scroll;
-    -ms-scroll-snap-type: x mandatory;
-    scroll-snap-type: x mandatory;
-}
-
-.card {
-    display: flex;
-    flex-direction: column;
-    flex: 0 0 100%;
-    padding: 20px;
-    background: var(--white);
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 15%);
-    scroll-snap-align: start;
-    transition: all 0.2s;
-    width: 100px;
-    height: 350px;
-}
-
-.card:not(:last-child) {
-    margin-right: 10px;
-}
-
-.card:hover {
-    color: var(--white);
-    background: var(--red);
-}
-
-.card img {
-    width: 100%;
-    height: 150px;
-}
-
-.card .card-title {
-    font-size: 20px;
-    margin: 20px 0;
-}
-
-.card .card-content {
-    margin: 20px 0;
-    max-width: 85%;
-}
-
-.card .card-link-wrapper {
-    margin-top: auto;
-}
-
-.card .card-link {
-    display: inline-block;
-    text-decoration: none;
-    color: white;
-    background: var(--red);
-    padding: 6px 12px;
-    border-radius: 8px;
-    transition: background 0.2s;
-}
-
-.card:hover .card-link {
-    background: var(--darkred);
-}
-
-.cards::-webkit-scrollbar {
-    height: 12px;
-}
-
-.cards::-webkit-scrollbar-thumb,
-.cards::-webkit-scrollbar-track {
-    border-radius: 92px;
-}
-
-.cards::-webkit-scrollbar-thumb {
-    background: var(--darkred);
-}
-
-.cards::-webkit-scrollbar-track {
-    background: var(--thumb);
-}
-
-@media (min-width: 500px) {
-    .card {
-        flex-basis: calc(50% - 10px);
-    }
-
-    .card:not(:last-child) {
-        margin-right: 20px;
-    }
-}
-
-@media (min-width: 700px) {
-    .card {
-        flex-basis: calc(calc(100% / 3) - 20px);
-    }
-
-    .card:not(:last-child) {
-        margin-right: 30px;
-    }
-}
-
-@media (min-width: 1100px) {
-    .card {
-        flex-basis: calc(25% - 30px);
-    }
-
-    .card:not(:last-child) {
-        margin-right: 40px;
-    }
+.product-slider {
+    height: 700px;
 }
 
 .btn-mas-productos {
@@ -660,287 +534,35 @@ h2 {
 
 .mision {
     background-color: #4c9fda25;
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    padding: 50px;
-    gap: 40px;
-    margin: auto;
-    /* Ajusta el valor según tus necesidades */
 }
-
-.img-vision,
-.imgMision {
-    width: 220px;
-    height: 220px;
-    object-fit: cover;
-    display: flex;
-    align-items: center;
-}
-
-.content-txt-vision {
-    padding: 2% 10%;
-}
-
-.content-txt-mision {
-    padding: 2% 10%;
-}
-
-.txt-content-mision,
-.txt-content-vision {
-    color: #001f3f;
-    text-align: center;
-    /* Cambiado a center para centrar el texto */
-    font-family: "Inter-Regular", sans-serif;
-    height: 100%;
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    /* Cambiado a column para que los elementos estén uno encima del otro */
-    justify-content: center;
-    /* Agregado para centrar verticalmente */
-    align-items: center;
-    /* Agregado para centrar horizontalmente */
-}
-
-.txt-content-mision h2,
-.txt-content-vision h2 {
-    color: #001f3f;
-    font-family: "Inter-Bold", sans-serif;
-    font-size: 24px;
-    line-height: 200%;
-    font-weight: 1000;
-    width: 100%;
-    /* Cambiado a 100% para ocupar todo el ancho disponible */
-    text-align: center;
-    /* Agregado para centrar el título */
-    font-weight: 800;
-
-}
-
 /* --------------------------- valores ------------------------------------- */
 
 .valores {
-    box-sizing: border-box;
+    height: 500px;
     display: flex;
-    flex-direction: column;
-    padding: 30px;
-    margin: auto;
-    max-width: 1200px;
-}
-
-.txt-content-valores {
-    color: #001f3f;
-    font-family: "Inter-Regular", sans-serif;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    text-align: center;
-}
-
-.txt-content-valores h2 {
-    color: #001f3f;
-    font-family: "Inter-Bold", sans-serif;
-    font-size: 24px;
-    line-height: 150%;
-    font-weight: 700;
-    width: 100%;
-}
-
-.txt-valores {
-    padding: 20px;
-}
-
-.img-valores {
-    width: 100%;
-    max-width: 100%;
-    object-fit: cover;
-    margin-top: 20px;
 }
 
 /* --------------------------- linea corporativa ------------------------------------- */
 
 .lineacorporativa {
-    box-sizing: border-box;
-    display: flex;
-    flex-direction: row;
-    padding-right: 20px;
-    margin: auto;
-    max-width: auto;
     background-color: #4c9fda25;
-}
-
-
-.txt-content-lineacorporativa {
-    color: #001f3f;
-    font-family: "Inter-Regular", sans-serif;
-    width: 50%;
+    height: 500px;
     display: flex;
-    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    align-content: center;
-    padding-right: 70px;
-    text-align: right;
-
 }
 
-.txt-title-lineacorporativa {
-    color: #001f3f;
-    font-family: "Inter-Bold", sans-serif;
-    font-size: 40px;
-    line-height: 200%;
-    width: 100%;
-    font-weight: 800;
-    text-align: right;
-}
-
-.img-lineacorporativa {
-    width: 50%;
-    object-fit: cover;
-    display: flex;
-    padding-right: 90px;
-    align-items: start;
-    margin-right: auto;
-}
-
-/* --------------------------- cotactanos ----------------------------------------- */
 /* --------------------------- cotactanos ----------------------------------------- */
 .contacto {
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-    background-color: #eeeeee;
     height: 600px;
-}
-
-
-.contacto form {
     display: flex;
-    margin: auto;
-    margin-top: 20px;
-    text-align: center;
-    flex-wrap: wrap;
-    max-width: 570px;
-}
-
-.contacto form label {
-    display: block;
-    margin-bottom: 8px;
-}
-
-.contacto form input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 16px;
-    box-sizing: border-box;
-}
-
-.lbl-nombre input {
-    width: 393px;
-}
-
-.lbl-telefono input {
-    width: 170px;
-}
-
-.lbl-mensaje input {
-    height: 160px;
-
-}
-
-
-.contacto h2 {
-    color: #001f3f;
-    text-align: left;
-    font-family: "Inter-Bold", sans-serif;
-    font-size: 32px;
-    line-height: 200%;
-    font-weight: 700;
-    position: relative;
-    display: flex;
-    align-items: center;
     justify-content: center;
-    margin-top: 15px;
-}
-
-.contacto p {
-    color: #001f3f;
-    font-family: "Inter-Regular", sans-serif;
-    font-size: 13px;
-    line-height: 200%;
-    font-weight: 400;
-    width: 561px;
-    height: 78px;
-    position: relative;
-    display: flex;
     align-items: center;
-    justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
 }
-
-.contacto input {
-    background: #f6f6f6;
-    border-radius: 13px;
-    border-style: solid;
-    border-color: #001f3f;
-    border-width: 0.2px;
-}
-
-.contacto input::placeholder {
-    color: rgba(0, 31, 63, 0.6);
-    text-align: left;
-    font-family: "Inter-Bold", sans-serif;
-    font-size: 13px;
-    line-height: 200%;
-    font-weight: 700;
-    position: relative;
-    width: 129px;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-.lbl-mensaje {
-    background: #f6f6f6;
-    border-radius: 13px;
-    border-style: solid;
-    border-color: #001f3f;
-    border-width: 0.2px;
-    width: 569px;
-    height: 120px;
-    resize: none;
-    overflow-y: auto;
-}
-
-.lbl-mensaje::placeholder {
-    color: rgba(0, 31, 63, 0.6);
-    text-align: left;
-    font-family: "Inter-Bold", sans-serif;
-    font-size: 13px;
-    line-height: 200%;
-    font-weight: 700;
-    position: relative;
-    width: 129px;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-.enviar-contact {
-    border-radius: 20px;
-    border-style: solid;
-    border-color: #001f3f;
-    border-width: 1px;
-    width: 113.3px;
-    height: 30px;
-    position: relative;
-    overflow: visible;
-    margin-top: 20px;
+.contacto  .container {
+    width: 800px;
 }
 
 /* ========================================================= */
@@ -1172,7 +794,7 @@ h2 {
     }
 
     .title-Distridulces {
-        font-size: 60px;
+        font-size: 50px;
     }
 
     .img-valores {
@@ -1194,90 +816,6 @@ h2 {
         margin-right: auto;
     }
 
-    .contacto {
-        display: flex;
-        text-align: center;
-        flex-direction: column;
-        background-color: #eeeeee;
-    }
-
-
-    .contacto h2 {
-        color: #001f3f;
-        text-align: left;
-        font-family: "Inter-Bold", sans-serif;
-        font-size: 32px;
-        line-height: 200%;
-        font-weight: 700;
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-top: 15px;
-    }
-
-    .contacto p {
-        color: #001f3f;
-        font-family: "Inter-Regular", sans-serif;
-        font-size: 15px;
-        line-height: 200%;
-        font-weight: 400;
-        width: 100%;
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin-left: auto;
-        margin-right: 200px;
-    }
-
-    .contacto form {
-        display: flex;
-        margin: auto;
-        margin-top: 20px;
-        text-align: center;
-        flex-wrap: wrap;
-    }
-
-    .contacto form label {
-        display: block;
-        margin-bottom: 8px;
-    }
-
-    .contacto form input {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 16px;
-        box-sizing: border-box;
-    }
-
-    .lbl-nombre input {
-        width: 150px;
-    }
-
-    .lbl-telefono input {
-        width: 150px;
-    }
-
-    .lbl-correo input {
-        width: 440px;
-    }
-
-    .lbl-mensaje input {
-        width: 440px;
-    }
-
-    .lbl-mensaje {
-        background: #f6f6f6;
-        border-radius: 13px;
-        border-style: solid;
-        border-color: #001f3f;
-        border-width: 0.2px;
-        width: 430px;
-        height: 120px;
-        resize: none;
-        overflow-y: auto;
-    }
 
     .footer {
         box-sizing: border-box;

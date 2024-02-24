@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DistridulcesdelEje</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles/style.css">
 </head>
 
@@ -71,10 +72,7 @@
               <a href="secciones/vista_cursos.php">Contactanos</a>
             </li>
           </ul>
-          <div class="backgrount-search">
-            <label for="product-search" class="txt-search">Busqueda</label>
-            <input type="text" id="product-search" name="product-search" class="lbl-search">
-          </div>
+          
         </nav>
       </div>
     
@@ -132,16 +130,16 @@
             <div class="slider">
               
             <?php
-                
-                include("configuraciones/db.php");
 
-                $query = "SELECT * FROM imgsbanner";
-                $resultado= $conexion->query($query);
-                while($row = $resultado->fetch_assoc()) {
-            ?>
-              <img src="data:image/jpg;base64,<?php echo base64_encode($row['imagen']); ?>">
-            <?php      
-                }
+            include("configuraciones/db.php");
+
+            $query = "SELECT * FROM imgsbanner";
+            $resultado = $conexion->query($query);
+            while ($row = $resultado->fetch_assoc()) {
+              ?>
+                <img src="data:image/jpg;base64,<?php echo base64_encode($row['imagen']); ?>">
+            <?php
+            }
             ?>
               
             </div>
@@ -149,155 +147,151 @@
 
 
         <!-- Sección Productos -->
-    <section class="productos-section" id="productos">
-        <h2 class="title-productos">PRODUCTOS DE ALTA CALIDAD</h2>
-
-        <ul class="cards">
+        <section class="product-slider">
+        <div class="container mt-5">
+    <h2 class="mb-4">Productos con Descuento</h2>
+    <div class="slider-container">
+        <div class="row">
             <?php
             include 'controladores/funciones.php';
             $productos = obtenerProductosConDescuento($conexion);
 
             foreach ($productos as $producto) { ?>
-                <li class="card" onclick="cargarModal('<?php echo $producto['nombre']; ?>','<?php echo $producto['descripcion']; ?>',
+                <div class="col-md-4 product-card" onclick="cargarModal('<?php echo $producto['nombre']; ?>','<?php echo $producto['descripcion']; ?>',
                 '<?php echo $producto['precio']; ?>','data:image/jpeg;base64,<?php echo base64_encode($producto['imagen']); ?>')">
-
-                <img src="data:image/jpeg;base64,<?php echo base64_encode($producto['imagen']); ?>" alt="<?php echo $producto['nombre']; ?>">
-
-                <div>
-                    <div class="card-content">
-                    <h3 class="card-title"><?php echo $producto['nombre']; ?> <?php echo $producto['descuento']; ?>%dcto</h3>
-                    <p class="descripcion"><?php echo $producto['descripcion']; ?></p>
+                    <div class="card">
+                        <img src="data:image/jpeg;base64,<?php echo base64_encode($producto['imagen']); ?>" class="card-img-top" alt="<?php echo $producto['nombre']; ?>">
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo $producto['nombre']; ?></h5>
+                            <p class="card-text"><?php echo $producto['descripcion']; ?></p>
+                            <p class="card-text"><strong>Precio:</strong> $<?php echo $producto['precio']; ?></p>
+                            <p class="card-text"><strong>Descuento:</strong> <?php echo $producto['descuento']; ?>%</p>
+                        </div>
                     </div>
                 </div>
-                <div class="card-link-wrapper">
-                    <a href="" class="card-link">$<?php echo $producto['precio_descuento']; ?>  </a>
-                </div>
-            </li>
             <?php } ?>
+        </div>
+    </div>
+</div>
+        </section>
 
-        </ul>
-
-        <a href="productPage" class="btn-mas-productos">Más productos</a>
-    </section>
-
-    </section>
-    <section class="title-Distridulces" id="title-Distridulces">
+<section class="title-Distridulces" id="title-Distridulces">
         DISTRIDULCES
-    </section>
+</section>
 
-    <!-- Sección mision -->
-    <section class="mision" id="section-aboutus">
+<section class="mision ">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img class="img-fluid" src="img/home/img_mision.png" alt="Imagen Misión" style="max-width: 300px;">
+                <div class="content-txt-mision mt-4">
+                    <h2 class="txt-title-mision">MISIÓN</h2>
+                    <p>
+                        Llevar hasta los hogares colombianos los productos de nuestros aliados a través de nuestros
+                        clientes, creando oportunidad de negocio para todos. Apoyados en una estructura de organización
+                        simple, recurso humano empoderado y tecnología de punta.
+                        <br>
+                        Desarrollamos un trabajo planeado y direccionado hacia el cumplimiento de indicadores para
+                        satisfacción de clientes y proveedores, logrando así nuestra consolidación en el futuro.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img class="img-fluid" src="img/home/img_vision.png" alt="Imagen Visión" style="max-width: 300px;">
+                <div class="content-txt-vision mt-4">
+                    <h2 class="txt-title-vision">VISIÓN</h2>
+                    <p>
+                        Ser en el año 2028 la empresa preferida por los clientes del canal tradicional en el eje
+                        cafetero para la compra de productos de consumo masivo y consolidarnos como líderes en ventas y
+                        distribución.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-        <div class="txt-content-mision">
-            <img class="imgMision" src="img/home/img_mision.png" />
-            <div class="content-txt-mision">
-                <h2 class="txt-title-mision">MISION</h2>
+<!-- Sección valores -->
+<section class="valores">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img class="img-fluid" src="img/home/img_valores.jpg" />
+            </div>
+            <div class="col-md-6">
+                <h2 class="text-center">VALORES</h2>
                 <p>
-                    Llevar hasta los hogares colombianos los productos de nuestros aliados a través de nuestros
-                    clientes, creando
-                    oportunidad
-                    de negocio para todos. Apoyados en una estructura de organización simple, recurso humano empoderado
-                    y
-                    tecnología de punta.
-                    <br>
-                    Desarrollamos un trabajo planeado y direccionado hacia el cumplimiento de indicadores para
-                    satisfacción de
-                    clientes y proveedores,
-                    logrando así nuestra consolidación en el futuro.
+                <strong>Integridad:</strong> Actuamos con honestidad, ética y transparencia en todas nuestras operaciones y relaciones comerciales.<br>
+
+                <strong>Calidad:</strong> Nos comprometemos a ofrecer productos y servicios de la más alta calidad, cumpliendo con los estándares más exigentes de la industria.<br>
+
+                <strong>Servicio al Cliente:</strong> Colocamos las necesidades y satisfacción del cliente en el centro de todo lo que hacemos, brindando un servicio personalizado y proactivo.<br>
+
+                <strong>Innovación:</strong> Fomentamos la creatividad y la innovación en nuestros procesos y productos, buscando constantemente nuevas formas de mejorar y crecer.<br>
+
+                <strong>Responsabilidad Social y Ambiental:</strong> Nos preocupamos por el bienestar de nuestra comunidad y el medio ambiente, adoptando prácticas sostenibles y contribuyendo al desarrollo social y económico..<br>
                 </p>
             </div>
         </div>
+    </div>
+</section>
 
-        <div class="txt-content-vision">
-            <img class="img-vision" src="img/home/img_Vision.png" />
-            <div class="content-txt-vision">
-                <h2 class="txt-title-vision">VISION</h2>
+<!-- Sección lineacorporativa -->
+<section class="lineacorporativa">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="text-center">LINEA CORPORATIVA</h2>
                 <p>
-                    Ser en el año 2028 la empresa preferida
-                    por los clientes del canal tradicional en el eje cafetero para la compra
-                    de productos de consumo masivo y
-                    consolidarnos como lideres en ventas y distribución.
-                    ola
+                    Somos un equipo de personas soñadoras y apasionadas que ponemos amor a todo lo que hacemos.
+                    Así, logramos materializar cada anhelo y proyecto en nuestras vidas. si te gusta soñar y hacer
+                    esos sueños realidad ven y haz parte de la familia Distridulces.
                 </p>
             </div>
-
-
+            <div class="col-md-6">
+                <img class="img-fluid float-left" src="img/home/img_lineacorporativa.jpg" />
+            </div>
         </div>
-    </section>
-
-    <!-- Sección valores -->
-    <section class="valores">
-        <div class="txt-content-valores">
-            <h2 class="txt-title-valores">VALORES</h2>
-            <p>
-                Ser en el año 2028 la empresa preferida
-                por los clientes del canal tradicional en el eje cafetero para la compra
-                de productos de consumo masivo y
-                consolidarnos como lideres en ventas y distribución.
-            </p>
-        </div>
-    </section>
-
-    <section class="seccion-img-valores">
-      <img height="500px" class="img-valores" src="img/home/img_valores.jpg" />
-    </section>
-
-    
-
-    <!-- Sección lineacorporativa -->
-    <section class="lineacorporativa">
-        <div class="txt-content-lineacorporativa">
-            <h2 class="txt-title-lineacorporativa">LINEA CORPORATIVA</h2>
-            <p>
-                Somos un equipo de personas soñadoras y apasionadas que ponemos amor a todo lo que hacemos.
-                Así, logramos materializar cada anhelo y proyecto en nuestras vidas. si te gusta soñar y hacer
-                esos sueños realidad ven y haz parte de la familia Distridulces.
-            </p>
-        </div>
-
-        <img class="img-lineacorporativa" src="img/home/img_lineacorporativa.jpg" />
-    </section>
+    </div>
+</section>
 
     <!-- Sección Contáctanos -->
     <section class="contacto" id="contacto">
-
+    <div class="container">
         <h2>Contactanos</h2>
-        <p>
-            No dude en comunicarse con nosotros mediante el formulario de contacto a
-            continuación. Estamos aquí para responder cualquier pregunta que pueda tener y
-            brindarle el mejor servicio posible.
-        </p>
-        <!-- Formulario de contacto -->
-
+        <p>No dude en comunicarse con nosotros mediante el formulario de contacto a continuación. Estamos aquí para responder cualquier pregunta que pueda tener y brindarle el mejor servicio posible.</p>
+        
         <form action="https://formsubmit.co/sebgameover5@gmail.com" method="POST">
-
-            <table>
-                <tr>
-                    <td>
-                        <input class="lbl-nombre" type="text" name="name" id="name" placeholder="NOMBRE">
-                    </td>
-                    <td>
-                        <input class="lbl-telefono" type="tel" name="phone" id="phone" placeholder="TELEFONO">
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <input class="lbl-correo" type="email" name="email" id="email" placeholder="CORREO">
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="2">
-                        <textarea class="lbl-mensaje" name="message" id="message" placeholder="MENSAJE"></textarea>
-                    </td>
-                </tr>
-            </table>
-
-            <input class="enviar-contact" type="submit" value="Enviar">
-
+            <div class="row mb-3">
+                <div class="col">
+                    <input class="form-control" type="text" name="name" id="name" placeholder="NOMBRE">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <input class="form-control" type="tel" name="phone" id="phone" placeholder="TELEFONO">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <input class="form-control" type="email" name="email" id="email" placeholder="CORREO">
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">
+                    <textarea class="form-control" name="message" id="message" placeholder="MENSAJE"></textarea>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <input class="btn btn-primary" type="submit" value="Enviar">
+                </div>
+            </div>
             <input type="hidden" name="_next" value="http://127.0.0.1:5501/">
             <input type="hidden" name="_captcha" value="false">
         </form>
-    </section>
+    </div>
+</section>
 
     <footer>
         <div class="footer">
@@ -322,6 +316,7 @@
     </footer>
 </body>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
         const slider = document.querySelector('.slider-mobile');
@@ -388,6 +383,7 @@
     // Automáticamente avanzar al siguiente slide cada 3 segundos
     setInterval(nextSlide, 3000);
 </script>
+
 </html>
 
     <body>
