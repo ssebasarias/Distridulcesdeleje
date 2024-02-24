@@ -91,9 +91,6 @@ $productos = obtener_productos($conexion, $categoria_id);
           <a href="#">Contactanos</a>
         </li>
       </ul>
-      <div class="backgrount-search">
-        <label for="product-search" class="txt-search">Busqueda</label>
-        <input type="text" id="product-search" name="product-search" class="lbl-search">
       </div>
     </nav>
   </div>
@@ -107,14 +104,17 @@ $productos = obtener_productos($conexion, $categoria_id);
 
     <nav class="navbar-mobile">
       <img class="logo-mobile-navbar" src="./img/header/img-logo-mobile.png" />
-      <a href="/home">- Inicio</a>
-      <a href="/home#title-Distridulces">- ¿Quienes Somos?</a>
-      <a href="productPage" target="pages">- Productos</a>
-      <a href="/home#contacto">- Contactanos</a>
-      <a href="login">Iniciar sesion</a>
+      <a href="/home">Inicio</a>
+      <a href="/home#title-Distridulces">¿Quienes Somos?</a>
+      <a href="productPage" target="pages">Productos</a>
+      <a href="/home#contacto">Contactanos</a>
       <label for="check" class="esconder-menu">
         &#215
       </label>
+
+      
+
+      
 
       <div class="info-box-mobile">
         <div class="info-adress">
@@ -152,49 +152,62 @@ $productos = obtener_productos($conexion, $categoria_id);
   <section class="category-menu">
   <h2>Categorías</h2>
   <ul class="list-group list-group-flush">
-    <li class ="list-group-item"><a class="list-group-item" href="productos.php">Todos los productos</a></li>
+    <li class ="list-group-item"><a class="icon-link icon-link-hover text-decoration-none" style="--bs-link-hover-color-rgb: 255, 215, 0;" href="productos.php">Todos los productos</a></li>
     <?php
       foreach ($categorias as $categoria) {
-        echo "<li class ='list-group-item'><a class='list-group-item' href='/productos.php?categoria={$categoria['id']}'>{$categoria['nombre']}</a></li>";
+        echo "<li class ='list-group-item'><a class='icon-link icon-link-hover text-decoration-none' style='--bs-link-hover-color-rgb: 255, 215, 0;' href='/productos.php?categoria={$categoria['id']}'>{$categoria['nombre']}</a></li>";
       }
       ?>
     </section>
     <section class="mostrador" id="mostrador">
+    <div class="dropdown">
+        <button class="btn btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        Categorias
+        </button>
+        <ul class="dropdown-menu">
+        <li class ="dropdown-item" href="productos.php">Todos los productos</a></li>
+          <?php
+          foreach ($categorias as $categoria) {
+            echo "<li><a class='dropdown-item' href='/productos.php?categoria={$categoria['id']}'>{$categoria['nombre']}</a></li>";
+          }
+          ?>
+        </ul>
+      </div>
         <?php foreach ($productos as $producto) { ?>
-            <div class="item" onclick="cargarModal('<?php echo $producto['nombre']; ?>','<?php echo $producto['descripcion']; ?>','<?php echo $producto['precio']; ?>','data:image/jpeg;base64,<?php echo base64_encode($producto['imagen']); ?>')">
-              <div class="contenedor-foto">
-                <img src="data:image/jpeg;base64,<?php echo base64_encode($producto['imagen']); ?>" alt="<?php echo $producto['nombre']; ?>">
-              </div>
-              <div class="contenedor-texto">
-                <p class="nombre"><?php echo $producto['nombre']; ?></p>
-                <p class="descripcion"><?php echo $producto['descripcion']; ?></p>
-                <span class="precio">$<?php echo $producto['precio']; ?></span>
-              </div>
-              <div class="contenedor-edit-delete">
-                <a type="button" data-bs-toggle="modal" data-bs-target="#editarProducto" onclick="abrirVentanaEditar('<?php echo $producto['id']; ?>','<?php echo $producto['nombre']; ?>','<?php echo $producto['descripcion']; ?>','<?php echo $producto['precio']; ?>','<?php echo $producto['descuento']; ?>')">
-                    <img src="./img/crud/edit.png" alt="Icono">
-                </a>
-                <a class="btn-delete" id="btn-delete" href="controladores/eliminarProducto.php?id=<?php echo $producto['id'];?>">
-                    <img class="btn-delete" src="./img/crud/delete.png" alt="Icono">
-                </a>
-              </div>
+          <div data-bs-toggle="modal" data-bs-target="#detalleProductos" class="card border border-dark rounded btn btn-light lift" style="width: 12rem;" onclick="cargarModal('<?php echo $producto['nombre']; ?>','<?php echo $producto['descripcion']; ?>','<?php echo $producto['precio']; ?>','data:image/jpeg;base64,<?php echo base64_encode($producto['imagen']); ?>')">
+              <img src="data:image/jpeg;base64,<?php echo base64_encode($producto['imagen']); ?>" alt="<?php echo $producto['nombre']; ?>" class="card-img-top">
+            <div class="card-body">
+              <p class="card-text"><?php echo $producto['nombre']; ?></p>
+               <span class="card-text text-primary">$<?php echo $producto['precio']; ?></span>
             </div>
+          </div>
             <?php } ?>
     </section>
   </div>
 
-  <div class="product-detail" id="myModal" onclick="cerrarModal(event)">
-    <div class="product-detail-close">
-      <img src="./img/product//icon_close.png" alt="close" onclick="cerrarModal(event)">
-    </div>
-    <img src="" alt="" id="img">
-    <div class="product-info">
-      <p id="precio"></p>
-      <p id="nombre"></p>
-      <p id="descripcion"></p>
+  <div class="modal fade" id="detalleProductos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Detalle del producto</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div id="myModal">
+          <img height="400px"src="" alt="" id="img">
+            <div class="product-info">
+              <p class="text-primary fs-2" id="precio"></p>
+              <p class="fs-3" id="nombre"></p>
+              <p class="fs-5" id="descripcion"></p>
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Ver más productos</button>
+      </div>
     </div>
   </div>
-
+</div>
 
 
 </body>

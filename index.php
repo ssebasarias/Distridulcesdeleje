@@ -147,34 +147,36 @@
             </div>
         </section>
 
-    <!-- Sección Productos -->
+
+        <!-- Sección Productos -->
     <section class="productos-section" id="productos">
         <h2 class="title-productos">PRODUCTOS DE ALTA CALIDAD</h2>
 
-          <div class="slider-mobile">
-              <div class="fila">
+        <ul class="cards">
+            <?php
+            include 'controladores/funciones.php';
+            $productos = obtenerProductosConDescuento($conexion);
 
-              <?php 
-              include 'controladores/funciones.php';
-              $productos = obtenerProductosConDescuento($conexion);
+            foreach ($productos as $producto) { ?>
+                <li class="card" onclick="cargarModal('<?php echo $producto['nombre']; ?>','<?php echo $producto['descripcion']; ?>',
+                '<?php echo $producto['precio']; ?>','data:image/jpeg;base64,<?php echo base64_encode($producto['imagen']); ?>')">
 
-              foreach ($productos as $producto) { ?>
-                <div class="item" onclick="cargarModal('<?php echo $producto['nombre']; ?>','<?php echo $producto['descripcion']; ?>','<?php echo $producto['precio']; ?>','data:image/jpeg;base64,<?php echo base64_encode($producto['imagen']); ?>')">
-                  <div class="contenedor-foto">
-                    <img src="data:image/jpeg;base64,<?php echo base64_encode($producto['imagen']); ?>" alt="<?php echo $producto['nombre']; ?>">
-                  </div>
-                  <div class="contenedor-texto">
-                    <p class="nombre"><?php echo $producto['nombre']; ?> <?php echo $producto['descuento']; ?>%</p>
+                <img src="data:image/jpeg;base64,<?php echo base64_encode($producto['imagen']); ?>" alt="<?php echo $producto['nombre']; ?>">
+
+                <div>
+                    <div class="card-content">
+                    <h3 class="card-title"><?php echo $producto['nombre']; ?> <?php echo $producto['descuento']; ?>%dcto</h3>
                     <p class="descripcion"><?php echo $producto['descripcion']; ?></p>
-                    <span class="precio">$<?php echo $producto['precio_descuento']; ?></span>
-                  </div>
+                    </div>
                 </div>
-              <?php } ?>
-             
-              </div>
-                  <button class="prev-btn">&larr;</button>
-                  <button class="next-btn">&rarr;</button>
-          </div>
+                <div class="card-link-wrapper">
+                    <a href="" class="card-link">$<?php echo $producto['precio_descuento']; ?>  </a>
+                </div>
+            </li>
+            <?php } ?>
+
+        </ul>
+
         <a href="productPage" class="btn-mas-productos">Más productos</a>
     </section>
 
@@ -225,7 +227,6 @@
 
     <!-- Sección valores -->
     <section class="valores">
-
         <div class="txt-content-valores">
             <h2 class="txt-title-valores">VALORES</h2>
             <p>
@@ -235,14 +236,16 @@
                 consolidarnos como lideres en ventas y distribución.
             </p>
         </div>
-        <img class="img-valores" src="img/home/img_valores.jpg" />
-
     </section>
+
+    <section class="seccion-img-valores">
+      <img height="500px" class="img-valores" src="img/home/img_valores.jpg" />
+    </section>
+
+    
 
     <!-- Sección lineacorporativa -->
     <section class="lineacorporativa">
-
-        <img class="img-lineacorporativa" src="img/home/img_lineacorporativa.jpg" />
         <div class="txt-content-lineacorporativa">
             <h2 class="txt-title-lineacorporativa">LINEA CORPORATIVA</h2>
             <p>
@@ -252,6 +255,7 @@
             </p>
         </div>
 
+        <img class="img-lineacorporativa" src="img/home/img_lineacorporativa.jpg" />
     </section>
 
     <!-- Sección Contáctanos -->

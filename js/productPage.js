@@ -21,7 +21,6 @@ function cargarModal(nombre, descripcion, precio, imagen) {
     descripSeleccionada.textContent = descripcion;
     precioSeleccionado.textContent = "$ " + precio;
 
-    modal.style.display = "block";
 }
 
 // Función para cerrar el modal
