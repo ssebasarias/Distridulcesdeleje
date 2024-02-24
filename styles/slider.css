@@ -1,0 +1,79 @@
+.mostrador {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0 40px;
+    gap: 30px;
+  
+}
+
+.item {
+
+    flex: 1 0 200px;
+    /* Ancho fijo de 200px */
+    max-width: 210px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 10px;
+    width: 189px;
+    height: 250px;
+    border-radius: 24px;
+    text-align: center;
+    border: 2px;
+    border-style: solid;
+    border-color: #001f3f;
+    display: grid;
+    text-align: center;
+    display: inline-block;
+    /* Para que las cards se muestren en línea */
+    vertical-align: top;
+    /* Para alinear las cards en la parte superior */
+}
+
+.lift {
+  transition: transform 0.15s ease-out;
+}
+
+.lift:hover,
+.lift:focus {
+  transform: translateY(-4px); /* Ajusta la distancia de levantamiento según tu preferencia */
+}
+
+
+.item .contenedor-foto {
+    width: 100%;
+    height: 50%;
+    overflow: hidden;
+}
+
+.item .contenedor-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item .descripcion {
+    color: #707070;
+    font-family: "Inter-SemiBold", sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+.item .descripcion {
+  display: none;
+}
+
+.item .precio {
+    color: #2b6be7;
+    font-family: "Inter-SemiBold", sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.contenedor-edit-delete img {
+    width: 50px;
+    transform: scaleX(-1);
+    cursor: pointer;
+}
+
+.contenedor-edit-delete a {
+    text-decoration: none;
+}

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DistridulcesdelEje</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles/style.css">
 </head>
 
@@ -125,55 +125,35 @@
                 </div>
         </nav>
     </div>
-    <!-- Sección Banner -->
-        <section class="section-banner" id="section-banner">
-            <div class="slider">
-              
-            <?php
+<!-- Sección Banner -->
+<section class="section-banner" id="section-banner">
+  <div class="slider">
+    
+  <?php
 
-            include("configuraciones/db.php");
+  include("configuraciones/db.php");
 
-            $query = "SELECT * FROM imgsbanner";
-            $resultado = $conexion->query($query);
-            while ($row = $resultado->fetch_assoc()) {
-              ?>
-                <img src="data:image/jpg;base64,<?php echo base64_encode($row['imagen']); ?>">
-            <?php
-            }
-            ?>
-              
-            </div>
-        </section>
+  $query = "SELECT * FROM imgsbanner";
+  $resultado = $conexion->query($query);
+  while ($row = $resultado->fetch_assoc()) {
+    ?>
+      <img src="data:image/jpg;base64,<?php echo base64_encode($row['imagen']); ?>">
+  <?php
+  }
+  ?>
+    
+  </div>
+</section>
 
 
-        <!-- Sección Productos -->
-        <section class="product-slider">
-        <div class="container mt-5">
-    <h2 class="mb-4">Productos con Descuento</h2>
-    <div class="slider-container">
-        <div class="row">
-            <?php
-            include 'controladores/funciones.php';
-            $productos = obtenerProductosConDescuento($conexion);
-
-            foreach ($productos as $producto) { ?>
-                <div class="col-md-4 product-card" onclick="cargarModal('<?php echo $producto['nombre']; ?>','<?php echo $producto['descripcion']; ?>',
-                '<?php echo $producto['precio']; ?>','data:image/jpeg;base64,<?php echo base64_encode($producto['imagen']); ?>')">
-                    <div class="card">
-                        <img src="data:image/jpeg;base64,<?php echo base64_encode($producto['imagen']); ?>" class="card-img-top" alt="<?php echo $producto['nombre']; ?>">
-                        <div class="card-body">
-                            <h5 class="card-title"><?php echo $producto['nombre']; ?></h5>
-                            <p class="card-text"><?php echo $producto['descripcion']; ?></p>
-                            <p class="card-text"><strong>Precio:</strong> $<?php echo $producto['precio']; ?></p>
-                            <p class="card-text"><strong>Descuento:</strong> <?php echo $producto['descuento']; ?>%</p>
-                        </div>
-                    </div>
-                </div>
-            <?php } ?>
-        </div>
-    </div>
-</div>
-        </section>
+<!-- Sección Productos -->
+<section class="product-slider"> 
+  <h2>Prodcutos de alta calidad</h2>
+  <div class="slider-container">
+    <iframe src="./slider.php"></iframe>
+  </div>
+  <a href="productPage" class="btn-mas-productos btn btn-primary">Más productos</a>
+</section>
 
 <section class="title-Distridulces" id="title-Distridulces">
         DISTRIDULCES
@@ -225,11 +205,7 @@
 
                 <strong>Calidad:</strong> Nos comprometemos a ofrecer productos y servicios de la más alta calidad, cumpliendo con los estándares más exigentes de la industria.<br>
 
-                <strong>Servicio al Cliente:</strong> Colocamos las necesidades y satisfacción del cliente en el centro de todo lo que hacemos, brindando un servicio personalizado y proactivo.<br>
-
-                <strong>Innovación:</strong> Fomentamos la creatividad y la innovación en nuestros procesos y productos, buscando constantemente nuevas formas de mejorar y crecer.<br>
-
-                <strong>Responsabilidad Social y Ambiental:</strong> Nos preocupamos por el bienestar de nuestra comunidad y el medio ambiente, adoptando prácticas sostenibles y contribuyendo al desarrollo social y económico..<br>
+                <strong>Servicio al Cliente:</strong> Colocamos las necesidades y satisfacción del cliente en el centro de todo lo que hacemos, brindando un servicio personalizado y proactivo.
                 </p>
             </div>
         </div>
@@ -316,54 +292,30 @@
     </footer>
 </body>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const slider = document.querySelector('.slider-mobile');
-        const fila = document.querySelector('.fila');
-        const items = document.querySelectorAll('.item');
-        const prevBtn = document.querySelector('.prev-btn');
-        const nextBtn = document.querySelector('.next-btn');
-      
-        let currentPosition = 0;
-        const itemWidth = items[0].offsetWidth;
-        const numItems = items.length;
-        const totalWidth = itemWidth * numItems;
-        
-        // Definir función para mover el slider
-        function moveSlider() {
-          if (currentPosition <= -totalWidth) {
-            currentPosition = 0;
-          } else {
-            currentPosition -= itemWidth;
-          }
-          fila.style.transform = `translateX(${currentPosition}px)`;
-        }
-      
-        // Establecer intervalo para el slider automático
-        const interval = setInterval(moveSlider, 3000);
-      
-        // Detener el slider automático al pasar el mouse sobre el slider
-        slider.addEventListener('mouseenter', () => clearInterval(interval));
-      
-        // Reanudar el slider automático al retirar el mouse del slider
-        slider.addEventListener('mouseleave', () => setInterval(moveSlider, 5000));
-      
-        // Agregar eventos a los botones de navegación
-        nextBtn.addEventListener('click', () => {
-          moveSlider();
+    
+    $(document).ready(function(){
+        $(".slider-mobile").owlCarousel({
+            items: 3,
+            loop: true,
+            margin: 10,
+            nav: true,
+            navText: ["&larr;", "&rarr;"],
+            responsive:{
+                0:{
+                    items:1
+                },
+                600:{
+                    items:2
+                },
+                1000:{
+                    items:3
+                }
+            }
         });
-      
-        prevBtn.addEventListener('click', () => {
-          if (currentPosition >= 0) {
-            currentPosition = -totalWidth + itemWidth;
-          } else {
-            currentPosition += itemWidth;
-          }
-          fila.style.transform = `translateX(${currentPosition}px)`;
-        });
-      });
-      
+    });
+
 
       // Inicializar el índice del slider
     let currentIndex = 0;     
