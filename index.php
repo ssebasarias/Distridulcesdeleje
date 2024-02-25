@@ -66,10 +66,10 @@
               <a href="productos.php">Productos</a>
             </li>
             <li>
-              <a href="secciones/vista_cursos.php">¿Quienes somos?</a>
+              <a href="#title-Distridulces">¿Quienes somos?</a>
             </li>
             <li>
-              <a href="secciones/vista_cursos.php">Contactanos</a>
+              <a href="#contacto">Contactanos</a>
             </li>
           </ul>
           
@@ -86,9 +86,9 @@
         <nav class="navbar-mobile">
           <img class="logo-mobile-navbar" src="img/header/img-logo-mobile.png" />
           <a href="index.php">Inicio</a>
-          <a href="secciones/vista_cursos.php">¿Quienes Somos?</a>
-          <a href="secciones/vista_alumnos.php" target="pages">Productos</a>
-          <a href="/home#contacto">Contactanos</a>
+          <a href="#title-Distridulces">¿Quienes Somos?</a>
+          <a href="productos.php">Productos</a>
+          <a href="#contacto">Contactanos</a>
 
           <label for="check" class="esconder-menu">
             &#215
@@ -145,10 +145,9 @@
   </div>
 </section>
 
-
 <!-- Sección Productos -->
-<section class="product-slider"> 
-  <h2>Prodcutos de alta calidad</h2>
+<section class="product-slider">
+  <h2>Productos al mejor precio</h2>
   <div class="slider-container">
     <iframe src="./slider.php"></iframe>
   </div>
@@ -156,16 +155,17 @@
 </section>
 
 <section class="title-Distridulces" id="title-Distridulces">
-        DISTRIDULCES
+  
 </section>
 
-<section class="mision ">
-    <div class="container">
-        <div class="row">
+<section class="mision">
+  <h2 class="title-Distridulces text-center display-4">DISTRIDULCES</h2>
+    <div class="container-mision">
+        <div class="row" style="margin-top:60px;">
             <div class="col-md-6">
-                <img class="img-fluid" src="img/home/img_mision.png" alt="Imagen Misión" style="max-width: 300px;">
+                <img class="img-fluid" src="img/home/mision.png" alt="Imagen Misión" style="max-width: 200px; margin-top:30px;">
                 <div class="content-txt-mision mt-4">
-                    <h2 class="txt-title-mision">MISIÓN</h2>
+                    <h2 class="txt-title-mision mt-4">MISIÓN</h2>
                     <p>
                         Llevar hasta los hogares colombianos los productos de nuestros aliados a través de nuestros
                         clientes, creando oportunidad de negocio para todos. Apoyados en una estructura de organización
@@ -177,9 +177,9 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <img class="img-fluid" src="img/home/img_vision.png" alt="Imagen Visión" style="max-width: 300px;">
+                <img class="img-fluid" src="img/home/vision.png" alt="Imagen Visión" style="max-width: 200px; margin-top:30px;">
                 <div class="content-txt-vision mt-4">
-                    <h2 class="txt-title-vision">VISIÓN</h2>
+                    <h2 class="txt-title-vision mt-4">VISIÓN</h2>
                     <p>
                         Ser en el año 2028 la empresa preferida por los clientes del canal tradicional en el eje
                         cafetero para la compra de productos de consumo masivo y consolidarnos como líderes en ventas y
@@ -232,12 +232,12 @@
 </section>
 
     <!-- Sección Contáctanos -->
-    <section class="contacto" id="contacto">
-    <div class="container">
+    <section class="contacto" id="contacto" style="margin: 50px 0;">
+    <div class="container" style="width: 800px;">
         <h2>Contactanos</h2>
         <p>No dude en comunicarse con nosotros mediante el formulario de contacto a continuación. Estamos aquí para responder cualquier pregunta que pueda tener y brindarle el mejor servicio posible.</p>
         
-        <form action="https://formsubmit.co/sebgameover5@gmail.com" method="POST">
+        <form action="https://formsubmit.co/danielgoezparra@gmail.com" method="POST">
             <div class="row mb-3">
                 <div class="col">
                     <input class="form-control" type="text" name="name" id="name" placeholder="NOMBRE">
@@ -294,27 +294,51 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-    
-    $(document).ready(function(){
-        $(".slider-mobile").owlCarousel({
-            items: 3,
-            loop: true,
-            margin: 10,
-            nav: true,
-            navText: ["&larr;", "&rarr;"],
-            responsive:{
-                0:{
-                    items:1
-                },
-                600:{
-                    items:2
-                },
-                1000:{
-                    items:3
-                }
-            }
+    document.addEventListener("DOMContentLoaded", function() {
+        const slider = document.querySelector('.slider-mobile');
+        const fila = document.querySelector('.fila');
+        const items = document.querySelectorAll('.item');
+        const prevBtn = document.querySelector('.prev-btn');
+        const nextBtn = document.querySelector('.next-btn');
+
+        let currentPosition = 0;
+        const itemWidth = items[0].offsetWidth;
+        const numItems = items.length;
+        const totalWidth = itemWidth * numItems;
+
+        // Definir función para mover el slider
+        function moveSlider() {
+          if (currentPosition <= -totalWidth) {
+            currentPosition = 0;
+          } else {
+            currentPosition -= itemWidth;
+          }
+          fila.style.transform = `translateX(${currentPosition}px)`;
+        }
+
+        // Establecer intervalo para el slider automático
+        const interval = setInterval(moveSlider, 3000);
+
+        // Detener el slider automático al pasar el mouse sobre el slider
+        slider.addEventListener('mouseenter', () => clearInterval(interval));
+
+        // Reanudar el slider automático al retirar el mouse del slider
+        slider.addEventListener('mouseleave', () => setInterval(moveSlider, 5000));
+
+        // Agregar eventos a los botones de navegación
+        nextBtn.addEventListener('click', () => {
+          moveSlider();
         });
-    });
+
+        prevBtn.addEventListener('click', () => {
+          if (currentPosition >= 0) {
+            currentPosition = -totalWidth + itemWidth;
+          } else {
+            currentPosition += itemWidth;
+          }
+          fila.style.transform = `translateX(${currentPosition}px)`;
+        });
+      });
 
 
       // Inicializar el índice del slider
@@ -325,17 +349,16 @@
       const slider = document.querySelector('.slider');
       const slides = slider.querySelectorAll('img');
       const slideWidth = slides[0].clientWidth;
-      
+
       currentIndex = (currentIndex + 1) % slides.length;
       const offset = -currentIndex * slideWidth;
-      
+
       slider.style.transform = `translateX(${offset}px)`;
     }
 
     // Automáticamente avanzar al siguiente slide cada 3 segundos
     setInterval(nextSlide, 3000);
 </script>
-
 </html>
 
     <body>

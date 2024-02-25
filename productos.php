@@ -85,10 +85,10 @@ $productos = obtener_productos($conexion, $categoria_id);
           <a href="productos.php">Productos</a>
         </li>
         <li>
-          <a href="#">¿Quienes somos?</a>
+          <a href="index.php#title-Distridulces">¿Quienes somos?</a>
         </li>
         <li>
-          <a href="#">Contactanos</a>
+          <a href="index.php#contacto">Contactanos</a>
         </li>
       </ul>
       </div>
@@ -104,10 +104,10 @@ $productos = obtener_productos($conexion, $categoria_id);
 
     <nav class="navbar-mobile">
       <img class="logo-mobile-navbar" src="./img/header/img-logo-mobile.png" />
-      <a href="/home">Inicio</a>
-      <a href="/home#title-Distridulces">¿Quienes Somos?</a>
-      <a href="productPage" target="pages">Productos</a>
-      <a href="/home#contacto">Contactanos</a>
+      <a href="index.php">Inicio</a>
+      <a href="index.php#title-Distridulces">¿Quienes Somos?</a>
+      <a href="productPage">Productos</a>
+      <a href="index.php#contacto">Contactanos</a>
       <label for="check" class="esconder-menu">
         &#215
       </label>
@@ -173,20 +173,22 @@ $productos = obtener_productos($conexion, $categoria_id);
           ?>
         </ul>
       </div>
-        <?php foreach ($productos as $producto) { ?>
-          <div data-bs-toggle="modal" data-bs-target="#detalleProductos" class="card border border-dark rounded btn btn-light lift" style="width: 12rem;" onclick="cargarModal('<?php echo $producto['nombre']; ?>','<?php echo $producto['descripcion']; ?>','<?php echo $producto['precio']; ?>','data:image/jpeg;base64,<?php echo base64_encode($producto['imagen']); ?>')">
-              <img src="data:image/jpeg;base64,<?php echo base64_encode($producto['imagen']); ?>" alt="<?php echo $producto['nombre']; ?>" class="card-img-top">
-            <div class="card-body">
-              <p class="card-text"><?php echo $producto['nombre']; ?></p>
-               <span class="card-text text-primary">$<?php echo $producto['precio']; ?></span>
-            </div>
+      <?php foreach ($productos as $producto) { ?>
+        <div style="width: 12rem; height: 16rem;" data-bs-toggle="modal" data-bs-target="#detalleProductos" class="card border border-dark rounded btn  shadow lift" style="width: 12rem;" onclick="cargarModal('<?php echo $producto['nombre']; ?>','<?php echo $producto['descripcion']; ?>','<?php echo $producto['precio']; ?>','data:image/jpeg;base64,<?php echo base64_encode($producto['imagen']); ?>')">
+        <div class="d-flex justify-content-center" style="width: 100%; height: 10rem;">
+          <img src="data:image/jpeg;base64,<?php echo base64_encode($producto['imagen']); ?>" alt="<?php echo $producto['nombre']; ?>" class="card-img-top">
+        </div>  
+          <div class="card-body d-flex flex-column justify-content-end">
+            <p class="card-text"><?php echo $producto['nombre']; ?></p>
+            <span class="card-text text-primary">$<?php echo $producto['precio']; ?></span>
           </div>
-            <?php } ?>
+        </div>
+      <?php } ?>
     </section>
   </div>
 
   <div class="modal fade" id="detalleProductos" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+  <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="exampleModalLabel">Detalle del producto</h1>
@@ -194,12 +196,14 @@ $productos = obtener_productos($conexion, $categoria_id);
       </div>
       <div class="modal-body">
         <div id="myModal">
-          <img height="400px"src="" alt="" id="img">
-            <div class="product-info">
-              <p class="text-primary fs-2" id="precio"></p>
-              <p class="fs-3" id="nombre"></p>
-              <p class="fs-5" id="descripcion"></p>
-            </div>
+          <div class="d-flex justify-content-center">
+            <img class="img-fluid" src="" alt="" id="img">
+          </div>
+          <div class="product-info mt-3">
+            <p class="text-primary fs-2" id="precio"></p>
+            <p class="fs-3" id="nombre"></p>
+            <p class="fs-5" id="descripcion"></p>
+          </div>
         </div>
       </div>
       <div class="modal-footer">
