@@ -1,3 +1,9 @@
+<?php
+include 'configuraciones/db.php';
+include 'controladores/funciones.php';
+$categoria_id = isset($_GET['categoria']) ? $_GET['categoria'] : null;
+$productos = obtenerProductosConDescuento($conexion);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -127,7 +133,7 @@
     </div>
 <!-- Sección Banner -->
 <section class="section-banner" id="section-banner">
-  <div class="slider">
+  <div class="slider-banner">
     
   <?php
 
@@ -137,25 +143,57 @@
   $resultado = $conexion->query($query);
   while ($row = $resultado->fetch_assoc()) {
     ?>
-      <img src="data:image/jpg;base64,<?php echo base64_encode($row['imagen']); ?>">
-  <?php
+          <img src="data:image/jpg;base64,<?php echo base64_encode($row['imagen']); ?>">
+      <?php
   }
   ?>
     
   </div>
+
 </section>
 
 <!-- Sección Productos -->
-<section class="product-slider">
-  <h2>Productos al mejor precio</h2>
-  <div class="slider-container">
-    <iframe src="./slider.php"></iframe>
-  </div>
-  <a href="productPage" class="btn-mas-productos btn btn-primary">Más productos</a>
-</section>
 
-<section class="title-Distridulces" id="title-Distridulces">
-  
+<section class="slider">
+  <div class="slide-track">
+    <?php
+      foreach ($productos as $producto) { ?>
+    <div class="slide">
+      <div class="item">
+        <div class="contenedor-foto">
+          <img src="data:image/jpeg;base64,<?php echo base64_encode($producto['imagen']); ?>" alt="<?php echo $producto['nombre']; ?>">
+        </div>
+        <div class="contenedor-texto">
+          <p class="nombre"><?php echo $producto['nombre']; ?></p>
+          <span class="precio">$<?php echo $producto['precio']; ?></span>
+          <span class="precio-descuento">$<?php echo $producto['precio_descuento']; ?></span>
+          <p class="descripcion"><?php echo $producto['descripcion']; ?></p>
+        </div>
+        <a href="productos.php">ver más productos</a>
+      </div>
+    </div>
+    
+      <?php } ?>
+      <?php
+      foreach ($productos as $producto) { ?>
+    <div class="slide">
+      <div class="item">
+          <div class="contenedor-foto">
+            <img src="data:image/jpeg;base64,<?php echo base64_encode($producto['imagen']); ?>" alt="<?php echo $producto['nombre']; ?>">
+          </div>
+          <div class="contenedor-texto">
+            <p class="nombre"><?php echo $producto['nombre']; ?></p>
+            <span class="precio">$<?php echo $producto['precio']; ?></span>
+            <span class="precio-descuento">$<?php echo $producto['precio_descuento']; ?></span>
+            <p class="descripcion"><?php echo $producto['descripcion']; ?></p>
+          </div>
+        <a href="productos.php">ver más productos</a>
+        </div>
+    </div>
+    
+      <?php } ?>
+    
+    </div>
 </section>
 
 <section class="mision">
@@ -165,8 +203,8 @@
             <div class="col-md-6">
                 <img class="img-fluid" src="img/home/mision.png" alt="Imagen Misión" style="max-width: 200px; margin-top:30px;">
                 <div class="content-txt-mision mt-4">
-                    <h2 class="txt-title-mision mt-4">MISIÓN</h2>
-                    <p>
+                    <h2 class="custom-title text-center display-4">MISIÓN</h2>
+                    <p class="txt-mision">
                         Llevar hasta los hogares colombianos los productos de nuestros aliados a través de nuestros
                         clientes, creando oportunidad de negocio para todos. Apoyados en una estructura de organización
                         simple, recurso humano empoderado y tecnología de punta.
@@ -179,8 +217,8 @@
             <div class="col-md-6">
                 <img class="img-fluid" src="img/home/vision.png" alt="Imagen Visión" style="max-width: 200px; margin-top:30px;">
                 <div class="content-txt-vision mt-4">
-                    <h2 class="txt-title-vision mt-4">VISIÓN</h2>
-                    <p>
+                    <h2 class="custom-title txt-title-vision mt-4">VISIÓN</h2>
+                    <p class="txt-mision">
                         Ser en el año 2028 la empresa preferida por los clientes del canal tradicional en el eje
                         cafetero para la compra de productos de consumo masivo y consolidarnos como líderes en ventas y
                         distribución.
@@ -198,8 +236,10 @@
             <div class="col-md-6">
                 <img class="img-fluid" src="img/home/img_valores.jpg" />
             </div>
-            <div class="col-md-6">
-                <h2 class="text-center">VALORES</h2>
+            <div class="txt-container col-md-6">
+              <div>
+
+                <h2 class="custom-title text-center">VALORES</h2>
                 <p>
                 <strong>Integridad:</strong> Actuamos con honestidad, ética y transparencia en todas nuestras operaciones y relaciones comerciales.<br>
 
@@ -207,6 +247,7 @@
 
                 <strong>Servicio al Cliente:</strong> Colocamos las necesidades y satisfacción del cliente en el centro de todo lo que hacemos, brindando un servicio personalizado y proactivo.
                 </p>
+              </div>
             </div>
         </div>
     </div>
@@ -216,18 +257,68 @@
 <section class="lineacorporativa">
     <div class="container">
         <div class="row">
-            <div class="col-md-6">
-                <h2 class="text-center">LINEA CORPORATIVA</h2>
+            <div class="txt-container col-md-6">
+              <div>
+
+                <h2 class="custom-title text-center">LINEA CORPORATIVA</h2>
                 <p>
-                    Somos un equipo de personas soñadoras y apasionadas que ponemos amor a todo lo que hacemos.
-                    Así, logramos materializar cada anhelo y proyecto en nuestras vidas. si te gusta soñar y hacer
-                    esos sueños realidad ven y haz parte de la familia Distridulces.
-                </p>
+                  Somos un equipo de personas soñadoras y apasionadas que ponemos amor a todo lo que hacemos.
+                  Así, logramos materializar cada anhelo y proyecto en nuestras vidas. si te gusta soñar y hacer
+                      esos sueños realidad ven y haz parte de la familia Distridulces.
+                  </p>
+              </div>
             </div>
             <div class="col-md-6">
                 <img class="img-fluid float-left" src="img/home/img_lineacorporativa.jpg" />
             </div>
         </div>
+    </div>
+</section>
+
+<section class="slider">
+  <div class="slide-track">
+    <div class="slide">
+    <img src="./img/slider/1.png" alt="">
+    </div>
+    <div class="slide">
+      <img src="./img/slider/3.png" alt="">
+    </div>
+    <div class="slide">
+      <img src="./img/slider/4.png" alt="">
+    </div>
+    <div class="slide">
+      <img src="./img/slider/2.png" alt="">
+    </div>
+    <div class="slide">
+      <img src="./img/slider/5.png" alt="">
+    </div>
+    <div class="slide">
+      <img src="./img/slider/7.png" alt="">
+    </div>
+    <div class="slide">
+      <img src="./img/slider/6.png" alt="">
+    </div>
+    
+   <div class="slide">
+    <img src="./img/slider/1.png" alt="">
+    </div>
+    <div class="slide">
+      <img src="./img/slider/3.png" alt="">
+    </div>
+    <div class="slide">
+      <img src="./img/slider/4.png" alt="">
+    </div>
+    <div class="slide">
+      <img src="./img/slider/2.png" alt="">
+    </div>
+    <div class="slide">
+      <img src="./img/slider/5.png" alt="">
+    </div>
+    <div class="slide">
+      <img src="./img/slider/7.png" alt="">
+    </div>
+    <div class="slide">
+      <img src="./img/slider/6.png" alt="">
     </div>
 </section>
 
@@ -295,16 +386,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        const slider = document.querySelector('.slider-mobile');
-        const fila = document.querySelector('.fila');
-        const items = document.querySelectorAll('.item');
-        const prevBtn = document.querySelector('.prev-btn');
-        const nextBtn = document.querySelector('.next-btn');
-
-        let currentPosition = 0;
-        const itemWidth = items[0].offsetWidth;
-        const numItems = items.length;
-        const totalWidth = itemWidth * numItems;
 
         // Definir función para mover el slider
         function moveSlider() {
@@ -318,35 +399,14 @@
 
         // Establecer intervalo para el slider automático
         const interval = setInterval(moveSlider, 3000);
-
-        // Detener el slider automático al pasar el mouse sobre el slider
-        slider.addEventListener('mouseenter', () => clearInterval(interval));
-
-        // Reanudar el slider automático al retirar el mouse del slider
-        slider.addEventListener('mouseleave', () => setInterval(moveSlider, 5000));
-
-        // Agregar eventos a los botones de navegación
-        nextBtn.addEventListener('click', () => {
-          moveSlider();
-        });
-
-        prevBtn.addEventListener('click', () => {
-          if (currentPosition >= 0) {
-            currentPosition = -totalWidth + itemWidth;
-          } else {
-            currentPosition += itemWidth;
-          }
-          fila.style.transform = `translateX(${currentPosition}px)`;
-        });
       });
-
 
       // Inicializar el índice del slider
     let currentIndex = 0;     
 
     // Función para avanzar al siguiente slide
     function nextSlide() {
-      const slider = document.querySelector('.slider');
+      const slider = document.querySelector('.slider-banner');
       const slides = slider.querySelectorAll('img');
       const slideWidth = slides[0].clientWidth;
 
