@@ -1,0 +1,64 @@
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Dependencies
+/vendor/
+/node_modules/
+
+# IDE and editor files
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+/logs/
+error_log
+access_log
+
+# Cache and temporary files
+/cache/
+/tmp/
+*.cache
+*.tmp
+
+# Compiled files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Packages
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Backup files
+*.bak
+*.swp
+*~
+
+# Application specific
+/public/uploads/
+/public/images/
+/config/database.php
+phpunit.xml 
